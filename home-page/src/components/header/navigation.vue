@@ -54,10 +54,11 @@ export default {
     .navigation-list-item {
       color: #fff;
       margin: 0px 15px;
-      font-size: 1.5em;
+      font-size: 1.2em;
       font-family: "Exo 2", sans-serif;
       font-weight: medium;
       cursor: pointer;
+      user-select: none;
     }
   }
 </style>
