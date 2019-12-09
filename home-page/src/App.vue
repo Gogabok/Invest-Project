@@ -27,8 +27,9 @@ export default {
   position: relative;
   background: #20272B;
   background-image: url("assets/common/main-bg.svg");
-  background-position: calc(50% - 52px) -200px;
-  background-size: 2000px;
+  background-position: calc(50% - 76px) -500px;
+  background-size: 2500px;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 </style>
