@@ -4,16 +4,18 @@
       <home-content
                     class="home-content-wrapper"
       />
+      <home-circle/>
     </div>
   </div>
 </template>
 
 <script>
 import homeContent from "@/components/home/content"
+import homeCircle from "@/components/home/circle"
 export default {
   name: 'home',
   components: {
-    homeContent
+    homeContent, homeCircle
   }
 }
 </script>
@@ -21,6 +23,9 @@ export default {
 <style lang="scss">
   .home-wrapper {
     padding: 50px 50px 20px 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     & .home-content-wrapper {
       max-width: 800px;
     }
