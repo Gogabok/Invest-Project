@@ -1,23 +1,68 @@
 <template>
   <div class="controls-wrapper">
     <transition name="wrapper-animation" mode="out-in">
-      <div class="login width-wrapper" v-if="!isRegistrationBtnTransform" key="login">
-        <button>Войти</button>
+      <div class="login width-wrapper" 
+           v-if="!inputTransform"
+           key="login">
+        <button @click="loginTransformBtn">Войти</button>
       </div>
       <div class="width-wrapper" key="registration" v-else>
-        <label class="registration-transform-wrapper" for="email">
-          <div class="registration-transform-item">
+        <label class="registration-transform-wrapper" 
+               for="email"
+               v-if="!login.isPutedEmail && !register.isPutedEmail"
+               >
+          <div 
+              class="registration-transform-item" 
+          >
             <img src="../../assets/header/mail.svg" alt="">
-            <input autocomplete="off" class="registration-transform-item-text" id="email" placeholder="Введите свой email">
+            <input 
+                  autocomplete="off" 
+                  class="registration-transform-item-text" 
+                  id="email" 
+                  name="email"
+                  placeholder="Введите свой email"
+                  value=""
+                  key="email-input"
+                  @input="emailValue($event.target)">
           </div>
+        </label>
+        <label 
+              class="registration-transform-wrapper" 
+              for="password" 
+              v-else
+        >
+          <div 
+                class="registration-transform-item"
+            >
+              <img src="../../assets/header/mail.svg" alt="">
+              <input 
+                    autocomplete="off" 
+                    class="registration-transform-item-text" 
+                    name="password"
+                    id="password" 
+                    placeholder="Введите свой пароль"
+                    value=""
+                    key="password-input"
+                    @input="passwordValue($event.target)"
+                    >
+            </div>
         </label>
       </div>
     </transition>
-    <div class="registration" 
-         :class="isRegistrationBtnTransform ? 'active-btn' : ''"
-         @click="!isRegistrationBtnTransform ? registrationTransformBtn() : registerNewUser()">
-      <button>Регистрация</button>
-    </div>
+    <transition name="wrapper-animation" mode="out-in">
+      <div v-if="!login.isTransformed"
+          class="registration" 
+          :class="register.isTransformed ? 'active-btn' : ''"
+          @click="!register.isTransformed ? registrationTransformBtn() : registerNewUser()">
+        <button>Регистрация</button>
+      </div>
+      <div v-else
+          class="registration" 
+          :class="login.isTransformed ? 'active-btn' : ''"
+          @click="loginUser">
+        <button>Войти</button>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -25,14 +70,72 @@
 export default {
   name: "controls",
   data: () => ({
-    isRegistrationBtnTransform: false
+    inputTransform: false,
+    // isRegistrationBtnTransform: false,
+    // isLoginBtnTransform: false,
+    login: {
+      isTransformed: false,
+      isPutedEmail: false,
+      email: '',
+      password: ''
+    },
+    register: {
+      isTransformed: false,
+      isPutedEmail: false,
+      email: '',
+      password: ''
+    }
   }),
   methods: {
     registrationTransformBtn () {
-      this.isRegistrationBtnTransform = !this.isRegistrationBtnTransform
+      this.register.isTransformed = !this.register.isTransformed
+      this.inputTransform = !this.inputTransform
     },
-    registerNewUser() {
-      alert('register')
+    registerNewUser () {
+      if(!this.register.isPutedEmail) {
+        if(this.register.email) {
+          this.register.isPutedEmail = true
+        } else {
+          alert("Пожалуйста, заполните поле 'Email'")
+        }
+      } else if(this.register.isPutedEmail && !this.register.password) {
+        alert("Пожалуйста, заполните поле 'Пароль'")
+      } else if(this.register.isPutedEmail && this.register.password) {
+        console.log({
+          User: {
+            email: this.register.email,
+            password: this.register.password
+          }
+        })
+      }
+    },
+    loginTransformBtn () {
+      this.login.isTransformed = !this.login.isTransformed
+      this.inputTransform = !this.inputTransform
+    },
+    loginUser () {
+      if(!this.login.isPutedEmail) {
+        if(this.login.email) {
+          this.login.isPutedEmail = true
+        } else {
+          alert("Пожалуйста, заполните поле 'Email'")
+        }
+      } else if(this.login.isPutedEmail && !this.login.password) {
+        alert("Пожалуйста, заполните поле 'Пароль'")
+      } else if(this.login.isPutedEmail && this.login.password) {
+        console.log({
+          User: {
+            email: this.login.email,
+            password: this.login.password
+          }
+        })
+      }
+    },
+    emailValue (e) {
+      this.login.isTransformed ? this.login.email = e.value : this.register.email = e.value
+    },
+    passwordValue (e) {
+      this.login.isTransformed ? this.login.password = e.value : this.register.password = e.value
     }
   }
 }
@@ -45,7 +148,7 @@ export default {
     width: 440px;
     justify-content: flex-end;
     & * {
-        transition-duration: .5s;
+        transition-duration: .2s;
       }
     .login {
       margin: 0px 7px;
@@ -68,8 +171,9 @@ export default {
         font-size: 1.2em;
         font-weight: 600;
         border: none;
-        padding: 10px 25px;
-        transition-duration: .5s;
+        padding: 10px 0px;
+        width: 170px;
+        transition-duration: .2s;
         z-index: 11;
         position: relative;
         &:hover {
