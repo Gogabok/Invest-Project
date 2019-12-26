@@ -17,8 +17,11 @@ export default {
   }),
   mounted () {
       const options = {
+        legend: {
+          hide: true
+        },
         line: {
-          connectNull: true
+          connectNull: false
         },
         padding: {
           top: 20,
@@ -28,7 +31,7 @@ export default {
           x: 'x',
           columns: [
             ['x', 1, 2, 3, 4],
-            ['data1', 10, 20, 20, 70, 60, 30],
+            ['data1', 20, 20, 20, 70, 60, 30],
           ],
           type: 'spline',
         },
@@ -37,7 +40,7 @@ export default {
             max: 100,
             min: 0,
             tick: {
-              values: [0,15, 30, 50, 75, 100],
+              values: [0, 15, 30, 50, 75, 100],
               format: function (d) { return d + '%'; }
             },
             padding: {
@@ -53,7 +56,7 @@ export default {
               fit: false
             },
             padding: {
-              left: .05,
+              left: 0,
               right: .1
             },
           }
@@ -61,6 +64,9 @@ export default {
         grid: {
           y: {
               show: true
+          },
+          x: {
+            show: true
           }
         }
       }
@@ -70,6 +76,10 @@ export default {
 </script>
 
 <style lang="scss">
+.c3 path, .c3 line {
+  fill: none !important;
+  stroke: #fff; 
+}
 .dashboard-graph, .dashboard-graph .c3 {
   max-width: 100%;
   height: 500px;
@@ -77,29 +87,43 @@ export default {
 }
 .c3-line {
   stroke: #379A1D !important;
-  stroke-width: 4px;
+  stroke-width: 6px;
 }
 .c3-circle {
-  stroke-width: 4px;
+  stroke-width: 6px;
   stroke: #fff;
   fill: #379A1D !important;
-  r: 5.5;
+  r: 8;
 }
 .c3-area {
   stroke: #fff !important;
   stroke-width: 12px;
 }
 .c3-axis {
-  fill: none !important;
+  // fill: none !important;
+  // color: #fff;
 }
 
-.c3 path, .c3 line {
-  fill: none !important;
-  stroke: #000 !important; }
-
-.c3-axis path, .axis line {
-    fill: none !important;
-    stroke: #fff !important;
-    stroke-width: 2px !important;
+.c3 .tick line {
+  visibility: hidden;
 }
+
+.c3 .tick text tspan {
+  fill: #fff;
+}
+
+// .domain {
+//   d: path("M0,6V0H742.9375V6");
+// }
+.c3-axis-y .domain {
+  d: path("M 0 1 H 0 V 425 H 0");
+}
+.c3-axis-x .domain {
+  d: path("M0,0V0H742.9375V0");
+}
+// .c3-axis path, .axis line {
+//     fill: none !important;
+//     stroke: #fff !important;
+//     stroke-width: 5px !important;
+// }
 </style>
