@@ -66,7 +66,7 @@ export default {
               show: true
           },
           x: {
-            show: true
+            // show: true
           }
         }
       }
