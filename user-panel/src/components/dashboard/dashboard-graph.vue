@@ -1,129 +1,90 @@
 <template>
   <div class="dashboard-graph">
-    <vue-c3 :handler="handler"></vue-c3>
+    <canvas ref="canvas"></canvas>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import VueC3 from 'vue-c3'
+import { Line } from 'vue-chartjs'
 export default {
-  name: 'graph',
-  components: {
-    VueC3
-  },
+  extends: Line,
   data: () => ({
-    handler: new Vue()
+    
   }),
   mounted () {
-      const options = {
-        legend: {
-          hide: true
-        },
-        line: {
-          connectNull: false
-        },
-        padding: {
-          top: 20,
-          left: 50
-        },
-        data: {
-          x: 'x',
-          columns: [
-            ['x', 1, 2, 3, 4],
-            ['data1', 20, 20, 20, 70, 60, 30],
+    this.renderChart({
+      labels: [10, 15, 20, 30],
+      datasets: [{
+          data: [
+            {
+              x: 1,
+              y: 30
+            },
+            {
+              x: 1,
+              y: 10
+            },
+            {
+              x: 1,
+              y: 15
+            },
           ],
-          type: 'spline',
-        },
-        axis: {
-          y: {
-            max: 100,
-            min: 0,
-            tick: {
-              values: [0, 15, 30, 50, 75, 100],
-              format: function (d) { return d + '%'; }
-            },
-            padding: {
-              top: 20,
-              bottom: 0
-            },
-           
-            // type: 'timeseries'
-            
+          borderColor: '#379A1D',
+          borderWidth: 4,
+          pointBorderWidth: 5,
+          pointBorderColor: '#fff',
+          pointBackgroundColor: '#379A1D',
+          pointRadius: 6,
+          pointHitRadius: 11,
+          backgroundColor: 'rgba(55, 154, 29, .05)',
+          pointHoverRadius: 6,
+          pointHoverBorderWidth: 5,
+      }],
+    },
+    {
+      scales: {
+        yAxes: [{
+          display: true,
+          gridLines: {
+            display: true,
+            color: 'rgba(255, 255, 255, 0.4)',
+            borderDash: [1, 10],
+            drawTicks: false
           },
-          x: {
-            tick: {
-              fit: false
-            },
-            padding: {
-              left: 0,
-              right: .1
-            },
+          ticks: {
+            fontColor: "#fff",
+            fontSize: 16,
+            padding: 15,
+            fontFamily: "Exo 2",
+            callback: function(value, index, values) {
+                return value + '%';
+            }
           }
-        },
-        grid: {
-          y: {
-              show: true
+        }],
+        xAxes: [{
+          display: true,
+          gridLines: {
+            display: true,
+            color: 'rgba(255, 255, 255, 0.4)',
+            borderDash: [1, 10],
+            drawTicks: false,
+            drawBorder: true,
           },
-          x: {
-            // show: true
+          ticks: {
+            fontColor: "#fff",
+            fontSize: 16,
+            padding: 15,
+            fontFamily: "Exo 2"
           }
-        }
+        }]
       }
-      this.handler.$emit('init', options)
     }
+    )
+  }
 }
 </script>
 
 <style lang="scss">
-.c3 path, .c3 line {
-  fill: none !important;
-  stroke: #fff; 
-}
-.dashboard-graph, .dashboard-graph .c3 {
-  max-width: 100%;
-  height: 500px;
-  margin-left: -23px;
-}
-.c3-line {
-  stroke: #379A1D !important;
-  stroke-width: 6px;
-}
-.c3-circle {
-  stroke-width: 6px;
-  stroke: #fff;
-  fill: #379A1D !important;
-  r: 8;
-}
-.c3-area {
-  stroke: #fff !important;
-  stroke-width: 12px;
-}
-.c3-axis {
-  // fill: none !important;
-  // color: #fff;
-}
 
-.c3 .tick line {
-  visibility: hidden;
-}
-
-.c3 .tick text tspan {
-  fill: #fff;
-}
-
-// .domain {
-//   d: path("M0,6V0H742.9375V6");
-// }
-.c3-axis-y .domain {
-  d: path("M 0 1 H 0 V 425 H 0");
-}
-.c3-axis-x .domain {
-  d: path("M0,0V0H742.9375V0");
-}
-// .c3-axis path, .axis line {
-//     fill: none !important;
-//     stroke: #fff !important;
-//     stroke-width: 5px !important;
-// }
 </style>
