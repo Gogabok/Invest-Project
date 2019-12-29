@@ -3,7 +3,7 @@
     <div class="dashboard-user-area">
       <v-nav class="v-nav"></v-nav>
       <dashboard-cards class="common-dashboard-padding"></dashboard-cards>
-      <dashboard-graph class="common-dashboard-padding"></dashboard-graph>
+      <dashboard-graph-module></dashboard-graph-module>
     </div>
   </div>
 </template>
@@ -11,12 +11,12 @@
 <script>
 import VNav from '@/components/header/index';
 import dashboardCards from '@/components/dashboard/dashboard-cards'
-import dashboardGraph from '@/components/dashboard/dashboard-graph'
+import dashboardGraphModule from '@/components/dashboard/dashboard-graph-module'
 
 export default {
   name: 'dashboard',
   components: {
-    VNav, dashboardCards, dashboardGraph
+    VNav, dashboardCards, dashboardGraphModule
   },
 };
 </script>
