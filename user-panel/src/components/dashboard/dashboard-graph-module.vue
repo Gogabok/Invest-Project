@@ -2,17 +2,29 @@
   <div class="dashboard-graph-module">
     <div class="toolbar">
       <div class="maintoolbar">
-        <button class="maintoolbar-item active">Доходность</button>
-        <button class="maintoolbar-item">Решения</button>
-        <button class="maintoolbar-item">Сделки</button>
+        <button 
+         v-for="btn in mainToolbar"
+         class="maintoolbar-item"
+         :class="btn.isActive ? 'active' : ''"
+         :key="btn.title"
+         @click.prevent="moduleChanger(btn)"
+         >
+          {{ btn.title }}
+        </button>
       </div>
       <div class="minitoolbar">
-        <button class="minitoolbar-item active"><div class="text">M</div></button>
-        <button class="minitoolbar-item"><div class="text">Y</div></button>
-        <button class="minitoolbar-item"><div class="text">All</div></button>
+        <button 
+          v-for="btn in miniToolbar[currentActiveMiniToolbar]"
+          :key="btn.title + currentActiveMiniToolbar"
+          class="minitoolbar-item"
+          :class="btn.isActive ? 'active' : ''"
+        >
+          <div class="text">{{ btn.title }}</div>
+        </button>
       </div>
     </div>
-    <dashboard-graph></dashboard-graph>
+    <!-- <dashboard-graph></dashboard-graph> -->
+    <component :is="currentActiveModule"></component>
   </div>
 </template>
 
@@ -28,26 +40,63 @@ export default {
     return {
       mainToolbar: [
         {
-          title: 'Доходность'
+          title: 'Доходность',
+          module: 'dashboardGraph',
+          isActive: true
         },
         {
-          title: 'Решения'
+          title: 'Решения',
+          module: 'decisions',
+          isActive: false
         },
         {
-          title: 'Сделки'
+          title: 'Сделки',
+          module: '',
+          isActive: false
         }
       ],
-      miniToolbar: [
-        {
-          title: 'M'
-        },
-        {
-          title: 'Y'
-        },
-        {
-          title: 'All'
-        },
-      ]
+      miniToolbar: {
+        dashboardGraphMiniToolbar: [
+          {
+            title: 'M',
+            isActive: true
+          },
+          {
+            title: 'Y',
+            isActive: false
+          },
+          {
+            title: 'All',
+            isActive: false
+          }
+        ],
+        decisionsMiniToolbar: [
+          {
+            title: 'B',
+            isActive: true
+          },
+          {
+            title: 'T',
+            isActive: false
+          },
+          {
+            title: 'All',
+            isActive: false
+          }
+        ]
+      },
+      currentActiveModule: 'dashboardGraph',
+      currentActiveMiniToolbar: 'dashboardGraphMiniToolbar'
+    }
+  },
+  methods: {
+    moduleChanger(btn) {
+      this.currentActiveModule = btn.module
+      this.currentActiveMiniToolbar = btn.module + 'MiniToolbar'
+      this.mainToolbar.forEach(button => {
+        button.isActive = false
+      })
+      btn.isActive = true
     }
   }
 }
