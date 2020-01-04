@@ -18,19 +18,19 @@ export default {
       datasets: [{
           data: [
             {
-              y: 50,
+              y: 70,
               x: '02.20'
             },
             {
-              y: 37,
+              y: 30,
               x: '03.20'
             },
             {
-              y: 47,
+              y: 70,
               x: '04.20'
             },
             {
-              y: 3 5,
+              y: 30,
               x: '05.20'
             },
           ],
@@ -41,12 +41,20 @@ export default {
           pointBackgroundColor: '#379A1D',
           pointRadius: 7,
           pointHitRadius: 13,
-          backgroundColor: 'rgba(55, 154, 29, .05)',
+          backgroundColor: 'rgba(55, 154, 29, .1)',
           pointHoverRadius: 7,
-          pointHoverBorderWidth: 6
+          pointHoverBorderWidth: 6,
       }],
     },
     { 
+      layout: {
+        padding: {
+            left: 5,
+            right: 40,
+            top: 0,
+            bottom: 0
+        }
+      },
       tooltips: {
         enabled: false
       },
@@ -59,7 +67,7 @@ export default {
           display: true,
           gridLines: {
             display: true,
-            color: 'rgba(255, 255, 255, 0.4)',
+            color: 'rgba(210, 212, 214, 1)',
             borderDash: [1, 10],
             drawTicks: false,
           },
@@ -74,13 +82,13 @@ export default {
             min: 0,
             max: 100,
             stepSize: 25
-          }
+          },
         }],
         xAxes: [{
           display: true,
           gridLines: {
             display: true,
-            color: 'rgba(255, 255, 255, 0.4)',
+            color: 'rgba(210, 212, 214, 1)',
             borderDash: [1, 10],
             drawTicks: false,
             drawBorder: true,
@@ -90,7 +98,6 @@ export default {
             fontSize: 16,
             padding: 15,
             fontFamily: "Exo 2",
-            
           }
         }]
       }
@@ -102,9 +109,9 @@ export default {
 
 <style lang="scss">
   .dashboard-graph {
-    position: relative;
-    left: -47px;
-    width: calc(100% + 61.5px);
-    bottom: -39.5px;
+    // position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
   }
 </style>

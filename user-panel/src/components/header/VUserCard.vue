@@ -27,16 +27,16 @@ export default {
     & .v-user-card-extraDots {
       position: absolute;
       top: 4px;
-      right: 5px;
-      width: 10px;
-      height: 10px;
+      right: 0px;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
       & .v-user-card-extraDots-item {
         display: block;
         border-radius: 50%;
-        width: 6px;
-        height: 6px;
-        margin: 4px 0px;
+        width: 5px;
+        height: 5px;
+        margin: 4px auto;
         background: rgba(184, 189, 196, 0.5);
       }
     }
