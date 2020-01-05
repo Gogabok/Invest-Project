@@ -18,11 +18,12 @@ export default {
       datasets: [{
           data: [0, 159, 75, -200, 20, 55, 40],
           borderColor: '#379A1D',
-          borderWidth: 3,
+          borderWidth: 2,
           lineTension: 0,
           fill: false,
           pointBorderWidth: 0,
-          pointRadius: 0
+          pointRadius: 0,
+          spanGaps: false,
       }],
     },
     { 
@@ -30,8 +31,8 @@ export default {
         padding: {
             left: 0,
             right: 0,
-            top: 5,
-            bottom: 15
+            top: 0,
+            bottom: 0
         }
       },
       tooltips: {
@@ -46,6 +47,8 @@ export default {
           gridLines: {
             display: true,
             color: 'transparent',
+            zeroLineColor: '#707070',
+            zeroLineBorderDash: [3, 6]
           },
           ticks: {
             display: false,
@@ -53,7 +56,6 @@ export default {
         }],
         xAxes: [{
           display: false,
-          // offset: false
         }]
       }
     }
