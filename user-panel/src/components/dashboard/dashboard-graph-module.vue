@@ -23,18 +23,18 @@
         </button>
       </div>
     </div>
-    <!-- <dashboard-graph></dashboard-graph> -->
     <component :is="currentActiveModule"></component>
   </div>
 </template>
 
 <script>
 import dashboardGraph from '@/components/dashboard/dashboard-graph'
+import dashboardDecisions from '@/components/dashboard/dashboard-decisions'
 
 export default {
   name: 'dashboardM',
   components: {
-    dashboardGraph
+    dashboardGraph, dashboardDecisions
   },
   data() {
     return {
@@ -46,7 +46,7 @@ export default {
         },
         {
           title: 'Решения',
-          module: 'decisions',
+          module: 'dashboardDecisions',
           isActive: false
         },
         {
@@ -70,7 +70,7 @@ export default {
             isActive: false
           }
         ],
-        decisionsMiniToolbar: [
+        dashboardDecisionsMiniToolbar: [
           {
             title: 'B',
             isActive: true
