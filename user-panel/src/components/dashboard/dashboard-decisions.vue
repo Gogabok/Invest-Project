@@ -30,18 +30,21 @@
           <p class="content-item-text">
             5%
           </p>
-          <p class="content-item-text">
+          <div class="content-item-text">
             <decisions-statistic-graph></decisions-statistic-graph>
-          </p>
+          </div>
       </label>
     </div>
   </div>
 </template>
 
 <script>
-import desicionsStatisticGraph from "@/components/dashboard/decisions-statistic-graph"
+import decisionsStatisticGraph from "@/components/dashboard/decisions-statistic-graph"
 export default {
   name: 'dashboardDecisions',
+  components: {
+    decisionsStatisticGraph
+  },
   data: () => ({
     navigation: [
       {
