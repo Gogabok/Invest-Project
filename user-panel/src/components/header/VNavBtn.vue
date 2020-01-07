@@ -25,15 +25,15 @@ export default {
 .invest {
   background: rgba(55, 154, 29, .7);
   border: 1px solid #fff;
-  &:hover {
-    background: rgba(55, 154, 29, .1);
-  }
+  // &:hover {
+  //   background: rgba(55, 154, 29, .1);
+  // }
 }
 .get {
   background: rgba(55, 154, 29, .1);
   border: 1px solid #379A1D;
-  &:hover {
-    border: 1px solid #fff; 
-  }
+  // &:hover {
+  //   border: 1px solid #fff; 
+  // }
 }
 </style>

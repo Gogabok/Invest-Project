@@ -12,13 +12,16 @@ export default {
   data: () => ({
     
   }),
+  props: [
+    'data'
+  ],
   mounted () {
     this.renderChart({
-      labels: ['', '', '', '', '', '', ''],
+      labels: this.data.labels,
       datasets: [{
-          data: [0, 159, 75, -200, 20, 55, 40],
+          data: this.data.data,
           borderColor: '#379A1D',
-          borderWidth: 2,
+          borderWidth: 3,
           lineTension: 0,
           fill: false,
           pointBorderWidth: 0,
@@ -48,7 +51,8 @@ export default {
             display: true,
             color: 'transparent',
             zeroLineColor: '#707070',
-            zeroLineBorderDash: [3, 6]
+            zeroLineBorderDash: [2,5],
+            zeroLineWidth: 2
           },
           ticks: {
             display: false,

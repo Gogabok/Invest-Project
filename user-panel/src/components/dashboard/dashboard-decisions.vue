@@ -10,28 +10,30 @@
     </div>
     <div class="desicions-wrapper-content">
       <label
-
+          v-for="(decision, index) in decisionsData"
+          :key="decision.botName + index"
           class="content-item">
-          
           <p class="content-item-text content-item-with-checkbox">
-            <input class="content-checkbox" type="checkbox" name="keyIndex">
+            <input v-model="decision.isActive" class="content-checkbox" type="checkbox" name="keyIndex">
             <span><span></span></span>
-            CryptoBot
+            {{ decision.botName }}
           </p>
           <p class="content-item-text">
-            Крипторынок
+            {{ decision.type }}
           </p>
           <p class="content-item-text">
-            Тестирование
+            {{ decision.status }}
           </p>
           <p class="content-item-text">
-            BTC
+            {{ decision.balance }}
           </p>
           <p class="content-item-text">
-            5%
+            {{ decision.profit }}
           </p>
           <div class="content-item-text">
-            <decisions-statistic-graph></decisions-statistic-graph>
+            <decisions-statistic-graph
+              :data="decision.statisticGraphData"
+            />
           </div>
       </label>
     </div>
@@ -64,6 +66,20 @@ export default {
       },
       {
         title: 'Статистика'
+      },
+    ],
+    decisionsData: [
+      {
+        isActive: false,
+        botName: 'CryptoBot',
+        type: 'Крипторынок',
+        status: 'Тестирование',
+        balance: 'BTC',
+        profit: '5%',
+        statisticGraphData: {
+          labels: ['', '', '', '', '', '', ''],
+          data: [0, 159, 75, -200, 20, 55, 40]
+        }
       },
     ]
   })
