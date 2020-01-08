@@ -15,12 +15,17 @@ export default {
   props: [
     'data'
   ],
+  computed: {
+    color () {
+      return this.data.data[this.data.data.length - 1] < 0 ? '#F55A50' : '#379A1D';
+    }
+  },
   mounted () {
     this.renderChart({
       labels: this.data.labels,
       datasets: [{
           data: this.data.data,
-          borderColor: '#379A1D',
+          borderColor: this.color,
           borderWidth: 3,
           lineTension: 0,
           fill: false,

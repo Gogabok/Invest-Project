@@ -78,7 +78,79 @@ export default {
         profit: '5%',
         statisticGraphData: {
           labels: ['', '', '', '', '', '', ''],
-          data: [0, 159, 75, -200, 20, 55, 40]
+          data: [0, 0, -10, 5, 7, 12, 3]
+        }
+      },
+      {
+        isActive: false,
+        botName: 'NeuroBot',
+        type: 'Крипторынок',
+        status: 'В работе',
+        balance: 'USD',
+        profit: '3%',
+        statisticGraphData: {
+          labels: ['', '', '', '', '', '', ''],
+          data: [0, 0, -10, 5, 7, 12, 3]
+        }
+      },
+      {
+        isActive: false,
+        botName: 'JetBot',
+        type: 'Брокерские ставки',
+        status: 'В работе',
+        balance: 'USD',
+        profit: '30%',
+        statisticGraphData: {
+          labels: ['', '', '', '', '', '', ''],
+          data: [0, 0, -10, 5, 7, 12, 3]
+        }
+      },
+      {
+        isActive: false,
+        botName: 'NinjaBot',
+        type: 'Валютный рынок',
+        status: 'В работе',
+        balance: 'USD',
+        profit: '20%',
+        statisticGraphData: {
+          labels: ['', '', '', '', '', '', ''],
+          data: [0, 0, -10, 5, 7, 12, 3]
+        }
+      },
+      {
+        isActive: false,
+        botName: 'AliBot',
+        type: 'Фондовый рынок',
+        status: 'В работе',
+        balance: 'USD, RUB',
+        profit: '40%',
+        statisticGraphData: {
+          labels: ['', '', '', '', '', '', ''],
+          data: [0, 5, 0, -3, 0, 6, -2]
+        }
+      },
+      {
+        isActive: false,
+        botName: 'WolfBot',
+        type: 'Крипторынок',
+        status: 'В работе',
+        balance: 'BTC',
+        profit: '3%',
+        statisticGraphData: {
+          labels: ['', '', '', '', '', '', ''],
+          data: [0, 5, 0, -3, 0, 6, -2]
+        }
+      },
+      {
+        isActive: false,
+        botName: '-',
+        type: 'Mining 2.0',
+        status: 'Тестирование',
+        balance: '-',
+        profit: '12%',
+        statisticGraphData: {
+          labels: ['', '', '', '', '', '', ''],
+          data: [0, 0, -10, 5, 7, 12, 3]
         }
       },
     ]
@@ -108,7 +180,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 12px 30px;
     border-bottom: 1px solid rgba(255, 255, 255, .5);
     & .content-item-text {
       font-weight: 400;
