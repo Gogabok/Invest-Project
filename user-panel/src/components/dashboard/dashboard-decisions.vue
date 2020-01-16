@@ -11,7 +11,7 @@
     <div class="desicions-wrapper-content" :style="`height: ${height}`" ref="desicionsWrapperContent">
       <label
           v-for="(decision, index) in items"
-          :key="decision.botName + index"
+          :key="decision.botName + index + Math.random()"
           class="content-item">
           <p class="content-item-text content-item-with-checkbox">
             <input v-model="decision.isActive" class="content-checkbox" type="checkbox" name="keyIndex">
@@ -57,6 +57,7 @@
 
 <script>
 import paginationMixin from "@/mixins/pagination.mixin"
+import decisionsJsonDataAPI from "@/server/decisions.json"
 import decisionsStatisticGraph from "@/components/dashboard/decisions-statistic-graph"
 export default {
   name: 'dashboardDecisions',
@@ -85,95 +86,11 @@ export default {
         title: 'Статистика'
       },
     ],
-    decisionsData: [
-      {
-        isActive: false,
-        botName: 'CryptoBot',
-        type: 'Крипторынок',
-        status: 'Тестирование',
-        balance: 'BTC',
-        profit: '5%',
-        statisticGraphData: {
-          labels: ['', '', '', '', '', '', ''],
-          data: [0, 0, -10, 5, 7, 12, 3]
-        }
-      },
-      {
-        isActive: false,
-        botName: 'NeuroBot',
-        type: 'Крипторынок',
-        status: 'В работе',
-        balance: 'USD',
-        profit: '3%',
-        statisticGraphData: {
-          labels: ['', '', '', '', '', '', ''],
-          data: [0, 0, -10, 5, 7, 12, 3]
-        }
-      },
-      {
-        isActive: false,
-        botName: 'JetBot',
-        type: 'Брокерские ставки',
-        status: 'В работе',
-        balance: 'USD',
-        profit: '30%',
-        statisticGraphData: {
-          labels: ['', '', '', '', '', '', ''],
-          data: [0, 0, -10, 5, 7, 12, 3]
-        }
-      },
-      {
-        isActive: false,
-        botName: 'NinjaBot',
-        type: 'Валютный рынок',
-        status: 'В работе',
-        balance: 'USD',
-        profit: '20%',
-        statisticGraphData: {
-          labels: ['', '', '', '', '', '', ''],
-          data: [0, 0, -10, 5, 7, 12, 3]
-        }
-      },
-      {
-        isActive: false,
-        botName: 'AliBot',
-        type: 'Фондовый рынок',
-        status: 'В работе',
-        balance: 'USD, RUB',
-        profit: '40%',
-        statisticGraphData: {
-          labels: ['', '', '', '', '', '', ''],
-          data: [0, 5, 0, -3, 0, 6, -2]
-        }
-      },
-      {
-        isActive: false,
-        botName: 'WolfBot',
-        type: 'Крипторынок',
-        status: 'В работе',
-        balance: 'BTC',
-        profit: '3%',
-        statisticGraphData: {
-          labels: ['', '', '', '', '', '', ''],
-          data: [0, 5, 0, -3, 0, 6, -2]
-        }
-      },
-      {
-        isActive: false,
-        botName: '-',
-        type: 'Mining 2.0',
-        status: 'Тестирование',
-        balance: '-',
-        profit: '12%',
-        statisticGraphData: {
-          labels: ['', '', '', '', '', '', ''],
-          data: [0, 0, -10, 5, 7, 12, 3]
-        }
-      },
-    ],
+    decisionsData: null,
     height: null
   }),
   created() {
+    this.decisionsData = decisionsJsonDataAPI
     this.mixinOptions(5)
     this.setupPagination(this.decisionsData)
   },
