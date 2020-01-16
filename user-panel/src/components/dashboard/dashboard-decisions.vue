@@ -8,7 +8,7 @@
             {{ navItem.title }}
       </div>
     </div>
-    <div class="desicions-wrapper-content">
+    <div class="desicions-wrapper-content" :style="`height: ${height}`" ref="desicionsWrapperContent">
       <label
           v-for="(decision, index) in items"
           :key="decision.botName + index"
@@ -170,12 +170,16 @@ export default {
           data: [0, 0, -10, 5, 7, 12, 3]
         }
       },
-    ]
+    ],
+    height: null
   }),
   created() {
-    this.mixinOptions(7)
+    this.mixinOptions(5)
     this.setupPagination(this.decisionsData)
-  }
+  },
+  mounted() {
+    this.height = this.$refs.desicionsWrapperContent.clientHeight + 'px'
+  },
 }
 </script>
 
@@ -201,7 +205,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 30px;
+    padding: 18px 30px;
     border-bottom: 1px solid rgba(255, 255, 255, .5);
     & .content-item-text {
       font-weight: 400;
@@ -254,8 +258,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 0px 0px 0px;
     height: 34px;
+    width: 100%;
   }
   .prev-next-class {
     display: none;
@@ -294,18 +298,22 @@ export default {
   .paginate-container {
     padding: 0px 30px;
     position: relative;
-  }
-  .paginate-container {
+    margin: 10px 0px 0px 0px;
     overflow: hidden;
+    width: inherit;
+  }
+  .paginate-container .dotted {
+    width: calc(100% - 60px);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    margin: 0px auto;
   }
   .paginate-container .dotted:after {
     content: "..............................................................................................................................................................................................................................................................................";
-    letter-spacing: 4px;
+    letter-spacing: 10px;
     font-size: 20px;
-    color:orange;
-    position: absolute;
-    top: 15px;
-    line-height: 20px;
+    color:#fff;
   }
   // .content-checkbox:checked + span span {
   //   border-radius: 50%;
