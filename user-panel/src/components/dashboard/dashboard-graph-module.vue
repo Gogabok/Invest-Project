@@ -108,7 +108,7 @@ export default {
     margin: 20px 0px 0px 140px;
     position: relative;
     border-radius: 3px;
-    padding: 20px 30px 20px 30px;
+    padding: 20px 30px 10px 30px;
     & * {
       font-family: "Exo 2", sans-serif;
     }

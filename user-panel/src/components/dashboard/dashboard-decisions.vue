@@ -10,7 +10,7 @@
     </div>
     <div class="desicions-wrapper-content">
       <label
-          v-for="(decision, index) in decisionsData"
+          v-for="(decision, index) in items"
           :key="decision.botName + index"
           class="content-item">
           <p class="content-item-text content-item-with-checkbox">
@@ -37,16 +37,33 @@
           </div>
       </label>
     </div>
+    <div class="paginate-container">
+      <paginate
+        :page-count="pageCount"
+        :click-handler="pageChangeHandler"
+        prev-link-class="prev-next-class"
+        next-link-class="prev-next-class"
+        :container-class="'pagination-wrapper'"
+        :page-link-class="'pagination-item'"
+        :disabled-class="'pagination-item-disabled'"
+        :active-class="'pagination-item-active'"
+        :no-li-surround="true"
+        :page-range="3">
+      </paginate>
+      <div class="dotted"/>
+    </div>
   </div>
 </template>
 
 <script>
+import paginationMixin from "@/mixins/pagination.mixin"
 import decisionsStatisticGraph from "@/components/dashboard/decisions-statistic-graph"
 export default {
   name: 'dashboardDecisions',
   components: {
     decisionsStatisticGraph
   },
+  mixins: [paginationMixin],
   data: () => ({
     navigation: [
       {
@@ -154,7 +171,11 @@ export default {
         }
       },
     ]
-  })
+  }),
+  created() {
+    this.mixinOptions(7)
+    this.setupPagination(this.decisionsData)
+  }
 }
 </script>
 
@@ -229,14 +250,71 @@ export default {
     background: transparent;
     transition-duration: .3s;
   }
-  .content-checkbox:checked + span span {
-    border-radius: 50%;
-    display: block;
-    width: 13px;
-    height: 13px;
-    background: #45F516;
-    transition-duration: .3s;
+  .pagination-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px 0px 0px;
+    height: 34px;
   }
+  .prev-next-class {
+    display: none;
+  }
+  .pagination-item {
+    margin: 0px 0px;
+    color: #fff;
+    line-height: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    outline: none;
+    background: #24303C;
+    transition-duration: .2s;
+    position: relative;
+    z-index: 10;
+  }
+  .pagination-item:focus {
+    outline: none;
+  }
+  .pagination-item-disabled {
+    display: none;
+  }
+  .pagination-item-disabled a {
+    display: none;
+  }
+  .pagination-item-active {
+    background: #379A1D;
+    transition-duration: .2s;
+  }
+  .paginate-container {
+    padding: 0px 30px;
+    position: relative;
+  }
+  .paginate-container {
+    overflow: hidden;
+  }
+  .paginate-container .dotted:after {
+    content: "..............................................................................................................................................................................................................................................................................";
+    letter-spacing: 4px;
+    font-size: 20px;
+    color:orange;
+    position: absolute;
+    top: 15px;
+    line-height: 20px;
+  }
+  // .content-checkbox:checked + span span {
+  //   border-radius: 50%;
+  //   display: block;
+  //   width: 13px;
+  //   height: 13px;
+  //   background: #45F516;
+  //   transition-duration: .3s;
+  // }
 
 
 

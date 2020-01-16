@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss">
 .dashboard-user-area {
-  width: 65%;
+  width: 55%;
   & .v-nav {
     padding-left: 50px !important;
   }
