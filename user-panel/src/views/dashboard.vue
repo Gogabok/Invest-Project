@@ -31,4 +31,65 @@ export default {
     padding-left: 140px;
   }
 }
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 34px;
+  width: 100%;
+}
+.prev-next-class {
+  display: none;
+}
+.pagination-item {
+  margin: 0px 0px;
+  color: #fff;
+  line-height: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  outline: none;
+  background: #24303C;
+  transition-duration: .2s;
+  position: relative;
+  z-index: 10;
+}
+.pagination-item:focus {
+  outline: none;
+}
+.pagination-item-disabled {
+  display: none;
+}
+.pagination-item-disabled a {
+  display: none;
+}
+.pagination-item-active {
+  background: #379A1D;
+  transition-duration: .2s;
+}
+.paginate-container {
+  padding: 0px 30px;
+  position: relative;
+  margin: 10px 0px 0px 0px;
+  overflow: hidden;
+  width: inherit;
+}
+.paginate-container .dotted {
+  width: calc(100% - 60px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  margin: 0px auto;
+}
+.paginate-container .dotted:after {
+  content: "..............................................................................................................................................................................................................................................................................";
+  letter-spacing: 10px;
+  font-size: 20px;
+  color:#fff;
+}
 </style>

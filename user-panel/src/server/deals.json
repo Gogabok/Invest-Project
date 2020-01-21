@@ -1,0 +1,947 @@
+[
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577905200000,
+    "deal_ends": 1577905200000,
+    "botName": "CryptoBot",
+    "type": "Крипторынок",
+    "profit": 1.5640152,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NeuroBot",
+    "type": "Крипторынок",
+    "profit": 0.5357415,
+    "valute": "BSDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "JetBot",
+    "type": "Брокерские ставки",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "NinjaBot",
+    "type": "Валютный рынок",
+    "profit": 0.5357415,
+    "valute": "USDT",
+    "isProfit": false
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "AliBot",
+    "type": "Фондовый рынок",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "WolfBot",
+    "type": "Крипторынок",
+    "profit": 100,
+    "valute": "USDT",
+    "isProfit": true
+  },
+  {
+    "deal_starts": 1577901600000,
+    "deal_ends": 1577901600000,
+    "botName": "-",
+    "type": "Mining 2.0",
+    "profit": 200,
+    "valute": "USD",
+    "isProfit": true
+  }
+]

@@ -19,7 +19,8 @@
           class="minitoolbar-item"
           :class="btn.isActive ? 'active' : ''"
         >
-          <div class="text">{{ btn.title }}</div>
+          <div class="text" v-if="btn.title">{{ btn.title }}</div>
+          <img class="text-img" :src="`./assets/common/${btn.icon}.svg`" v-else alt="">
         </button>
       </div>
     </div>
@@ -30,11 +31,12 @@
 <script>
 import dashboardGraph from '@/components/dashboard/dashboard-graph'
 import dashboardDecisions from '@/components/dashboard/dashboard-decisions'
+import dashboardDeals from '@/components/dashboard/dashboard-deals'
 
 export default {
   name: 'dashboardM',
   components: {
-    dashboardGraph, dashboardDecisions
+    dashboardGraph, dashboardDecisions, dashboardDeals
   },
   data() {
     return {
@@ -51,7 +53,7 @@ export default {
         },
         {
           title: 'Сделки',
-          module: '',
+          module: 'dashboardDeals',
           isActive: false
         }
       ],
@@ -83,7 +85,17 @@ export default {
             title: 'All',
             isActive: false
           }
-        ]
+        ],
+        dashboardDealsMiniToolbar: [
+          {
+            icon: 'list-icon',
+            isActive: true
+          },
+          {
+            icon: 'calendar-icon',
+            isActive: false
+          },
+        ],
       },
       currentActiveModule: 'dashboardGraph',
       currentActiveMiniToolbar: 'dashboardGraphMiniToolbar'
@@ -157,6 +169,12 @@ export default {
         height: 20px;
         max-width: 20px;
         max-height: 0px;
+      }
+      & img {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        pointer-events: none;
       }
       &.active {
         background: rgba(184, 189, 196, .1);
