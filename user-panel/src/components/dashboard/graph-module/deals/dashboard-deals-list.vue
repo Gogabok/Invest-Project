@@ -42,8 +42,7 @@
         :disabled-class="'pagination-item-disabled'"
         :active-class="'pagination-item-active'"
         :no-li-surround="true"
-        :page-range="3"
-        v-model="page">
+        :page-range="3">
       </paginate>
       <div class="dotted"/>
     </div>
@@ -54,7 +53,7 @@
 import paginationMixin from "@/mixins/pagination.mixin"
 import dealsJsonDataAPI from "@/server/deals.json"
 export default {
-  name: "deals",
+  name: "dashboard-deals-list",
   mixins: [paginationMixin],
   data: () => ({
     navigation: [
@@ -75,8 +74,7 @@ export default {
       },
     ],
     dealsData: null,
-    height: null,
-    page: 10
+    height: null
   }),
   created() {
     this.dealsData = dealsJsonDataAPI
@@ -128,7 +126,8 @@ export default {
     }
   }
   .content-item {
-    padding: 22px 30px;
+    padding: 6px 30px;
+    height: 60px;
     & .content-item-profit {
       font-weight: bold;
       & span {

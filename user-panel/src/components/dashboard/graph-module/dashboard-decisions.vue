@@ -58,7 +58,7 @@
 <script>
 import paginationMixin from "@/mixins/pagination.mixin"
 import decisionsJsonDataAPI from "@/server/decisions.json"
-import decisionsStatisticGraph from "@/components/dashboard/decisions-statistic-graph"
+import decisionsStatisticGraph from "@/components/dashboard/graph-module/decisions-statistic-graph"
 export default {
   name: 'dashboardDecisions',
   components: {

@@ -15,23 +15,24 @@
       <div class="minitoolbar">
         <button 
           v-for="btn in miniToolbar[currentActiveMiniToolbar]"
-          :key="btn.title + currentActiveMiniToolbar"
+          :key="btn.title || btn.icon + currentActiveMiniToolbar"
           class="minitoolbar-item"
           :class="btn.isActive ? 'active' : ''"
+          @click="miniToolbarHandler(btn, miniToolbar[currentActiveMiniToolbar])"
         >
           <div class="text" v-if="btn.title">{{ btn.title }}</div>
           <img class="text-img" :src="`./assets/common/${btn.icon}.svg`" v-else alt="">
         </button>
       </div>
     </div>
-    <component :is="currentActiveModule"></component>
+    <component :is="currentActiveModule" :minitoolbar="miniToolbar[currentActiveMiniToolbar]"></component>
   </div>
 </template>
 
 <script>
 import dashboardGraph from '@/components/dashboard/dashboard-graph'
-import dashboardDecisions from '@/components/dashboard/dashboard-decisions'
-import dashboardDeals from '@/components/dashboard/dashboard-deals'
+import dashboardDecisions from '@/components/dashboard/graph-module/dashboard-decisions'
+import dashboardDeals from '@/components/dashboard/graph-module/dashboard-deals'
 
 export default {
   name: 'dashboardM',
@@ -61,39 +62,47 @@ export default {
         dashboardGraphMiniToolbar: [
           {
             title: 'M',
-            isActive: true
+            isActive: true,
+            component: 'graph-m'
           },
           {
             title: 'Y',
-            isActive: false
+            isActive: false,
+            component: 'graph-y'
           },
           {
             title: 'All',
-            isActive: false
+            isActive: false,
+            component: 'graph-all'
           }
         ],
         dashboardDecisionsMiniToolbar: [
           {
             title: 'B',
-            isActive: true
+            isActive: true,
+            component: 'decisions-b'
           },
           {
             title: 'T',
-            isActive: false
+            isActive: false,
+            component: 'decisions-t'
           },
           {
             title: 'All',
-            isActive: false
+            isActive: false,
+            component: 'decisions-all'
           }
         ],
         dashboardDealsMiniToolbar: [
           {
             icon: 'list-icon',
-            isActive: true
+            isActive: true,
+            component: 'deals-list'
           },
           {
             icon: 'calendar-icon',
-            isActive: false
+            isActive: false,
+            component: 'deals-calendar'
           },
         ],
       },
@@ -109,6 +118,12 @@ export default {
         button.isActive = false
       })
       btn.isActive = true
+    },
+    miniToolbarHandler(item, minitoolbar) {
+      minitoolbar.forEach(btn => {
+        btn.isActive = false
+      })
+      item.isActive = true
     }
   }
 }
