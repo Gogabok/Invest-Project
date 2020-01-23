@@ -17,13 +17,19 @@ export default {
   }),
   props: ["minitoolbar"],
   mounted: function () {
+    this.updatingComponent()
     this.$watch("minitoolbar", function () {
+      this.updatingComponent()
+    }, {deep:true})
+  },
+  methods: {
+    updatingComponent () {
       this.minitoolbar.forEach(item => {
         if(item.isActive) {
           this.currentComponent = item.component
         }
       })
-    }, {deep:true})
+    }
   }
 }
 </script>

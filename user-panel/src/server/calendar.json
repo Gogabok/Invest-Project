@@ -1,0 +1,58 @@
+[
+  {
+    "eventDate": 1578001600000,
+    "rates": {
+      "up": 5,
+      "down": 2
+    }
+  },
+  {
+    "eventDate": 1578101600000,
+    "rates": {
+      "up": 5,
+      "down": 2
+    }
+  },
+  {
+    "eventDate": 1578201600000,
+    "rates": {
+      "up": 5,
+      "down": 2
+    }
+  },
+  {
+    "eventDate": 1578301600000,
+    "rates": {
+      "up": 5,
+      "down": 2
+    }
+  },
+  {
+    "eventDate": 1578401600000,
+    "rates": {
+      "up": 5,
+      "down": 2
+    }
+  },
+  {
+    "eventDate": 1578501600000,
+    "rates": {
+      "up": 5,
+      "down": 2
+    }
+  },
+  {
+    "eventDate": 1578601600000,
+    "rates": {
+      "up": 5,
+      "down": 2
+    }
+  },
+  {
+    "eventDate": 1578701600000,
+    "rates": {
+      "up": 5,
+      "down": 2
+    }
+  }
+]
