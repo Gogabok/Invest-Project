@@ -9,188 +9,17 @@
       </div>
     </div>
     <div class="calendar-body">
-      <div class="calendar-line">
-        <div class="calendar-line-item">
-          <span class="date">1</span>
+      <div class="calendar-line" v-for="(line, index) in Object.values(daysData)" :key="index + Math.random()">
+        <div class="calendar-line-item" v-for="day in line">
+          <span class="date">{{ day.date }}</span>
           <div class="rates">
-            <div class="rates-up">
+            <div class="rates-up" v-if="day.rates">
               <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
+              <span>{{ day.rates.up }}</span>
             </div>
-            <div class="rates-down">
+            <div class="rates-down" v-if="day.rates">
               <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="calendar-line">
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-line-item">
-          <span class="date">1</span>
-          <div class="rates">
-            <div class="rates-up">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>6</span>
-            </div>
-            <div class="rates-down">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>16</span>
+              <span>{{ day.rates.down }}</span>
             </div>
           </div>
         </div>
@@ -237,38 +66,53 @@ export default {
       4: [],
       5: [],
       6: [],
-    }
+    },
+    currentMonth: null,
+    currentYear: null,
+    daysInMonth: null
   }),
   mounted() {
+    this.getData(calendarData)
     this.updatingDate(calendarData)
+    this.generateCalendar()
+    this.fillingCalendar(calendarData)
   },
   methods: {
+    getData(data) {
+      this.currentYear = new Date(data[0].eventDate).getFullYear()
+      this.currentMonth = new Date(data[0].eventDate).getMonth()
+      this.daysInMonth = new Date(this.currentYear, this.currentMonth, 0).getDate()
+    },
     updatingDate(data) {
       data.forEach(day => {
         day.date = new Date(day.eventDate).getDate()
         day.day = new Date(day.eventDate).getDay()
         day.month = new Date(day.eventDate).getMonth()
         day.year = new Date(day.eventDate).getFullYear()
-        this.daysData[new Date(day.eventDate).getDay()].push(day)
       });
-      this.fillingCalendar(data)
     },
     fillingCalendar (data) {
-      let currentYear = new Date(data[0].eventDate).getFullYear()
-      let currentMonth = new Date(data[0].eventDate).getMonth()
-      let daysInMonth = new Date(currentYear, currentMonth, 0).getDate()
-      Object.values(this.daysData).forEach(day => {
-        let dayDates = []
-        day.forEach((item, index) => {
-          let itemDate = new Date(item.eventDate).getDate()
-          // daysDates.push(itemDate)
-          if(itemDate + 7 < daysInMonth) {
-            day.splice(index + 1, 0, {})
+      data.forEach(day => {
+        this.daysData[new Date(day.eventDate).getDay()].forEach((item, index) => {
+          if(item.date === day.date) {
+            item.rates = day.rates
           }
-          console.log(day)
-          // Генерировать месяц по индексу 0 от приходящих данных, вставлять в нужные даты инфу
         })
       })
+      Object.values(this.daysData).forEach((item, index, arr) => {
+        if(arr[index] < arr[index - 1]) {
+          arr[index].push(new Object())
+        }
+      })
+      console.log(this.daysData)
+    },
+    generateCalendar () {
+      for(let i = 1; i <= this.daysInMonth; i++) {
+        let day = {
+          date: new Date(this.currentYear, this.currentMonth, i).getDate()
+        }
+        this.daysData[new Date(this.currentYear, this.currentMonth, i).getDay()].push(day)
+      }
     }
   }
 }
@@ -283,7 +127,6 @@ export default {
     }
   }
   .calendar-nav {
-    margin-bottom: 10px;
     display: flex;
     & .nav-item {
       color: #fff;
@@ -298,7 +141,7 @@ export default {
   }
   .calendar-body {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
   }
   .calendar-line {
     width: 100%;
@@ -317,6 +160,7 @@ export default {
     display: flex;
     padding: 10px 0px;
     justify-content: center;
+    height: 20px;
     & .rates-up, & .rates-down {
       display: flex;
       align-items: center;
