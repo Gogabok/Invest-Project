@@ -10,7 +10,7 @@
     </div>
     <div class="calendar-body">
       <div class="calendar-line" v-for="(line, index) in Object.values(daysData)" :key="index + Math.random()">
-        <div class="calendar-line-item" v-for="day in line">
+        <div class="calendar-line-item" v-for="day in line" :key="day.date + Math.random()">
           <span class="date">{{ day.date }}</span>
           <div class="rates">
             <div class="rates-up" v-if="day.rates">
@@ -72,6 +72,10 @@ export default {
     daysInMonth: null
   }),
   mounted() {
+    // Нужно получать данные за весь год массивом из 12 элементов - по месяцам. 
+    // После этого засунуть его в Pagination.mixin и разделить на 12 страниц соответственно
+    // + Предполагаю, что нужно сделать выбор года, после ввода которого, будет происходить запрос к базе
+
     this.getData(calendarData)
     this.updatingDate(calendarData)
     this.generateCalendar()
@@ -136,7 +140,8 @@ export default {
       border-collapse: collapse;
       text-align: center;
       padding: 10px 1px;
-      width: calc(100% / 7)
+      width: calc(100% / 7);
+      margin: -1px 0px 0px -1px;
     }
   }
   .calendar-body {
@@ -155,6 +160,7 @@ export default {
     border-collapse: collapse;
     text-align: center;
     padding: 10px 1px;
+    margin: -1px 0px -1px -1px !important;
   }
   .rates {
     display: flex;

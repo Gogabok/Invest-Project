@@ -87,16 +87,36 @@ export default {
       },
     ],
     decisionsData: null,
-    height: null
+    height: null,
+    currentComponent: null,
   }),
+  props: ["minitoolbar"],
   created() {
     this.decisionsData = decisionsJsonDataAPI
     this.mixinOptions(5)
     this.setupPagination(this.decisionsData)
+
+    this.updatingComponent()
+    this.$watch("minitoolbar", function () {
+      this.updatingComponent()
+    }, {deep:true})
   },
   mounted() {
     this.height = this.$refs.desicionsWrapperContent.clientHeight + 'px'
   },
+  methods: {
+    updatingComponent () {
+      this.minitoolbar.forEach(item => {
+        if(item.isActive) {
+          this.currentComponent = item.component
+          this.updatingData(item.component)
+        }
+      })
+    },
+    updatingData(url) {
+      // Запрос к базе при измененнии minitoolbar'а
+    }
+  }
 }
 </script>
 
