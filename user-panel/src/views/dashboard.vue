@@ -5,6 +5,9 @@
       <dashboard-cards class="common-dashboard-padding"></dashboard-cards>
       <dashboard-graph-module></dashboard-graph-module>
     </div>
+    <div class="side-panel-area">
+      <side-panel></side-panel>
+    </div>
   </div>
 </template>
 
@@ -12,24 +15,35 @@
 import VNav from '@/components/header/index';
 import dashboardCards from '@/components/dashboard/dashboard-cards'
 import dashboardGraphModule from '@/components/dashboard/dashboard-graph-module'
+import sidePanel from '@/components/side-panel/side-panel'
 
 export default {
   name: 'dashboard',
   components: {
-    VNav, dashboardCards, dashboardGraphModule
+    VNav, dashboardCards, dashboardGraphModule, sidePanel
   },
 };
 </script>
 
 <style lang="scss">
+.dashboard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 .dashboard-user-area {
-  width: 55%;
+  width: 60%;
   & .v-nav {
     padding-left: 50px !important;
   }
   & .common-dashboard-padding {
     padding-left: 140px;
   }
+}
+.side-panel-area {
+  padding: 0px 60px;
+  max-width: 500px;
+  width: 100%;
 }
 .pagination-wrapper {
   display: flex;

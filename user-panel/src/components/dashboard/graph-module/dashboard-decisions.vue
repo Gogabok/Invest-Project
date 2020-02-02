@@ -14,7 +14,7 @@
           :key="decision.botName + index + Math.random()"
           class="content-item">
           <p class="content-item-text content-item-with-checkbox">
-            <input v-model="decision.isActive" class="content-checkbox" type="checkbox" name="keyIndex">
+            <!-- <input v-model="decision.isActive" class="content-checkbox" type="checkbox" name="keyIndex"> -->
             <span><span></span></span>
             {{ decision.botName }}
           </p>

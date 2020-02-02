@@ -10,7 +10,7 @@
     </div>
     <div class="calendar-body">
       <div class="calendar-line" v-for="(line, index) in Object.values(daysData)" :key="index + Math.random()">
-        <div class="calendar-line-item" v-for="day in line" :key="day.date + Math.random()">
+        <div :class="day.date ? `calendar-line-item ${ today === day.unformateDate ? `calendar-line-item-today` : ``}` : `calendar-line-item-empty`" v-for="day in line" :key="day.date + Math.random()">
           <span class="date">{{ day.date }}</span>
           <div class="rates">
             <div class="rates-up" v-if="day.rates">
@@ -69,7 +69,9 @@ export default {
     },
     currentMonth: null,
     currentYear: null,
-    daysInMonth: null
+    daysInMonth: null,
+    startDay: null,
+    today: `(${new Date().getFullYear()}, ${new Date().getMonth()}, ${new Date().getDate()})`
   }),
   mounted() {
     // Нужно получать данные за весь год массивом из 12 элементов - по месяцам. 
@@ -85,7 +87,9 @@ export default {
     getData(data) {
       this.currentYear = new Date(data[0].eventDate).getFullYear()
       this.currentMonth = new Date(data[0].eventDate).getMonth()
-      this.daysInMonth = new Date(this.currentYear, this.currentMonth, 0).getDate()
+      this.daysInMonth = new Date(this.currentYear, this.currentMonth + 1, 0).getDate()
+      console.log(new Date(this.currentYear, this.currentMonth + 1, 0));
+      
     },
     updatingDate(data) {
       data.forEach(day => {
@@ -97,25 +101,37 @@ export default {
     },
     fillingCalendar (data) {
       data.forEach(day => {
-        this.daysData[new Date(day.eventDate).getDay()].forEach((item, index) => {
+        let eventDate = new Date(day.eventDate).getDay() === 0 ? 6 : new Date(day.eventDate).getDay() - 1
+        this.daysData[eventDate].forEach((item, index) => {
           if(item.date === day.date) {
             item.rates = day.rates
           }
         })
       })
       Object.values(this.daysData).forEach((item, index, arr) => {
-        if(arr[index] < arr[index - 1]) {
-          arr[index].push(new Object())
+        if(item[0].date === 1 || index >= this.startDay) {
+        } else {
+          item.unshift(new Object())
         }
       })
-      console.log(this.daysData)
     },
     generateCalendar () {
       for(let i = 1; i <= this.daysInMonth; i++) {
         let day = {
-          date: new Date(this.currentYear, this.currentMonth, i).getDate()
+          date: new Date(this.currentYear, this.currentMonth, i).getDate(),
+          unformateDate: `(${new Date(this.currentYear, this.currentMonth, i).getFullYear()}, ${new Date(this.currentYear, this.currentMonth, i).getMonth()}, ${new Date(this.currentYear, this.currentMonth, i).getDate()})`
         }
-        this.daysData[new Date(this.currentYear, this.currentMonth, i).getDay()].push(day)
+        if(new Date(this.currentYear, this.currentMonth, i).getDay() === 0) {
+          this.daysData[6].push(day)
+          if(i === 1) {
+            this.startDay = 6
+          }
+        } else {
+          this.daysData[new Date(this.currentYear, this.currentMonth, i).getDay() - 1].push(day)
+          if(i === 1) {
+            this.startDay = new Date(this.currentYear, this.currentMonth, i).getDay() - 1
+          }
+        }
       }
     }
   }
@@ -136,7 +152,7 @@ export default {
       color: #fff;
       font-weight: bold;
       font-size: 1em;
-      border: 1px solid #92989E;
+      background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: grey; stroke-width: 1;'/></svg>");
       border-collapse: collapse;
       text-align: center;
       padding: 10px 1px;
@@ -146,7 +162,7 @@ export default {
   }
   .calendar-body {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
   }
   .calendar-line {
     width: 100%;
@@ -156,11 +172,28 @@ export default {
     color: #fff;
     font-weight: bold;
     font-size: 1em;
-    border: 1px solid #92989E;
-    border-collapse: collapse;
+    background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: grey; stroke-width: 1;'/></svg>");
     text-align: center;
     padding: 10px 1px;
-    margin: -1px 0px -1px -1px !important;
+    margin: -1px 0px 0px -1px !important;
+    position: relative;
+    padding: 15px 0px 0px 0px;
+    box-sizing: border-box;
+    & .date {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-weight: 400;
+    }
+  }
+  .calendar-line-item-empty {
+    padding: 15px 0px 0px 0px;
+    margin: -1px 0px 0px -1px;
+    // margin: -1px 0px 1px 1px !important;
+  }
+  .calendar-line-item-today {
+    background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: white; stroke-width: 1; stroke-dasharray: 25 10'/></svg>") !important;
+    border: none !important;
   }
   .rates {
     display: flex;
@@ -170,7 +203,7 @@ export default {
     & .rates-up, & .rates-down {
       display: flex;
       align-items: center;
-      font-size: 1.1em;
+      font-size: 1em;
       border-radius: 3px;
       margin: 0px 2px;
       padding: 2px 2px;
@@ -183,16 +216,6 @@ export default {
     }
     & .rates-down {
       background: #EF5350;
-    }
-  }
-  .calendar-line-item {
-    position: relative;
-    padding: 15px 0px 0px 0px;
-    & .date {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      font-weight: 400;
     }
   }
 </style>

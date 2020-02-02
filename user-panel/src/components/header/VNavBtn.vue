@@ -17,7 +17,7 @@ export default {
   font-weight: 400;
   border-radius: 3px;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0px 7px;
   text-align: center;
   transition-duration: .5s;
