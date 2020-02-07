@@ -18,7 +18,7 @@ export default {
     nav: [
       {
         title: 'Мои цели',
-        component: 'myTargets',
+        component: 'targets',
         isActive: true
       },
       {
@@ -34,8 +34,13 @@ export default {
         navItem.isActive = false
       })
       item.isActive = true
+      this.$emit("selecting", item)
     }
-  }
+  },
+  created() {
+    let currentModule = this.nav.find(item => item.isActive)
+    this.$emit("selecting", currentModule)
+  },
 }
 </script>
 
