@@ -192,7 +192,7 @@ export default {
 }
 
 .targets-wrapper {
-  margin: 60px 0px;
+  margin: 10px 0px;
   max-height: 420px;
   overflow-y: auto;
   height: 100%;
