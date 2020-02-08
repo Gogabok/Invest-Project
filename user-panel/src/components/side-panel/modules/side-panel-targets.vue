@@ -1,8 +1,7 @@
 <template>
   <div class="side-panel-targets">
     <div class="frame" ref="frame">
-      <div>
-        <div class="circle">
+      <div class="circle">
           <div class="text-circle">
             <div class="text-dividend">
               <div class="title">
@@ -34,20 +33,19 @@
             <circle class="bg" cx="180" cy="180" r="150"></circle>
             <circle class="progress" cx="180" cy="180" r="150" ref="progressBar" stroke="url(#gradient)"></circle>
           </svg>
-        </div>
-        <div class="targets-wrapper">
-          <div class="targets-item" v-for="item in targets" :key="item.title + item.value">
-            <svg viewBox="-50 -50 100 100" class="small-circle">
-              <circle class="bg-small-circle" r="40"></circle>
-              <circle class="progress-small-circle" r="40" :ref="item.title + item.value"></circle>
-              <text x="50%" y="50%" dy=".3em" text-anchor="middle" class="progress-value">
-                {{ `${item.value}%` }}
-              </text>
-            </svg>
-             <div class="target-text">
-              <p class="title">{{ item.title }}</p>
-              <p class="desc">{{ item.description }}</p>
-            </div>
+      </div>
+      <div class="targets-wrapper">
+        <div class="targets-item" v-for="item in targets" :key="item.title + item.value">
+          <svg viewBox="-50 -50 100 100" class="small-circle">
+            <circle class="bg-small-circle" r="40"></circle>
+            <circle class="progress-small-circle" r="40" :ref="item.title + item.value"></circle>
+            <text x="50%" y="50%" dy=".3em" text-anchor="middle" class="progress-value">
+              {{ `${item.value}%` }}
+            </text>
+          </svg>
+           <div class="target-text">
+            <p class="title">{{ item.title }}</p>
+            <p class="desc">{{ item.description }}</p>
           </div>
         </div>
       </div>
@@ -110,6 +108,13 @@ export default {
   width: 100%;
   opacity: 0;
   transition-duration: 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+.side-panel-targets {
+  height: 100%;
 }
 
 .circle {
@@ -187,17 +192,21 @@ export default {
 }
 
 .targets-wrapper {
-  margin-top: 30px;
+  margin: 60px 0px;
   max-height: 420px;
   overflow-y: auto;
+  height: 100%;
 }
 
 .targets-item {
   min-height: 80px;
-  height: 100%;
   display: flex;
   align-items: flex-start;
-  padding: 15px 15px;
+  padding: 10px 35px;
+  &:hover {
+    background: rgba(184, 189, 196, .08);
+    user-select: none;
+  }
 }
 
 .targets-item .small-circle {
@@ -209,20 +218,20 @@ export default {
     left: 50%;
     transform:translate(-50%, -50%);
     fill:#fff;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
   }
 }
 
 .targets-wrapper .bg-small-circle {
   fill: none;
-  stroke-width: 11px;
+  stroke-width: 13px;
   stroke: rgba(133, 170, 83, .1);
 }
 
 .targets-wrapper .progress-small-circle {
   fill: none;
-  stroke-width: 11px;
+  stroke-width: 13px;
   stroke: rgba(133, 170, 83, .7);
   stroke-linecap: round;
   transition-duration: 1s;
@@ -235,12 +244,12 @@ export default {
   max-width: 60%;
   & .title {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 15px;
   }
   & .desc {
     font-weight: 400;
-    font-size: 19px;
+    font-size: 16px;
   }
 }
 
