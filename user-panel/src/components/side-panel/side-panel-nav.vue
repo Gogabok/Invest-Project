@@ -1,5 +1,5 @@
 <template>
-  <div class="side-panel-nav">
+  <div class="side-panel-nav" ref="sidePanelNav">
     <div class="nav-item"
          v-for="item in nav"
          :key="item.title"

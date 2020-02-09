@@ -1,5 +1,5 @@
 <template>
-  <div class="side-panel-targets">
+  <div class="side-panel-targets" ref="sidePanelModule">
     <div class="frame" ref="frame">
       <div class="circle">
           <div class="text-circle">
