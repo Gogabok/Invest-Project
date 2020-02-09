@@ -109,8 +109,6 @@ export default {
       })
     },
     setHeight() {
-      console.log(1);
-      
       // Тут просто вычисления высоты side panel и адаптив под экран
       this.height.module = this.$refs.sidePanelModule.clientHeight - this.$refs.activityNav.clientHeight - 34
       let acc = 0
