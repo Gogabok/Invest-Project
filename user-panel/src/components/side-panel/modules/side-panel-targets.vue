@@ -81,7 +81,9 @@ export default {
       let ourCoef = 62 // % заполнения
       let forPercent = fullLength / 100
       let result = fullLength - (forPercent * ourCoef)
-      this.$refs.progressBar.style.strokeDashoffset = result
+      if(this.$refs.progressBar) {
+        this.$refs.progressBar.style.strokeDashoffset = result
+      }
     }, 300);
   },
   methods: {
@@ -95,7 +97,9 @@ export default {
         setTimeout(() => {
           let forPercent = fullLength / 100
           let result = fullLength - (forPercent * item.value)
-          this.$refs[unicID][0].style.strokeDashoffset = result
+          if(this.$refs[unicID][0]) {
+            this.$refs[unicID][0].style.strokeDashoffset = result
+          }
         }, 300);
       })
     }

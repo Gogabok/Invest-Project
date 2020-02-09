@@ -1,10 +1,11 @@
 <template>
   <div class="side-panel" ref="sidePanel">
     <side-panel-nav
+      :style="`height: ${height.nav}px`"
       ref="sidePanelNav"
       @selecting="modulesSelecting"
     ></side-panel-nav>
-    <component ref="sidePanelModule" :is="currentModule"></component>
+    <component :style="`height: ${height.module}px`" ref="sidePanelModule" :is="currentModule"></component>
   </div>
 </template>
 
@@ -19,7 +20,12 @@ export default {
     sidePanelNav, sidePanelModuleTargets, sidePanelModuleActivity
   },
   data: () => ({
-    currentModule: null
+    currentModule: null,
+    height: {
+      sidePanel: null,
+      nav: null,
+      module: null
+    }
   }),
   methods: {
     modulesSelecting (item) {
@@ -28,11 +34,14 @@ export default {
       this.currentModule = newComponent
     }
   },
-  mounted () {
-    setInterval(() => {
-      console.log(this.$refs.sidePanelNav.$refs.sidePanelNav.clientHeight, this.$refs.sidePanelModule.$refs.sidePanelModule.clientHeight, this.$refs.sidePanel.clientHeight)
-    }, 500);
-  }
+  updated() {
+    if(this.$refs.sidePanelNav.$refs) {
+      this.height.sidePanel = this.$refs.sidePanel.clientHeight
+      this.height.nav = this.$refs.sidePanelNav.$refs.sidePanelNav.clientHeight
+      this.height.module = this.$refs.sidePanel.clientHeight - this.height.nav
+      // console.log(this.$refs.sidePanelNav.$refs.sidePanelNav.clientHeight, this.$refs.sidePanelModule.$refs.sidePanelModule.clientHeight, this.$refs.sidePanel.clientHeight)
+    }
+  },
 }
 </script>
 

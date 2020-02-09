@@ -1,6 +1,6 @@
 <template>
   <div class="side-panel-activity" ref="sidePanelModule">
-    <div class="activity-nav">
+    <div class="activity-nav" ref="activityNav">
       <button 
        v-for="item in nav"
        class="activity-nav-item"
@@ -11,7 +11,7 @@
         {{ item.title }}
       </button>
     </div>
-    <div class="activity-wrapper">
+    <div class="activity-wrapper" :style="`height: ${height.module}px`">
       <div class="activity-list" ref="activity">
         <div class="item" v-for="item in items" :key="item.desc + item.date + Math.random()">
           <div class="icon">
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="paginate-container paginate-container-activity">
+      <div class="paginate-container paginate-container-activity" ref="pagination">
         <paginate
           :page-count="pageCount"
           :click-handler="pageChangeHandler"
@@ -51,219 +51,88 @@ export default {
   name: "side-panel-activity",
   mixins: [paginationMixin],
   data: () => ({
+    height: {
+      module: null
+    },
     nav: [
         {
           title: 'Все',
-          type: 'dashboardGraph',
+          type: 'all',
           isActive: true
         },
         {
           title: 'Дивиденды',
-          module: 'dividends',
+          type: 'dividends',
           isActive: false
         },
         {
           title: 'Депозиты',
-          module: 'deposits',
+          type: 'deposits',
           isActive: false
         },
         {
           title: 'Выводы',
-          module: 'outputting',
+          type: 'outputting',
           isActive: false
         },
         {
           title: 'Партнерство',
-          module: 'partnership',
+          type: 'partnership',
           isActive: false
         }
       ],
-      "list": [
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": true
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": true
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": true
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": true
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": true
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": true
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": true
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": true
-        },
-        {
-          "date": 1577836800000,
-          "desc": "отчет по Партнерской программе",
-          "action": "Начисление комиссии $20.00",
-          "isCloudFilled": false
-        }
-      ]
+      list: null
   }),
-  created () {
-    this.mixinOptions(8)
+  async created () {
+    await this.getData(this.nav.find(item => item.isActive))
+    this.mixinOptions(20)
     this.setupPagination(this.list)
   },
   mounted () {
-    console.log(this.$refs.activity.childNodes);
-    
+    this.setHeight()
   },
   methods: {
     activityNavSelector (payload) {
       this.nav.forEach(item => {
         item.isActive = false
       })
-      payload.isActive = true
+      payload.isActive = true 
+      this.getData(payload)
+    },
+    getData(item) {
+      return new Promise(resolve => {
+        import(`@/server/activity/${item.type}.json`).then(data => {
+          this.list = data.default
+          this.setupPagination(this.list)
+          resolve()
+        })
+      })
+    },
+    setHeight() {
+      console.log(1);
       
+      // Тут просто вычисления высоты side panel и адаптив под экран
+      this.height.module = this.$refs.sidePanelModule.clientHeight - this.$refs.activityNav.clientHeight - 34
+      let acc = 0
+      let index = null
+      setTimeout(() => {
+        if(this.$refs.activity) {
+          for(let i = 0; i < this.$refs.activity.childNodes.length; i++) {
+            if(acc < this.height.module - 60) {
+              acc += this.$refs.activity.childNodes[i].clientHeight
+            } else {
+              index = i
+              break;
+            }
+          }
+          this.mixinOptions(index - 1)
+          this.setupPagination(this.list)
+          setTimeout(() => {
+            this.height.module = this.height.module + 14 - this.$refs.pagination.clientHeight
+            this.$refs.sidePanelModule.style.opacity = 1
+          }, 1);
+        }
+      }, 250);
     }
   },
   filters: {
@@ -282,10 +151,13 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80vh;
+    height: 100%;
   }
   .side-panel-activity {
     height: 100%;
+    opacity: 0;
+    transition-duration: 1.5s;
+    overflow: auto;
   }
   .activity-nav {
     display: flex;
@@ -293,6 +165,7 @@ export default {
     justify-content: space-around;
     margin: 10px;
     &-item {
+      user-select: none;
       color: #fff;
       font-size: .9em;
       padding: 8px 8px;
@@ -310,7 +183,8 @@ export default {
     & .item {
       display: flex;
       align-items: center;
-      margin: 15px 0px;
+      margin: 0px 0px;
+      padding: 10px 0px;
       & .icon {
         user-select: none;
         pointer-events: none;
