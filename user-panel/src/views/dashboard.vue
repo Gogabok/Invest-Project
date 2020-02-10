@@ -134,8 +134,35 @@ export default {
     width: 100%;
     padding: 0px 10px 0px 5px;
   }
+}
+@media screen and (max-width: 1250px) {
   .dashboard {
-    flex-grow: wrap;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .main-app-container {
+    height: auto;
+  }
+  .dashboard-user-area {
+    width: 100%;
+    max-width: 991px;
+    padding: 0px 20px;
+    margin: 0px auto;
+    & .v-nav {
+      padding: 10px 0px;
+    }
+    & .common-dashboard-padding {
+      padding: 10px 0px;
+    }
+    & .dashboard-graph-module {
+      margin: 10px 0px;
+    }
+  }
+  .side-panel-area {
+    width: 100%;
+    max-width: 991px;
+    padding: 0px 20px;
+    margin: 10px auto 0px auto;
   }
 }
 </style>

@@ -35,7 +35,7 @@ export default {
     }
   },
   updated() {
-    if(this.$refs.sidePanelNav.$refs) {
+    if(this.$refs.sidePanelNav.$refs && document.body.clientWidth > 1250) {
       this.height.sidePanel = this.$refs.sidePanel.clientHeight
       this.height.nav = this.$refs.sidePanelNav.$refs.sidePanelNav.clientHeight
       this.height.module = this.$refs.sidePanel.clientHeight - this.height.nav
@@ -52,5 +52,10 @@ export default {
   }
   .side-panel * {
     font-family: "Exo 2", sans-serif;
+  }
+  @media screen and (max-width: 1250px) {
+    .side-panel {
+      height: auto;
+    }
   }
 </style>

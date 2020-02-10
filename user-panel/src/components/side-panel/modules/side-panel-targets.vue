@@ -256,5 +256,18 @@ export default {
     font-size: 16px;
   }
 }
-
+@media screen and (max-width: 1250px) {
+  .targets-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .targets-item {
+    justify-content: center;
+    max-width: 50%;
+    padding: 0px;
+    margin: 10px 0px;
+  }
+}
 </style>

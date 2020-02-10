@@ -11,7 +11,7 @@
         {{ item.title }}
       </button>
     </div>
-    <div class="activity-wrapper" :style="`height: ${height.module}px`">
+    <div class="activity-wrapper" :style="`height: ${height.module === 'auto' ? height.module : height.module + 'px'}`">
       <div class="activity-list" ref="activity">
         <div class="item" v-for="item in items" :key="item.desc + item.date + Math.random()">
           <div class="icon">
@@ -85,11 +85,22 @@ export default {
   }),
   async created () {
     await this.getData(this.nav.find(item => item.isActive))
-    this.mixinOptions(20)
-    this.setupPagination(this.list)
+    if(document.body.clientWidth > 1250) {
+      this.mixinOptions(20)
+      this.setupPagination(this.list)
+    }
   },
   mounted () {
-    this.setHeight()
+    if(document.body.clientWidth > 1250) {
+      this.setHeight()
+    } else {
+      this.mixinOptions(10)
+      this.setupPagination(this.list)
+      setTimeout(() => {
+        this.$refs.sidePanelModule.style.opacity = 1
+        this.height.module = 'auto'
+      }, 250);
+    }
   },
   methods: {
     activityNavSelector (payload) {
