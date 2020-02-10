@@ -218,4 +218,11 @@ export default {
       background: #EF5350;
     }
   }
+  @media screen and (max-width: 1530px) {
+    .calendar-nav {
+      & .nav-item {
+        font-size: .8em;
+      }
+    }
+  }
 </style>

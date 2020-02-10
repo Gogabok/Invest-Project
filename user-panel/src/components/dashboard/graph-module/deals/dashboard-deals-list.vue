@@ -141,4 +141,23 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 1530px) {
+    .decisions-wrapper-nav {
+      padding: 0px 15px;
+      margin-bottom: 5px;
+      & .nav-item {
+        font-size: 1em;
+        width: calc((100% / 6) - 10px);
+      }
+    }
+    .content-item {
+      padding: 3px 15px;
+      height: 60px;
+      & .content-item-profit {
+        & span {
+          margin-right: 3px;
+        }
+      }
+    }
+  }
 </style>

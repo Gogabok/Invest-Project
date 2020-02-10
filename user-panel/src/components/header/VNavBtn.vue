@@ -17,7 +17,7 @@ export default {
   font-weight: 400;
   border-radius: 3px;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1em;
   margin: 0px 7px;
   text-align: center;
   transition-duration: .5s;
@@ -35,5 +35,12 @@ export default {
   // &:hover {
   //   border: 1px solid #fff; 
   // }
+}
+
+@media screen and (max-width: 1530px) {
+  .v-nav-btn {
+    margin: 0px 3px;
+    padding: 4px 12px;
+  }
 }
 </style>

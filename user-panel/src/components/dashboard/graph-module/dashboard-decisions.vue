@@ -200,7 +200,23 @@ export default {
   //   transition-duration: .3s;
   // }
 
-
+  @media screen and (max-width: 1530px) {
+    .decisions-wrapper-nav {
+      padding: 0px 15px;
+      margin-bottom: 5px;
+      & .nav-item {
+        font-size: 1em;
+        width: calc((100% / 6) - 10px);
+      }
+    }
+    .content-item {
+      padding: 9px 15px;
+      & .content-item-text {
+        font-size: .9em;
+        width: calc((100% / 6) - 10px);
+      }
+    }
+  }
 
 
 </style>

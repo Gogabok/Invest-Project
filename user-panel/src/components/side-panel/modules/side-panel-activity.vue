@@ -110,7 +110,7 @@ export default {
     },
     setHeight() {
       // Тут просто вычисления высоты side panel и адаптив под экран
-      this.height.module = this.$refs.sidePanelModule.clientHeight - this.$refs.activityNav.clientHeight - 34
+      this.height.module = this.$refs.sidePanelModule.clientHeight - this.$refs.activityNav.clientHeight
       let acc = 0
       let index = null
       setTimeout(() => {
@@ -123,7 +123,7 @@ export default {
               break;
             }
           }
-          this.mixinOptions(index - 1)
+          this.mixinOptions(index - 2)
           this.setupPagination(this.list)
           setTimeout(() => {
             this.height.module = this.height.module + 14 - this.$refs.pagination.clientHeight
@@ -207,9 +207,39 @@ export default {
     }
   }
   .paginate-container-activity {
+    margin-bottom: 15px !important;
     & .pagination-item-active {
       background: #fff;
       color: #24303C;
+    }
+  }
+  @media screen and (max-width: 1530px) {
+    .activity-list {
+      padding: 10px;
+      & .item {
+        padding: 15px 0px;
+        justify-content: center;
+        & .icon {
+          & img {
+            width: 35px;
+          }
+        }
+        & .icon-cloud {
+          margin: 0px 15px;
+          & img {
+            width: 35px;
+          }
+        }
+        & .text {
+          & .desc {
+            font-size: .9em;
+            margin-bottom: 5px;
+          }
+          & .action {
+            font-size: .9em;
+          }
+        }
+      }
     }
   }
 </style>

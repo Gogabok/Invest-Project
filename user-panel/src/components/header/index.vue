@@ -33,4 +33,9 @@ export default {
       font-family: "Exo 2";
     }
   }
+  @media screen and (max-width: 1530px) {
+    .navigation-wrapper {
+      padding: 5px 0px;
+    }
+  }
 </style>

@@ -196,4 +196,22 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 1530px) {
+    .maintoolbar {
+      &-item {
+        font-size: 1em;
+      }
+    }
+    .minitoolbar {
+      &-item {
+        & .text {
+          font-size: .8em;
+        }
+        & img {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
 </style>

@@ -20,11 +20,16 @@ export default {
   pointer-events: none;
   margin-right: 20px;
   & .logo-title {
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: bold;
     color: #fff;
     user-select: none;
     pointer-events: none;
+  }
+}
+@media screen and (max-width: 1530px) {
+  .logo {
+    margin-right: 5px;
   }
 }
 </style>

@@ -34,7 +34,7 @@ export default {
 .dashboard-user-area {
   width: 60%;
   & .v-nav {
-    padding-left: 50px !important;
+    padding-left: 50px ;
   }
   & .common-dashboard-padding {
     padding-left: 140px;
@@ -105,5 +105,37 @@ export default {
   letter-spacing: 10px;
   font-size: 20px;
   color:#fff;
+}
+@media screen and (max-width: 1530px) {
+  .paginate-container {
+    padding: 0px 10px;
+    & .dotted  {
+      width: calc(100% - 20px);
+      &:after {
+        letter-spacing: 7px;
+      }
+    }
+  }
+  .dashboard-user-area {
+    width: 100%;
+    & .v-nav {
+      padding-left: 10px;
+    }
+    & .common-dashboard-padding {
+      padding-left: 10px;
+      margin-top: 10px;
+    }
+    & .dashboard-graph-module {
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+  }
+  .side-panel-area {
+    width: 100%;
+    padding: 0px 10px 0px 5px;
+  }
+  .dashboard {
+    flex-grow: wrap;
+  }
 }
 </style>

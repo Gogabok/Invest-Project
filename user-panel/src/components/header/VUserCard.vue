@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss">
   .v-user-card {
-    padding: 15px 30px;
+    padding: 10.5px 20px 10.5px 15px;
     background: rgba(184, 189, 196, 0.1);
     color: #fff;
     border-radius: 3px;
@@ -39,6 +39,11 @@ export default {
         margin: 4px auto;
         background: rgba(184, 189, 196, 0.5);
       }
+    }
+  }
+  @media screen and (max-width: 1530px) {
+    .v-user-card {
+      padding: 6.5px 20px 6.5px 5px;
     }
   }
 </style>

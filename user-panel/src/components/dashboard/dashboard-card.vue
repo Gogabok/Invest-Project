@@ -71,4 +71,24 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 1530px) {
+    .dashboard-card {
+      padding: 10px 0px;
+      max-width: calc((100% / 3) - 5px);
+      & .extraInfo {
+        font-size: .9em;
+        padding: 0px 15px;
+      }
+      & .balance {
+        font-size: 1.3em;
+        max-width: 60%;
+        padding: 8px 15px;
+        margin: 12px 0px;
+      }
+      & .dashboard-card-title {
+        font-size: 1em;
+        padding: 0px 15px;
+      }
+    }
+  }
 </style>

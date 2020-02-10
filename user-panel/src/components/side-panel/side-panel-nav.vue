@@ -63,4 +63,12 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 1530px) {
+    .side-panel-nav {
+      &  .nav-item {
+        padding: 20px 10px;
+        font-size: 1.1em;
+      }
+    }
+  }
 </style>
