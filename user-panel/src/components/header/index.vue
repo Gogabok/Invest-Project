@@ -56,6 +56,7 @@ export default {
     align-items: center;
     & * {
       font-family: "Exo 2";
+      user-select: none;
     }
   }
   @media screen and (max-width: 1530px) {

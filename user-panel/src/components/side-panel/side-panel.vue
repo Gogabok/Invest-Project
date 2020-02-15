@@ -49,9 +49,12 @@ export default {
   .side-panel {
     height: 100vh;
     background: #24303C;
+    max-width: 991px !important;
+    width: 100%;
   }
   .side-panel * {
     font-family: "Exo 2", sans-serif;
+    box-sizing: content-box !important;
   }
   @media screen and (max-width: 1250px) {
     .side-panel {

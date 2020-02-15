@@ -1,41 +1,43 @@
 <template>
   <div class="decisions-wrapper">
-    <div class="decisions-wrapper-nav">
-      <div 
-          v-for="navItem in navigation"
-          :key="navItem.title"
-          class="nav-item">
-            {{ navItem.title }}
+    <div class="graph-module-zone">
+      <div class="decisions-wrapper-nav">
+        <div 
+            v-for="navItem in navigation"
+            :key="navItem.title"
+            class="nav-item">
+              {{ navItem.title }}
+        </div>
       </div>
-    </div>
-    <div class="desicions-wrapper-content" :style="`height: ${height}`" ref="desicionsWrapperContent">
-      <label
-          v-for="(decision, index) in items"
-          :key="decision.botName + index + Math.random()"
-          class="content-item">
-          <p class="content-item-text content-item-with-checkbox">
-            <!-- <input v-model="decision.isActive" class="content-checkbox" type="checkbox" name="keyIndex"> -->
-            <span><span></span></span>
-            {{ decision.botName }}
-          </p>
-          <p class="content-item-text">
-            {{ decision.type }}
-          </p>
-          <p class="content-item-text">
-            {{ decision.status }}
-          </p>
-          <p class="content-item-text">
-            {{ decision.balance }}
-          </p>
-          <p class="content-item-text">
-            {{ decision.profit }}
-          </p>
-          <div class="content-item-text">
-            <decisions-statistic-graph
-              :data="decision.statisticGraphData"
-            />
-          </div>
-      </label>
+      <div class="desicions-wrapper-content" :style="`height: ${height}`" ref="desicionsWrapperContent">
+        <label
+            v-for="(decision, index) in items"
+            :key="decision.botName + index + Math.random()"
+            class="content-item">
+            <p class="content-item-text content-item-with-checkbox">
+              <!-- <input v-model="decision.isActive" class="content-checkbox" type="checkbox" name="keyIndex"> -->
+              <span><span></span></span>
+              {{ decision.botName }}
+            </p>
+            <p class="content-item-text">
+              {{ decision.type }}
+            </p>
+            <p class="content-item-text">
+              {{ decision.status }}
+            </p>
+            <p class="content-item-text">
+              {{ decision.balance }}
+            </p>
+            <p class="content-item-text">
+              {{ decision.profit }}
+            </p>
+            <div class="content-item-text">
+              <decisions-statistic-graph
+                :data="decision.statisticGraphData"
+              />
+            </div>
+        </label>
+      </div>
     </div>
     <div class="paginate-container">
       <paginate
@@ -217,6 +219,23 @@ export default {
       }
     }
   }
-
+  @media screen and (max-width: 650px) {
+    .decisions-wrapper-nav, .desicions-wrapper-content {
+      width: 700px;
+    }
+    .graph-module-zone {
+      overflow-x: scroll;
+      padding-bottom: 10px;
+    }
+    .graph-module-zone::-webkit-scrollbar{
+      background: rgba(30, 44, 61, 0.7);
+      border-radius: 5px;
+      height: 5px;
+    }
+    .graph-module-zone::-webkit-scrollbar-thumb{
+      background: rgb(42, 59, 80);
+      border-radius: 5px;
+    }
+  }
 
 </style>

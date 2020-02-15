@@ -45,7 +45,7 @@ export default {
 }
 .side-panel-area {
   padding: 0px 60px;
-  max-width: 500px;
+  max-width: 620px;
   width: 100%;
 }
 .pagination-wrapper {
@@ -166,6 +166,9 @@ export default {
     max-width: 991px;
     padding: 0px 20px;
     margin: 10px auto 0px auto;
+    & * {
+      box-sizing: content-box !important;
+    }
   }
 }
 @media screen and (max-width: 830px) {

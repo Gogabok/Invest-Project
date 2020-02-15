@@ -1,25 +1,27 @@
 <template>
   <div class="calendar">
-    <div class="calendar-nav">
-      <div
-        v-for="navItem in navigation"
-        :key="navItem.title"
-        class="nav-item">
-          {{ navItem.title }}
+    <div class="graph-module-zone">
+      <div class="calendar-nav">
+        <div
+          v-for="navItem in navigation"
+          :key="navItem.title"
+          class="nav-item">
+            {{ navItem.title }}
+        </div>
       </div>
-    </div>
-    <div class="calendar-body">
-      <div class="calendar-line" v-for="(line, index) in Object.values(daysData)" :key="index + Math.random()">
-        <div :class="day.date ? `calendar-line-item ${ today === day.unformateDate ? `calendar-line-item-today` : ``}` : `calendar-line-item-empty`" v-for="day in line" :key="day.date + Math.random()">
-          <span class="date">{{ day.date }}</span>
-          <div class="rates">
-            <div class="rates-up" v-if="day.rates">
-              <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-              <span>{{ day.rates.up }}</span>
-            </div>
-            <div class="rates-down" v-if="day.rates">
-              <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-              <span>{{ day.rates.down }}</span>
+      <div class="calendar-body">
+        <div class="calendar-line" v-for="(line, index) in Object.values(daysData)" :key="index + Math.random()">
+          <div :class="day.date ? `calendar-line-item ${ today === day.unformateDate ? `calendar-line-item-today` : ``}` : `calendar-line-item-empty`" v-for="day in line" :key="day.date + Math.random()">
+            <span class="date">{{ day.date }}</span>
+            <div class="rates">
+              <div class="rates-up" v-if="day.rates">
+                <img :src="`./assets/common/arrow-up-white.svg`" alt="">
+                <span>{{ day.rates.up }}</span>
+              </div>
+              <div class="rates-down" v-if="day.rates">
+                <img :src="`./assets/common/arrow-down-white.svg`" alt="">
+                <span>{{ day.rates.down }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -157,7 +159,7 @@ export default {
       text-align: center;
       padding: 10px 1px;
       width: calc(100% / 7);
-      margin: -1px 0px 0px -1px;
+      // margin: -1px 0px 0px -1px;
     }
   }
   .calendar-body {
@@ -175,10 +177,9 @@ export default {
     background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: grey; stroke-width: 1;'/></svg>");
     text-align: center;
     padding: 10px 1px;
-    margin: -1px 0px 0px -1px !important;
+    // margin: -1px 0px 0px -1px !important;
     position: relative;
     padding: 15px 0px 0px 0px;
-    box-sizing: border-box;
     & .date {
       position: absolute;
       top: 5px;
@@ -199,14 +200,14 @@ export default {
     display: flex;
     padding: 10px 0px;
     justify-content: center;
-    height: 20px;
+    height: 40px;
     & .rates-up, & .rates-down {
       display: flex;
       align-items: center;
       font-size: 1em;
       border-radius: 3px;
       margin: 0px 2px;
-      padding: 2px 2px;
+      padding: 3px 6px;
       & img {
         margin-right: 2px;
       }
@@ -223,6 +224,34 @@ export default {
       & .nav-item {
         font-size: .8em;
       }
+    }
+  }
+  @media screen and (max-width: 830px) {
+    .rates {
+    & .rates-up, & .rates-down {
+      padding: 1px 2px;
+      }
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .calendar-nav, .calendar-body {
+      width: 700px;
+    }
+    .content-item {
+      width: 700px;
+    }
+    .graph-module-zone {
+      overflow-x: scroll;
+      padding-bottom: 10px;
+    }
+    .graph-module-zone::-webkit-scrollbar{
+      background: rgba(30, 44, 61, 0.7);
+      border-radius: 5px;
+      height: 5px;
+    }
+    .graph-module-zone::-webkit-scrollbar-thumb{
+      background: rgb(42, 59, 80);
+      border-radius: 5px;
     }
   }
 </style>

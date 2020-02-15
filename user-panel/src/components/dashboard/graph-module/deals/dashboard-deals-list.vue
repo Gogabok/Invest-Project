@@ -1,35 +1,37 @@
 <template>
   <div class="decisions-wrapper">
-    <div class="decisions-wrapper-nav">
-      <div 
-          v-for="navItem in navigation"
-          :key="navItem.title"
-          class="nav-item">
-            {{ navItem.title }}
+    <div class="graph-module-zone">
+      <div class="decisions-wrapper-nav">
+        <div 
+            v-for="navItem in navigation"
+            :key="navItem.title"
+            class="nav-item">
+              {{ navItem.title }}
+        </div>
       </div>
-    </div>
-    <div class="deals-wrapper-content" :style="`height: ${height}`" ref="dealsWrapperContent">
-      <label
-          v-for="(deal, index) in items"
-          :key="deal.botName + index + Math.random()"
-          class="content-item">
-          <p class="content-item-text content-item-with-checkbox">
-            {{ deal.deal_starts | prettyTime }}
-          </p>
-          <p class="content-item-text">
-            {{ deal.deal_ends | prettyTime }}
-          </p>
-          <p class="content-item-text">
-            {{ deal.botName }}
-          </p>
-          <p class="content-item-text">
-            {{ deal.type }}
-          </p>
-          <p class="content-item-text content-item-profit" :class="deal.isProfit ? 'content-item-profit-up' : 'content-item-profit-down'">
-            <span><img :src="`./assets/common/arrow-${deal.isProfit ? 'up' : 'down'}.svg`" alt=""></span>
-            {{ deal.profit }}
-          </p>
-      </label>
+      <div class="deals-wrapper-content" :style="`height: ${height}`" ref="dealsWrapperContent">
+        <label
+            v-for="(deal, index) in items"
+            :key="deal.botName + index + Math.random()"
+            class="content-item">
+            <p class="content-item-text content-item-with-checkbox">
+              {{ deal.deal_starts | prettyTime }}
+            </p>
+            <p class="content-item-text">
+              {{ deal.deal_ends | prettyTime }}
+            </p>
+            <p class="content-item-text">
+              {{ deal.botName }}
+            </p>
+            <p class="content-item-text">
+              {{ deal.type }}
+            </p>
+            <p class="content-item-text content-item-profit" :class="deal.isProfit ? 'content-item-profit-up' : 'content-item-profit-down'">
+              <span><img :src="`./assets/common/arrow-${deal.isProfit ? 'up' : 'down'}.svg`" alt=""></span>
+              {{ deal.profit }}
+            </p>
+        </label>
+      </div>
     </div>
     <div class="paginate-container">
       <paginate
@@ -154,10 +156,33 @@ export default {
       padding: 3px 15px;
       height: 60px;
       & .content-item-profit {
+        font-size: 0.8em;
         & span {
-          margin-right: 3px;
+          margin-right: 2px;
         }
       }
     }
   }
+  @media screen and (max-width: 650px) {
+    .decisions-wrapper-nav, .desicions-wrapper-content {
+      width: 700px;
+    }
+    .content-item {
+      width: 700px;
+    }
+    .graph-module-zone {
+      overflow-x: scroll;
+      padding-bottom: 10px;
+    }
+    .graph-module-zone::-webkit-scrollbar{
+      background: rgba(30, 44, 61, 0.7);
+      border-radius: 5px;
+      height: 5px;
+    }
+    .graph-module-zone::-webkit-scrollbar-thumb{
+      background: rgb(42, 59, 80);
+      border-radius: 5px;
+    }
+  }
+
 </style>
