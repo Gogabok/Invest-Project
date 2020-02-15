@@ -253,4 +253,66 @@ export default {
       }
     }
   }
+
+
+  @media screen and (max-width: 1250px) {
+    .activity-list::-webkit-scrollbar{
+      background: rgba(30, 44, 61, 0.7);
+      border-radius: 5px;
+      width: 8px;
+    }
+    .activity-list::-webkit-scrollbar-thumb{
+      background: rgb(42, 59, 80);
+      border-radius: 5px;
+    }
+    .activity-wrapper {
+      padding-right: 5px;
+    }
+    .activity-list {
+      padding: 10px;
+      height: 500px;
+      overflow-y: scroll;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .activity-nav {
+      display: block;
+      text-align: center;
+      &-item {
+        display: block;
+        margin: 0px auto;
+      }
+    }
+    .activity-list {
+      padding: 5px;
+      height: 350px;
+      overflow-y: scroll;
+      & .item {
+        padding: 10px 0px 10px 10px;
+        justify-content: flex-start;
+        & .icon {
+          & img {
+            width: 30px;
+          }
+        }
+        & .icon-cloud {
+          margin: 0px 15px 0px 8px;
+          & img {
+            width: 30px;
+          }
+        }
+        & .text {
+          max-width: 100%;
+          & .desc {
+            font-size: .8em;
+            margin-bottom: 5px;
+          }
+          & .action {
+            font-size: .8em;
+          }
+        }
+      }
+    }
+  }
 </style>

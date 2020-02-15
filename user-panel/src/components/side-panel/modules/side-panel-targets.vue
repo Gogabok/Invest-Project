@@ -30,8 +30,8 @@
                 <stop offset="100%" stop-color="#1C4E0F" />
               </linearGradient>
             </defs>
-            <circle class="bg" cx="180" cy="180" r="150"></circle>
-            <circle class="progress" cx="180" cy="180" r="150" ref="progressBar" stroke="url(#gradient)"></circle>
+            <circle class="bg" cx="150" cy="150" r="120"></circle>
+            <circle class="progress" cx="150" cy="150" r="120" ref="progressBar" stroke="url(#gradient)"></circle>
           </svg>
       </div>
       <div class="targets-wrapper">
@@ -123,13 +123,13 @@ export default {
 
 .circle {
   position: relative;
-  width: 360px;
+  width: 300px;
   margin: 0px auto 0px auto;
 }
 
 .circle .main-circle {
   width: 100%;
-  height: 360px;
+  height: 300px;
 }
 
 .circle .bg {
@@ -161,11 +161,11 @@ export default {
     text-transform: uppercase;
     font-weight: bold;
     & .title {
-      font-size: 20px;
+      font-size: 19px;
       margin-bottom: 10px;
     }
     & .balance {
-      font-size: 40px;
+      font-size: 36px;
     }
   }
   & .text-invested {
@@ -173,12 +173,12 @@ export default {
     text-transform: uppercase;
     margin-top: 15px;
     & .title {
-      font-size: 17px;
-      margin-top: 10px;
+      font-size: 16px;
+      margin-top: 5px;
       font-weight: bold;
     }
     & .balance {
-      font-size: 25px;
+      font-size: 23px;
       font-weight: 400;
     }
   }
@@ -268,6 +268,26 @@ export default {
     max-width: 50%;
     padding: 0px;
     margin: 10px 0px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .targets-wrapper {
+    display: block;
+    margin-top: 0px;
+  }
+  .targets-item {
+    justify-content: flex-start;
+    max-width: 100%;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px;
+    & .target-text {
+      width: 100%;
+      min-width: 160px;
+      & .title {
+        margin-bottom: 5px;
+      }
+    }
   }
 }
 </style>

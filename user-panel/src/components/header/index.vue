@@ -187,4 +187,15 @@ export default {
       padding: 10px 10px !important;
     }
   }
+  @media screen and (max-width: 570px) { 
+    .navigation-wrapper {
+      justify-content: center;
+      & .btn, & .userBtn {
+        max-width: 270px;
+        width: 100%;
+        margin: 2px 0px !important;
+        padding: 10px 10px;
+      }
+    }
+  }
 </style>

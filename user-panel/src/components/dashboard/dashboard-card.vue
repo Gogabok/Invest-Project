@@ -91,4 +91,17 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 650px) {
+    .dashboard-card {
+      width: 100%;
+      max-width: 100%;
+      margin: 7px 0px;
+      & .balance {
+        max-width: none;
+        width: auto;
+        display: inline-block;
+        padding-right: 120px;
+      }
+    }
+  }
 </style>

@@ -214,4 +214,28 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 650px) {
+    .maintoolbar {
+      &-item {
+        font-size: .7em;
+        padding: 5px;
+        margin: 0px 2px;
+      }
+    }
+    .minitoolbar {
+      &-item {
+        padding: 5px;
+        width: 22px;
+        height: 22px;
+        margin: 0px 2px;
+        & .text {
+          font-size: .6em;
+        }
+        & img {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
 </style>

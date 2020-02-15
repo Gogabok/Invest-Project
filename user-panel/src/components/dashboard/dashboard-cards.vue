@@ -47,4 +47,9 @@ export default {
       font-family: "Exo 2", sans-serif;
     }
   }
+  @media screen and (max-width: 650px) {
+    .dashboard-cards {
+      flex-wrap: wrap;
+    }
+  }
 </style>

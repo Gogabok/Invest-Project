@@ -173,7 +173,7 @@ export default {
 }
 @media screen and (max-width: 830px) {
   .common-dashboard-padding {
-    margin-top: 60px !important;
+    margin-top: 50px !important;
   }
   .dashboard-graph-module {
     padding: 10px 5px;
