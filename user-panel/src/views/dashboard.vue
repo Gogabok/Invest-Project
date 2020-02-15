@@ -30,6 +30,9 @@ export default {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  & * {
+    box-sizing: border-box;
+  }
 }
 .dashboard-user-area {
   width: 60%;
@@ -163,6 +166,28 @@ export default {
     max-width: 991px;
     padding: 0px 20px;
     margin: 10px auto 0px auto;
+  }
+}
+@media screen and (max-width: 830px) {
+  .common-dashboard-padding {
+    margin-top: 60px !important;
+  }
+  .dashboard-graph-module {
+    padding: 10px 5px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .dashboard-user-area {
+    padding: 0px 10px;
+  }
+  .dashboard-graph-module {
+    margin-top: 0px !important;
+  }
+  .side-panel-area {
+    margin-top: 0px;
+    padding: 0px 10px;
+    max-width: 635px;
   }
 }
 </style>
