@@ -193,4 +193,51 @@ export default {
     max-width: 635px;
   }
 }
+
+
+// animations 
+
+.scaleY-enter, .scaleY-leave-to {
+  opacity: 0;
+  transform: scaleY(0); 
+  transform-origin: top;
+}
+.scaleY-enter-active, .scaleY-leave-active {
+  transition-duration: .3s;
+}
+
+.scaleY-group-enter, .scaleY-group-leave-to {
+  opacity: 0;
+  display: none;
+  transform: scaleY(0); 
+  transform-origin: top;
+}
+
+.scaleY-group-enter-active, .scaleY-group-leave-active {
+  transition-duration: .3s;
+}
+
+.scaleY-group-leave-active {
+  display: none !important;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+  transition-duration: .5s;
+}
+
+.fade-group-enter, .fade-group-leave-to {
+  opacity: 0;
+}
+.fade-group-enter-active, .fade-group-leave-active {
+  transition-duration: 2s;
+}
+
+.fade-group-leave-active {
+  display: none !important;
+}
+
+
 </style>

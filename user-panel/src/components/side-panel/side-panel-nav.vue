@@ -68,6 +68,7 @@ export default {
       &  .nav-item {
         padding: 20px 10px;
         font-size: 1.1em;
+        transition-duration: .5s;
       }
     }
   }

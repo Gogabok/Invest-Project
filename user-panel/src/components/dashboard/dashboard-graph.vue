@@ -49,7 +49,7 @@ export default {
       layout: {
         padding: {
             left: 5,
-            right: 40,
+            right: 5,
             top: 0,
             bottom: 0
         }

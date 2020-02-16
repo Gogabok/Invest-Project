@@ -1,6 +1,8 @@
 <template>
   <div>
-    <component :is="currentComponent"></component>
+    <transition name="scaleY" mode="out-in">
+      <component :is="currentComponent"></component>
+    </transition>
   </div>
 </template>
 

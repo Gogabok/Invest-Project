@@ -12,7 +12,7 @@
       </button>
     </div>
     <div class="activity-wrapper" :style="`height: ${height.module === 'auto' ? height.module : height.module + 'px'}`">
-      <div class="activity-list" ref="activity">
+      <transition-group tag="div" class="activity-list" ref="activity" name="scaleY-group">
         <div class="item" v-for="item in items" :key="item.desc + item.date + Math.random()">
           <div class="icon">
             <img src="/assets/common/activity-item-icon.svg" alt="">
@@ -25,7 +25,7 @@
             <p class="action">{{ item.action }}</p>
           </div>
         </div>
-      </div>
+      </transition-group>
       <div class="paginate-container paginate-container-activity" ref="pagination">
         <paginate
           :page-count="pageCount"
@@ -112,8 +112,10 @@ export default {
     },
     getData(item) {
       return new Promise(resolve => {
+        this.list = null
         import(`@/server/activity/${item.type}.json`).then(data => {
           this.list = data.default
+          this.mixinOptions(20)
           this.setupPagination(this.list)
           resolve()
         })
@@ -134,10 +136,10 @@ export default {
               break;
             }
           }
-          this.mixinOptions(index - 2)
-          this.setupPagination(this.list)
+          // this.mixinOptions(index - 2)
+          // this.setupPagination(this.list)
           setTimeout(() => {
-            this.height.module = this.height.module + 14 - this.$refs.pagination.clientHeight
+            this.height.module = this.height.module - this.$refs.pagination.clientHeight
             this.$refs.sidePanelModule.style.opacity = 1
           }, 1);
         }
@@ -166,7 +168,7 @@ export default {
     height: 100%;
     opacity: 0;
     transition-duration: 1.5s;
-    overflow: auto;
+    // overflow: auto;
   }
   .activity-nav {
     display: flex;
@@ -174,6 +176,7 @@ export default {
     justify-content: space-around;
     margin: 10px;
     &-item {
+      transition-duration: .5s;
       user-select: none;
       color: #fff;
       font-size: .9em;
@@ -187,8 +190,19 @@ export default {
       }
     }
   }
+  .activity-list::-webkit-scrollbar{
+    background: rgba(30, 44, 61, 0.7);
+    border-radius: 5px;
+    width: 8px;
+  }
+  .activity-list::-webkit-scrollbar-thumb{
+    background: rgb(42, 59, 80);
+    border-radius: 5px;
+  }
   .activity-list {
+    overflow-y: auto;
     padding: 20px;
+    height: calc(100% - 110px);
     & .item {
       display: flex;
       align-items: center;
@@ -256,15 +270,6 @@ export default {
 
 
   @media screen and (max-width: 1250px) {
-    .activity-list::-webkit-scrollbar{
-      background: rgba(30, 44, 61, 0.7);
-      border-radius: 5px;
-      width: 8px;
-    }
-    .activity-list::-webkit-scrollbar-thumb{
-      background: rgb(42, 59, 80);
-      border-radius: 5px;
-    }
     .activity-wrapper {
       padding-right: 5px;
     }

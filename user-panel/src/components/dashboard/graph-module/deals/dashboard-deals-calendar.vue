@@ -90,8 +90,6 @@ export default {
       this.currentYear = new Date(data[0].eventDate).getFullYear()
       this.currentMonth = new Date(data[0].eventDate).getMonth()
       this.daysInMonth = new Date(this.currentYear, this.currentMonth + 1, 0).getDate()
-      console.log(new Date(this.currentYear, this.currentMonth + 1, 0));
-      
     },
     updatingDate(data) {
       data.forEach(day => {
@@ -193,7 +191,7 @@ export default {
     // margin: -1px 0px 1px 1px !important;
   }
   .calendar-line-item-today {
-    background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: white; stroke-width: 1; stroke-dasharray: 25 10'/></svg>") !important;
+    background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: white; stroke-width: 2; stroke-dasharray: 25 15'/></svg>") !important;
     border: none !important;
   }
   .rates {

@@ -2,17 +2,19 @@
   <div class="dashboard-graph-module">
     <div class="toolbar">
       <div class="maintoolbar">
-        <button 
-         v-for="btn in mainToolbar"
-         class="maintoolbar-item"
-         :class="btn.isActive ? 'active' : ''"
-         :key="btn.title"
-         @click.prevent="moduleChanger(btn)"
-         >
-          {{ btn.title }}
-        </button>
+        <transition-group name="fade" mode="out-in">
+          <button 
+          v-for="btn in mainToolbar"
+          class="maintoolbar-item"
+          :class="btn.isActive ? 'active' : ''"
+          :key="btn.title"
+          @click.prevent="moduleChanger(btn)"
+          >
+            {{ btn.title }}
+          </button>
+        </transition-group>
       </div>
-      <div class="minitoolbar">
+      <transition-group tag="div" class="minitoolbar" name="fade-group">
         <button 
           v-for="btn in miniToolbar[currentActiveMiniToolbar]"
           :key="btn.title || btn.icon + currentActiveMiniToolbar"
@@ -23,9 +25,11 @@
           <div class="text" v-if="btn.title">{{ btn.title }}</div>
           <img class="text-img" :src="`./assets/common/${btn.icon}.svg`" v-else alt="">
         </button>
-      </div>
+      </transition-group>
     </div>
-    <component :is="currentActiveModule" :minitoolbar="miniToolbar[currentActiveMiniToolbar]"></component>
+    <transition name="scaleY" mode="out-in">
+      <component :is="currentActiveModule" :minitoolbar="miniToolbar[currentActiveMiniToolbar]"></component>
+    </transition>
   </div>
 </template>
 
@@ -136,6 +140,7 @@ export default {
     position: relative;
     border-radius: 3px;
     padding: 20px 30px 10px 30px;
+    transition-duration: .5s;
     & * {
       font-family: "Exo 2", sans-serif;
     }
@@ -156,6 +161,7 @@ export default {
       border-radius: 3px;
       border: none;
       background: transparent;
+      transition-duration: .3s;
       &.active {
         background: rgba(184, 189, 196, .1);
       }
@@ -176,6 +182,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      transition-duration: .3s;
       & .text {
         color: #fff;
         font-size: 1em;

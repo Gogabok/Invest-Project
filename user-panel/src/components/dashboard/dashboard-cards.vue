@@ -40,7 +40,7 @@ export default {
     margin-top: 40px;
     padding: 0px 0px;
     display: flex;
-    align-items: flex-start;
+    // align-items: flex-start;
     justify-content: space-between;
     max-width: 100%;
     & * {

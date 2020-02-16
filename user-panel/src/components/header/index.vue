@@ -193,8 +193,8 @@ export default {
       & .btn, & .userBtn {
         max-width: 270px;
         width: 100%;
-        margin: 2px 0px !important;
-        padding: 10px 10px;
+        margin: 4px 0px !important;
+        padding: 7px 10px;
       }
     }
   }

@@ -5,7 +5,9 @@
       ref="sidePanelNav"
       @selecting="modulesSelecting"
     ></side-panel-nav>
-    <component :style="`height: ${height.module}px`" ref="sidePanelModule" :is="currentModule"></component>
+    <transition name="scaleY" mode="out-in">
+      <component :style="`height: ${height.module}px`" ref="sidePanelModule" :is="currentModule"></component>
+    </transition>
   </div>
 </template>
 
