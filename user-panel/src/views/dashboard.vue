@@ -240,6 +240,4 @@ export default {
 .fade-group-leave-active {
   display: none !important;
 }
-
-
 </style>
