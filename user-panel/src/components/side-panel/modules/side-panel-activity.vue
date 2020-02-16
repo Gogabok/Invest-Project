@@ -126,24 +126,24 @@ export default {
       this.height.module = this.$refs.sidePanelModule.clientHeight - this.$refs.activityNav.clientHeight
       let acc = 0
       let index = null
-      setTimeout(() => {
-        if(this.$refs.activity) {
-          for(let i = 0; i < this.$refs.activity.childNodes.length; i++) {
-            if(acc < this.height.module - 60) {
-              acc += this.$refs.activity.childNodes[i].clientHeight
-            } else {
-              index = i
-              break;
-            }
-          }
+      // setTimeout(() => {
+        // if(this.$refs.activity) {
+        //   for(let i = 0; i < this.$refs.activity.childNodes.length; i++) {
+        //     if(acc < this.height.module - 60) {
+        //       acc += this.$refs.activity.childNodes[i].clientHeight
+        //     } else {
+        //       index = i
+        //       break;
+        //     }
+        //   }
           // this.mixinOptions(index - 2)
           // this.setupPagination(this.list)
           setTimeout(() => {
             this.height.module = this.height.module - this.$refs.pagination.clientHeight
             this.$refs.sidePanelModule.style.opacity = 1
           }, 1);
-        }
-      }, 250);
+        // }
+      // }, 250);
     }
   },
   filters: {
