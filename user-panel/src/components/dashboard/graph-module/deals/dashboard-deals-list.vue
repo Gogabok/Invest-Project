@@ -123,13 +123,14 @@ export default {
     & .nav-item {
       color: #fff;
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1em;
       width: calc(100% / 6)
     }
   }
   .content-item {
     padding: 6px 30px;
     height: 60px;
+    font-size: .9em;
     & .content-item-profit {
       font-weight: bold;
       & span {

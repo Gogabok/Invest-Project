@@ -1,9 +1,9 @@
 <template>
   <div class="dashboard">
-    <div class="dashboard-user-area">
+    <div class="dashboard-user-area" ref="dashboardUserArea">
       <v-nav class="v-nav"></v-nav>
       <dashboard-cards class="common-dashboard-padding"></dashboard-cards>
-      <dashboard-graph-module></dashboard-graph-module>
+      <dashboard-graph-module :height="height" @heightComputed="heightComputed" :style="styleModule"></dashboard-graph-module>
     </div>
     <div class="side-panel-area">
       <side-panel></side-panel>
@@ -22,6 +22,26 @@ export default {
   components: {
     VNav, dashboardCards, dashboardGraphModule, sidePanel
   },
+  data: () => ({
+    styleModule: null,
+    height: null
+  }),
+  mounted() {
+    let sideHeight = this.$refs.dashboardUserArea.clientHeight
+    if(sideHeight > document.body.clientHeight && document.body.clientWidth > 830) {
+      let newModuleHeight = sideHeight - this.height - 20
+      this.styleModule = {
+        "max-height": `${newModuleHeight}px`
+      }
+    }
+  },
+  methods: {
+    heightComputed(value) {
+      console.log(value);
+      
+      this.height = value
+    }
+  }
 };
 </script>
 

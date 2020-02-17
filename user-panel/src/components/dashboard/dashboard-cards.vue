@@ -37,7 +37,7 @@ export default {
 
 <style lang="scss">
   .dashboard-cards {
-    margin-top: 40px;
+    margin-top: 0px;
     padding: 0px 0px;
     display: flex;
     // align-items: flex-start;

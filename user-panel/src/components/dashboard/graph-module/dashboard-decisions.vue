@@ -134,7 +134,7 @@ export default {
     & .nav-item {
       color: #fff;
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1em;
       width: calc(100% / 6)
     }
   }
@@ -149,7 +149,7 @@ export default {
     & .content-item-text {
       font-weight: 400;
       color: #fff;
-      font-size: 1.1em;
+      font-size: .9em;
       width: calc(100% / 6);
       line-height: 16px;
     }

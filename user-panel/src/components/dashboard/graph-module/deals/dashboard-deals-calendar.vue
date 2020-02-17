@@ -151,7 +151,7 @@ export default {
     & .nav-item {
       color: #fff;
       font-weight: bold;
-      font-size: 1em;
+      font-size: .9em;
       background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: grey; stroke-width: 1;'/></svg>");
       border-collapse: collapse;
       text-align: center;

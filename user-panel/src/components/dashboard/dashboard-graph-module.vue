@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard-graph-module">
+  <div class="dashboard-graph-module" ref="dashboardGraphModuleRef">
     <div class="toolbar">
       <div class="maintoolbar">
         <transition-group name="fade" mode="out-in">
@@ -28,7 +28,7 @@
       </transition-group>
     </div>
     <transition name="scaleY" mode="out-in">
-      <component :is="currentActiveModule" :minitoolbar="miniToolbar[currentActiveMiniToolbar]"></component>
+      <component :is="currentActiveModule" class="module-component" :minitoolbar="miniToolbar[currentActiveMiniToolbar]"></component>
     </transition>
   </div>
 </template>
@@ -43,6 +43,7 @@ export default {
   components: {
     dashboardGraph, dashboardDecisions, dashboardDeals
   },
+  props: ["height"],
   data() {
     return {
       mainToolbar: [
@@ -114,6 +115,9 @@ export default {
       currentActiveMiniToolbar: 'dashboardGraphMiniToolbar'
     }
   },
+  mounted() {
+    this.$emit("heightComputed", this.$refs.dashboardGraphModuleRef.clientHeight)
+  },
   methods: {
     moduleChanger(btn) {
       this.currentActiveModule = btn.module
@@ -136,10 +140,10 @@ export default {
 <style lang="scss">
   .dashboard-graph-module {
     background: #24303C;
-    margin: 20px 0px 0px 140px;
+    margin: 10px 0px 0px 140px;
     position: relative;
     border-radius: 3px;
-    padding: 20px 30px 10px 30px;
+    padding: 10px 30px 5px 30px;
     transition-duration: .5s;
     & * {
       font-family: "Exo 2", sans-serif;
@@ -203,6 +207,30 @@ export default {
       }
     }
   }
+  // @media screen and (min-width: 830px) {
+    .dashboard-graph-module {
+      overflow-y: auto;
+    }
+    .dashboard-graph-module::-webkit-scrollbar{
+      background: rgba(30, 44, 61, 0.7);
+      border-radius: 5px;
+      width: 8px;
+    }
+    .dashboard-graph-module::-webkit-scrollbar-thumb{
+      background: rgb(42, 59, 80);
+      border-radius: 5px;
+    } 
+  // }
+
+
+  // @media screen and (min-width: 830px) {
+  //   .module-component {
+  //     zoom: 50%;
+  //     & * {
+  //       zoom: 100%;
+  //     }
+  //   }
+  // }
   @media screen and (max-width: 1530px) {
     .maintoolbar {
       &-item {
