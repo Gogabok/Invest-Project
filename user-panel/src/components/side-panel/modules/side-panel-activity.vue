@@ -5,6 +5,7 @@
        v-for="item in nav"
        class="activity-nav-item"
        :class="item.isActive ? 'active' : ''"
+       :disabled="item.isActive"
        :key="item.title"
        @click.prevent="activityNavSelector(item)"
        >

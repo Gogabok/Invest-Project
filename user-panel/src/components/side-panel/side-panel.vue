@@ -1,12 +1,12 @@
 <template>
   <div class="side-panel" ref="sidePanel">
     <side-panel-nav
-      :style="`height: ${height.nav}px`"
+      
       ref="sidePanelNav"
       @selecting="modulesSelecting"
     ></side-panel-nav>
     <transition name="scaleY" mode="out-in">
-      <component :style="`height: ${height.module}px`" ref="sidePanelModule" :is="currentModule"></component>
+      <component ref="sidePanelModule" class="side-panel-height" :is="currentModule"></component>
     </transition>
   </div>
 </template>
@@ -36,20 +36,20 @@ export default {
       this.currentModule = newComponent
     }
   },
-  updated() {
-    if(this.$refs.sidePanelNav.$refs && document.body.clientWidth > 1250) {
-      this.height.sidePanel = this.$refs.sidePanel.clientHeight
-      this.height.nav = this.$refs.sidePanelNav.$refs.sidePanelNav.clientHeight
-      this.height.module = this.$refs.sidePanel.clientHeight - this.height.nav
-      // console.log(this.$refs.sidePanelNav.$refs.sidePanelNav.clientHeight, this.$refs.sidePanelModule.$refs.sidePanelModule.clientHeight, this.$refs.sidePanel.clientHeight)
-    }
-  },
+  // updated() {
+  //   if(this.$refs.sidePanelNav.$refs && document.body.clientWidth > 1250) {
+  //     this.height.sidePanel = this.$refs.sidePanel.clientHeight
+  //     this.height.nav = this.$refs.sidePanelNav.$refs.sidePanelNav.clientHeight
+  //     this.height.module = this.$refs.sidePanel.clientHeight - this.height.nav
+  //     console.log(this.$refs.sidePanelNav.$refs.sidePanelNav.clientHeight, this.$refs.sidePanelModule.$refs.sidePanelModule.clientHeight, this.$refs.sidePanel.clientHeight)
+  //   }
+  // },
 }
 </script>
 
 <style lang="scss">
   .side-panel {
-    height: 100vh;
+    height: 100%;
     background: #24303C;
     max-width: 991px !important;
     width: 100%;

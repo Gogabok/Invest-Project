@@ -30,9 +30,6 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-body {
-	line-height: 1;
-}
 
 ol, ul {
 	list-style: none;
@@ -234,7 +231,22 @@ select {
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-
+ html {
+  /* position:relative;
+  min-height: 100%; */
+  overflow-y: scroll;
+}
+body {
+  height:100%;
+  max-height: 100%;
+}
+html::-webkit-scrollbar{
+  background: rgba(30, 44, 61, 0.7);
+  width: 8px;
+}
+html::-webkit-scrollbar-thumb{
+  background: rgb(42, 59, 80);
+} 
 button,
 html input[type="button"], /* 1 */
 input[type="reset"],

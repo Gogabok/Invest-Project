@@ -3,7 +3,8 @@
     <div class="dashboard-user-area" ref="dashboardUserArea">
       <v-nav class="v-nav"></v-nav>
       <dashboard-cards class="common-dashboard-padding"></dashboard-cards>
-      <dashboard-graph-module :height="height" @heightComputed="heightComputed" :style="styleModule"></dashboard-graph-module>
+      <!-- <dashboard-graph-module @heightComputed="heightCalculation"></dashboard-graph-module> -->
+      <dashboard-graph-module></dashboard-graph-module>
     </div>
     <div class="side-panel-area">
       <side-panel></side-panel>
@@ -23,23 +24,16 @@ export default {
     VNav, dashboardCards, dashboardGraphModule, sidePanel
   },
   data: () => ({
-    styleModule: null,
-    height: null
+
   }),
-  mounted() {
-    let sideHeight = this.$refs.dashboardUserArea.clientHeight
-    if(sideHeight > document.body.clientHeight && document.body.clientWidth > 830) {
-      let newModuleHeight = sideHeight - this.height - 20
-      this.styleModule = {
-        "max-height": `${newModuleHeight}px`
-      }
-    }
-  },
   methods: {
-    heightComputed(value) {
-      console.log(value);
-      
-      this.height = value
+    heightCalculation() {
+      setTimeout(() => {
+        let sideHeight = this.$refs.dashboardUserArea.clientHeight
+        if(sideHeight > document.body.clientHeight && document.body.clientWidth > 830) {
+          // document.getElementsByClassName("main-app-container")[0].style.overflow = "auto"
+        }
+      }, 1000);
     }
   }
 };
@@ -48,8 +42,11 @@ export default {
 <style lang="scss">
 .dashboard {
   display: flex;
-  align-items: flex-start;
+  // align-items: stretch;
   justify-content: space-between;
+  // height: 100%;
+  // min-height: 100%;
+  overflow: hidden;
   & * {
     box-sizing: border-box;
   }
@@ -236,7 +233,7 @@ export default {
 }
 
 .scaleY-group-enter-active, .scaleY-group-leave-active {
-  transition-duration: .3s;
+  transition-duration: .5s;
 }
 
 .scaleY-group-leave-active {

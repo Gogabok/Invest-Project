@@ -43,7 +43,6 @@ export default {
   components: {
     dashboardGraph, dashboardDecisions, dashboardDeals
   },
-  props: ["height"],
   data() {
     return {
       mainToolbar: [
@@ -117,6 +116,11 @@ export default {
   },
   mounted() {
     this.$emit("heightComputed", this.$refs.dashboardGraphModuleRef.clientHeight)
+  },
+  watch: {
+    currentActiveModule: function () {
+      this.$emit("heightComputed", this.$refs.dashboardGraphModuleRef.clientHeight)
+    }
   },
   methods: {
     moduleChanger(btn) {
@@ -210,6 +214,8 @@ export default {
   // @media screen and (min-width: 830px) {
     .dashboard-graph-module {
       overflow-y: auto;
+      min-height: 400px;
+      margin-bottom: 40px;
     }
     .dashboard-graph-module::-webkit-scrollbar{
       background: rgba(30, 44, 61, 0.7);
@@ -221,8 +227,6 @@ export default {
       border-radius: 5px;
     } 
   // }
-
-
   // @media screen and (min-width: 830px) {
   //   .module-component {
   //     zoom: 50%;

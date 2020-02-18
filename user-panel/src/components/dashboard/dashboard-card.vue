@@ -43,7 +43,8 @@ export default {
       color: #fff;
       font-size: 1.7em;
       font-weight: 400;
-      max-width: 40%;
+      // max-width: 40%;
+      display: inline-block;
       padding: 8px 30px;
       margin: 12px 0px;
     }
