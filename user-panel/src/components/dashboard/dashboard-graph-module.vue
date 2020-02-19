@@ -215,7 +215,7 @@ export default {
     .dashboard-graph-module {
       overflow-y: auto;
       min-height: 400px;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
     }
     .dashboard-graph-module::-webkit-scrollbar{
       background: rgba(30, 44, 61, 0.7);

@@ -39,9 +39,9 @@ export default {
   computed: {
     menuStyle() {
       if (document.body.clientWidth > 830) {
-        return `opacity: 1; max-height: 100%; padding: 5px;`;
+        return `opacity: 1; max-height: 100%; padding: 5px; pointer-events: all;`;
       } else {
-        return this.isMenuOpen ? `opacity: 1; max-height: 100%; padding: 5px;` : "";
+        return this.isMenuOpen ? `opacity: 1; max-height: 100%; padding: 5px; pointer-events: all;` : "";
       }
     }
   },
@@ -174,6 +174,7 @@ export default {
     flex-wrap: wrap;
     padding: 0px;
     height: 100%;
+    pointer-events: none;
   }
   .common-dashboard-padding {
     padding-top: 0px !important;

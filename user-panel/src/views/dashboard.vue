@@ -23,18 +23,16 @@ export default {
   components: {
     VNav, dashboardCards, dashboardGraphModule, sidePanel
   },
-  data: () => ({
-
-  }),
+  
   methods: {
-    heightCalculation() {
-      setTimeout(() => {
-        let sideHeight = this.$refs.dashboardUserArea.clientHeight
-        if(sideHeight > document.body.clientHeight && document.body.clientWidth > 830) {
-          // document.getElementsByClassName("main-app-container")[0].style.overflow = "auto"
-        }
-      }, 1000);
-    }
+    // heightCalculation() {
+    //   setTimeout(() => {
+    //     let sideHeight = this.$refs.dashboardUserArea.clientHeight
+    //     if(sideHeight > document.body.clientHeight && document.body.clientWidth > 830) {
+    //       document.getElementsByClassName("main-app-container")[0].style.overflow = "auto"
+    //     }
+    //   }, 1000);
+    // }
   }
 };
 </script>
