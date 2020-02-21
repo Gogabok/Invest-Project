@@ -277,4 +277,9 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 500px) {
+    .dashboard-graph-module { 
+      min-height: auto;
+    }
+  }
 </style>

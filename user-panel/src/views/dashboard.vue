@@ -17,13 +17,14 @@ import VNav from '@/components/header/index';
 import dashboardCards from '@/components/dashboard/dashboard-cards'
 import dashboardGraphModule from '@/components/dashboard/dashboard-graph-module'
 import sidePanel from '@/components/side-panel/side-panel'
-
 export default {
   name: 'dashboard',
   components: {
     VNav, dashboardCards, dashboardGraphModule, sidePanel
   },
-  
+  mounted() {
+    console.log(this.$store.state.modalStore.sec)
+  },
   methods: {
     // heightCalculation() {
     //   setTimeout(() => {
