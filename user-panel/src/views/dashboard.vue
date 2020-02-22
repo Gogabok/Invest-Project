@@ -22,9 +22,6 @@ export default {
   components: {
     VNav, dashboardCards, dashboardGraphModule, sidePanel
   },
-  mounted() {
-    console.log(this.$store.state.modalStore.sec)
-  },
   methods: {
     // heightCalculation() {
     //   setTimeout(() => {

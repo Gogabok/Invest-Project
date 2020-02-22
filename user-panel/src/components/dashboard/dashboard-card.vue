@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-card">
     <p class="dashboard-card-title"><slot></slot></p>
-    <div class="v-dashboard-card-extraDots">
+    <div class="v-dashboard-card-extraDots" @click="openMiniModal">
       <span class="v-dashboard-card-extraDots-item"></span>
       <span class="v-dashboard-card-extraDots-item"></span>
     </div>
@@ -11,6 +11,15 @@
     <div class="extraInfo">
       {{ extraInfo }}
     </div>
+    <transition name="scaleY" mode="out-in">
+      <div class="card-modal" v-show="miniModals[modal].isActive">
+        <div class="list">
+          <p @click="openModal(item.link)" class="item" v-for="item in miniModals[modal].list" :key="item.link + modal">
+            {{ item.title }}
+          </p>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -18,8 +27,56 @@
 export default {
   name: 'dashboard-card',
   props: [
-    'balance', 'extraInfo'
-  ]
+    'balance', 'extraInfo', 'modal'
+  ],
+  data: () => ({
+    miniModals: {
+      invest: {
+        isActive: false,
+        list: [
+          {
+            title: 'Внести депозит',
+            link: 'deposit'
+          },
+          {
+            title: 'Внести деньги',
+            link: 'money'
+          }
+        ]
+      },
+      dividend: {
+        isActive: false,
+        list: [
+          {
+            title: 'Автовывод',
+            link: 'output'
+          }
+        ]
+      },
+      parther: {
+        isActive: false,
+        list: [
+          {
+            title: 'Реферальная ссылка',
+            link: 'referral'
+          },
+          {
+            title: 'Промоматериалы',
+            link: 'promo'
+          }
+        ]
+      }
+    }
+  }),
+  methods: {
+    openMiniModal () {
+      this.miniModals[this.modal].isActive = !this.miniModals[this.modal].isActive
+    },
+    openModal (link) {
+      this.miniModals[this.modal].isActive = false
+      alert("Открыть модальное окно: " + link)
+    }
+  }
 }
 </script>
 
@@ -72,6 +129,28 @@ export default {
       }
     }
   }
+  .card-modal {
+    position: absolute;
+    top: 40px;
+    right: -30px;
+    background: #2E3C3E;
+    z-index: 999;
+    border-radius: 3px;
+    & .list {
+      & .item {
+        padding: 5px 15px;
+        color: #fff;
+        font-size: 1.1em;
+        cursor: pointer;
+        user-select: none;
+        width: 100%;
+        transition-duration: .3s;
+        &:hover {
+          background: #379A1D;
+        }
+      }
+    }
+  }
   @media screen and (max-width: 1530px) {
     .dashboard-card {
       padding: 10px 0px;
@@ -90,6 +169,12 @@ export default {
         font-size: 1em;
         padding: 0px 15px;
       }
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .card-modal {
+      right: 0px;
+      top: 41px;
     }
   }
   @media screen and (max-width: 650px) {

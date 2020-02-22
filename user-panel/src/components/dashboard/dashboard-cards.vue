@@ -2,17 +2,20 @@
   <div class="dashboard-cards">
     <dashboard-card 
                     :balance="investBalance"
+                    :modal="`invest`"
     >
     Инвестиции
     </dashboard-card>
     <dashboard-card 
                     :balance="dividendBalance"
                     :extraInfo="'от 5% до 15% в месяц'"
+                    :modal="`dividend`"
     >
     Дивиденды
     </dashboard-card>
     <dashboard-card 
                     :balance="partherBalance"
+                    :modal="`parther`"
     >
     Партнерство
     </dashboard-card>
