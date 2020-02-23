@@ -3,17 +3,27 @@
     <!-- <div class="main-app-container"> -->
       <router-view/>
     <!-- </div> -->
+    <div class="modal-folder" v-show="this.$store.state.modalStore.modals.length > 0">
+      <modal></modal>
+    </div>
   </div>
 </template>
 
 <script>
+import modal from "@/components/modals/modal"
 export default {
   name: 'App',
+  components: {
+    modal
+  }
 };
 </script>
 
 
 <style lang="scss">
+html {
+  // overflow-y: scroll;
+}
 #app {
   // height: 100%;
   background: #20272B;

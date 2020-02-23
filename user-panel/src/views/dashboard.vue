@@ -253,4 +253,16 @@ export default {
 .fade-group-leave-active {
   display: none !important;
 }
+
+
+.fade-group-faster-enter, .fade-group-faster-leave-to {
+  opacity: 0;
+}
+.fade-group-faster-enter-active, .fade-group-faster-leave-active {
+  transition-duration: .5s;
+}
+
+.fade-group-faster-leave-active {
+  display: none !important;
+}
 </style>

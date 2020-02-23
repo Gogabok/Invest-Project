@@ -10,7 +10,7 @@
         <!-- {{ miniModals[modal].list[0].title }} -->
         <div class="list">
           <p
-            @click="openModal(item.link)"
+            @click="openModal(item)"
             class="item"
             v-for="item in modal.list"
             :key="item.link"
@@ -43,9 +43,9 @@ export default {
     openMiniModal () {
       this.modal.isActive = !this.modal.isActive
     },
-    openModal (link) {
+    openModal (payload) {
       this.modal.isActive = false
-      alert("Открыть модальное окно: " + link)
+      this.$store.dispatch("modalStore/ADD_MODAL", payload)
     }
   },
 };
@@ -82,7 +82,7 @@ export default {
   position: absolute;
   top: 30px;
   right: -50px;
-  background: #2e3c3e;
+  background: #2E3C3E;
   z-index: 999;
   border-radius: 3px;
   & .list {

@@ -14,7 +14,7 @@
     <transition name="scaleY" mode="out-in">
       <div class="card-modal" v-show="miniModals[modal].isActive">
         <div class="list">
-          <p @click="openModal(item.link)" class="item" v-for="item in miniModals[modal].list" :key="item.link + modal">
+          <p @click="openModal(item)" class="item" v-for="item in miniModals[modal].list" :key="item.link + modal">
             {{ item.title }}
           </p>
         </div>
@@ -72,9 +72,9 @@ export default {
     openMiniModal () {
       this.miniModals[this.modal].isActive = !this.miniModals[this.modal].isActive
     },
-    openModal (link) {
+    openModal (payload) {
       this.miniModals[this.modal].isActive = false
-      alert("Открыть модальное окно: " + link)
+      this.$store.dispatch("modalStore/ADD_MODAL", payload)
     }
   }
 }
