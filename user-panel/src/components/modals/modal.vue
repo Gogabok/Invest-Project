@@ -3,7 +3,7 @@
     <div class="modal" v-for="(modal, index) in this.$store.state.modalStore.modals" :key="modal.component + index">
       <img ondragstart="return false;" @click="deleteModal(modal, index)" class="modal-close" src="../../assets/modals/close.svg" alt="">
       <div class="modal-wrapper">
-        <component :is="`modal-${modal.component}`"></component>
+        <component :modal="modal" :is="`modal-${modal.component}`"></component>
       </div>
     </div>
   </transition-group>
@@ -20,7 +20,9 @@ export default {
   mounted() {
     document.getElementsByTagName('html')[0].style.overflow = "hidden"
     document.getElementsByTagName('html')[0].style.paddingRight = "8px"
-    document.getElementsByClassName("navigation")[0].style.width = "calc(100% - 8px)"
+    if(document.body.clientWidth < 830) {
+      document.getElementsByClassName("navigation")[0].style.width = "calc(100% - 8px)"
+    }
     let overlay = document.getElementsByClassName("modal-overlay")[0]
     overlay.addEventListener("mousedown", function (e) {
       if(e.target === overlay) {
@@ -63,7 +65,10 @@ export default {
     width: 100%;
     height: 100%;
     padding: 60px;
-    box-sizing: border-box
+    box-sizing: border-box;
+    & * {
+
+    }
   }
   .modal-close {
     position: absolute;

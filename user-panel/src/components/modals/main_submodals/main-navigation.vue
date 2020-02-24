@@ -1,34 +1,106 @@
 <template>
   <div class="main-navigation">
-    312
+    <div class="list">
+      <div @click="selecting(item)" class="item" :class="item.isActive ? 'active' : ''" v-for="item in nav" :key="item.link">
+        {{ item.title }}
+        <img ondragstart="return false;" v-show="item.isActive" src="@/assets/common/arrow-right-gray.svg" alt="">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: ["activeNavItem"],
   data: () => ({
     nav: [
       {
         title: "Профиль", 
-        link: "profile"
+        link: "profile",
+        isActive: false
       },
       {
         title: "Безопасность", 
-        link: "secure"
+        link: "secure",
+        isActive: false
       },
       {
         title: "Настройки", 
-        link: "settings"
+        link: "settings",
+        isActive: false
       },
       {
         title: "Моб. приложение", 
-        link: "app"
+        link: "app",
+        isActive: false
       },
     ]
-  })
+  }),
+  mounted() {
+    this.nav.forEach(item => {
+      if(item.link === this.activeNavItem) {
+        item.isActive = true
+      } else {
+        item.isActive = false
+      }
+    })
+  },
+  methods: {
+    selecting (payload) {
+      this.nav.forEach(item => {
+        if(item.link === payload.link) {
+          if(!item.isActive) {
+
+            console.log("Активный модуль в главном модальном окне: " + payload.link)
+
+            item.isActive = true
+          } else {
+            return false
+          }
+        } else {
+          item.isActive = false
+        }
+      })
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  
+  .main-navigation {
+    max-width: 250px;
+    border-right: 2px solid #E4E4E4;
+    height: 100%;
+    & .list {
+      padding: 20px 0px 20px 0px;
+      & .item {
+        padding: 20px 20px;
+        width: 100%;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: transparent;
+        transition: background .3s;
+        user-select: none;
+        & img {
+          width: 10px;
+          pointer-events: none;
+          user-select: none;
+        }
+        &:nth-child(2) {
+          border-bottom: 2px solid #E4E4E4;
+          border-top: 2px solid #E4E4E4;
+        }
+        &:nth-child(3) {
+          border-bottom: 2px solid #E4E4E4;
+        }
+        &.active {
+          background: #E4E4E4;
+          font-weight: 600;
+        }
+      }
+    }
+  }
 </style>

@@ -43,9 +43,10 @@ export default {
   // height: 100%;
   // min-height: 100%;
   overflow: hidden;
-  & * {
-    box-sizing: border-box;
-  }
+  // & * {
+  //   box-sizing: border-box;
+  //   font-family: "Exo 2", sans-serif;
+  // }
 }
 .dashboard-user-area {
   width: 60%;

@@ -27,6 +27,10 @@ html {
 #app {
   // height: 100%;
   background: #20272B;
+  & * {
+    box-sizing: border-box;
+    font-family: "Exo 2", sans-serif;
+  }
 }
 .main-app-container {
   min-height: 100vh;

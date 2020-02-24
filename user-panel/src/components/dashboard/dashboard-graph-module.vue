@@ -149,9 +149,6 @@ export default {
     border-radius: 3px;
     padding: 10px 30px 5px 30px;
     transition-duration: .5s;
-    & * {
-      font-family: "Exo 2", sans-serif;
-    }
   }
   .toolbar {
     display: flex;
