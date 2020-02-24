@@ -3,20 +3,26 @@
     <div class="modal" v-for="(modal, index) in this.$store.state.modalStore.modals" :key="modal.component + index">
       <img ondragstart="return false;" @click="deleteModal(modal, index)" class="modal-close" src="../../assets/modals/close.svg" alt="">
       <div class="modal-wrapper">
-        {{ modal }}
+        <component :is="`modal-${modal.component}`"></component>
       </div>
     </div>
   </transition-group>
 </template>
 
 <script>
+import modalMain from "@/components/modals/main-modal"
 import store from '@/store'
 export default {
   name: "main-modal",
+  components: {
+    modalMain
+  },
   mounted() {
     document.getElementsByTagName('html')[0].style.overflow = "hidden"
+    document.getElementsByTagName('html')[0].style.paddingRight = "8px"
+    document.getElementsByClassName("navigation")[0].style.width = "calc(100% - 8px)"
     let overlay = document.getElementsByClassName("modal-overlay")[0]
-    overlay.addEventListener("click", function (e) {
+    overlay.addEventListener("mousedown", function (e) {
       if(e.target === overlay) {
         store.dispatch("modalStore/DELETE_ALL_MODALS")
       }
@@ -24,6 +30,8 @@ export default {
   },
   destroyed() {
     document.getElementsByTagName('html')[0].style.overflowY = "scroll"
+    document.getElementsByTagName('html')[0].style.paddingRight = "0px"
+    document.getElementsByClassName("navigation")[0].style.width = "100%"
   },
   methods: {
     deleteModal (modal, index) {
@@ -54,13 +62,13 @@ export default {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 60px;
     box-sizing: border-box
   }
   .modal-close {
     position: absolute;
-    right: -20px;
-    top: -10px;
+    right: 20px;
+    top: 30px;
     cursor: pointer;
     user-select: none;
   }

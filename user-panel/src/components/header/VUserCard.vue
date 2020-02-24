@@ -30,11 +30,13 @@ export default {
       list: [
         {
           title: "Редактировать",
-          link: "edit"
+          link: "main",
+          sublink: "profile"
         },
         {
           title: "Выйти",
-          link: "exit"
+          link: "exit",
+          sublink: "profile"
         }
       ]
     }

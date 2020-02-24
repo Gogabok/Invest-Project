@@ -14,7 +14,8 @@ export default {
     addModal(state, payload) {
       state.modals.push(
         {
-          component: payload.link
+          component: payload.link,
+          subModal: payload.sublink
         }
       )
     },

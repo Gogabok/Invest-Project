@@ -39,9 +39,9 @@ export default {
   computed: {
     menuStyle() {
       if (document.body.clientWidth > 830) {
-        return `opacity: 1; max-height: 100%; padding: 5px; pointer-events: all;`;
+        return `opacity: 1; max-height: 100%; pointer-events: all;`;
       } else {
-        return this.isMenuOpen ? `opacity: 1; max-height: 100%; padding: 5px; pointer-events: all;` : "";
+        return this.isMenuOpen ? `opacity: 1; max-height: 100%; pointer-events: all;` : "";
       }
     }
   },
@@ -54,7 +54,7 @@ export default {
   padding: 20px 0px;
   display: flex;
   align-items: center;
-  transition-duration: 0.5s;
+    transition: opacity .5s;
   & * {
     font-family: "Exo 2";
     user-select: none;
@@ -164,7 +164,7 @@ export default {
     top: 0px;
     padding: 10px 20px !important;
     background: #20272b;
-    transition-duration: .5s;
+    transition: opacity .5s;
   }
   .navigation-wrapper {
     // display: none;

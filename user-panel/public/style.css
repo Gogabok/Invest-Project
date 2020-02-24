@@ -234,8 +234,9 @@ select {
  html {
   /* position:relative;
   min-height: 100%; */
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   min-height: 100vh;
+  background: #20272B;
 }
 body {
   height:100%;

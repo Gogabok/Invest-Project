@@ -1,6 +1,8 @@
 <template>
   <div class="dashboard-graph">
-    <canvas ref="canvas"></canvas>
+    <div class="dashboard-graph-zone">
+      <canvas ref="canvas"></canvas>
+    </div>
   </div>
 </template>
 
@@ -112,5 +114,22 @@ export default {
     width: 100%;
     max-width: 1200px;
     margin: 0px auto;
+  }
+  @media screen and (max-width: 652px) {
+    .dashboard-graph-zone {
+      width: 700px;
+    }
+    .dashboard-graph {
+      overflow-x: auto;
+    }
+    .dashboard-graph::-webkit-scrollbar {
+      background: rgba(30, 44, 61, 0.7);
+      border-radius: 5px;
+      height: 5px;
+    }
+    .dashboard-graph::-webkit-scrollbar-thumb {
+      background: #2a3b50;
+      border-radius: 5px;
+    }
   }
 </style>

@@ -75,7 +75,8 @@ export default {
     this.$refs.progressBar.style.strokeDasharray = fullLength;
     this.getTargets();
     setTimeout(() => {
-      this.$refs.frame.style.opacity = 1;
+      this.$refs.frame ? this.$refs.frame.style.opacity = 1 : false
+      
     }, 100);
     // Таймаут 300 просто для анимации
     setTimeout(() => {
