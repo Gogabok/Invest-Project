@@ -61,10 +61,7 @@ export default {
       this.nav.forEach(item => {
         if (item.link === payload.link) {
           if (!item.isActive) {
-            console.log(
-              "Активный модуль в главном модальном окне: " + payload.link
-            );
-
+            this.$emit("selecting", payload)
             item.isActive = true;
           } else {
             return false;
@@ -80,9 +77,10 @@ export default {
 
 <style lang="scss" scoped>
 .main-navigation {
-  max-width: 250px;
+  max-width: 230px;
   border-right: 2px solid #e4e4e4;
   height: 100%;
+  width: 100%;
   & .list {
     padding: 20px 0px 20px 0px;
     & .item {

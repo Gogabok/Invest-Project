@@ -244,6 +244,16 @@ export default {
   transition-duration: .5s;
 }
 
+
+.fade-faster-enter, .fade-faster-leave-to {
+  opacity: 0;
+}
+.fade-faster-enter-active, .fade-faster-leave-active {
+  transition-duration: .2s;
+}
+
+
+
 .fade-group-enter, .fade-group-leave-to {
   opacity: 0;
 }
