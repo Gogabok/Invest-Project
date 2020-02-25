@@ -1,9 +1,8 @@
 <template>
   <transition-group name="fade-group-faster" tag="div" class="modal-overlay">
     <div class="modal" v-for="(modal, index) in this.$store.state.modalStore.modals" :key="modal.component + index">
-      <img ondragstart="return false;" @click="deleteModal(modal, index)" class="modal-close" src="../../assets/modals/close.svg" alt="">
       <div class="modal-wrapper">
-        <component :modal="modal" :is="`modal-${modal.component}`"></component>
+        <component @deleteModal="deleteModal" :modal="modal" :index="index" :is="`modal-${modal.component}`"></component>
       </div>
     </div>
   </transition-group>
@@ -36,8 +35,8 @@ export default {
     document.getElementsByClassName("navigation")[0].style.width = "100%"
   },
   methods: {
-    deleteModal (modal, index) {
-      this.$store.dispatch("modalStore/DELETE_MODAL", {modal: modal, index: index})
+    deleteModal (payload) {
+      this.$store.dispatch("modalStore/DELETE_MODAL", {modal: payload.modal, index: payload.index})
     },
   }
 }
@@ -54,6 +53,7 @@ export default {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: 9999;
+    padding: 60px;
   }
   .modal {
     max-width: 1000px;
@@ -64,15 +64,7 @@ export default {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    padding: 60px;
     box-sizing: border-box;
-  }
-  .modal-close {
-    position: absolute;
-    right: 20px;
-    top: 30px;
-    cursor: pointer;
-    user-select: none;
   }
   .modal-wrapper {
     background: #fff;
@@ -91,7 +83,7 @@ export default {
     border-radius: 5px;
   } 
   @media screen and (max-width: 630px) {
-    .modal {
+    .modal-overlay {
       padding: 50px 5px 10px 5px;
     }
     .modal-close {
