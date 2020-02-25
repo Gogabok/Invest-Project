@@ -66,9 +66,6 @@ export default {
     height: 100%;
     padding: 60px;
     box-sizing: border-box;
-    & * {
-
-    }
   }
   .modal-close {
     position: absolute;
@@ -83,5 +80,30 @@ export default {
     border-radius: 5px;
     width: 100%;
     height: 100%;
+    overflow-y: auto;
+  }
+  .modal-wrapper::-webkit-scrollbar{
+    background: #E4E4E4;
+    width: 8px;
+  }
+  .modal-wrapper::-webkit-scrollbar-thumb{
+    background: rgba(45, 45, 45, .7);
+    border-radius: 5px;
+  } 
+  @media screen and (max-width: 630px) {
+    .modal {
+      padding: 50px 5px 10px 5px;
+    }
+    .modal-close {
+      top: 15px;
+      right: 10px;
+    }
+    .modal-wrapper {
+      max-height: 100%;
+      overflow-y: auto;
+    }
+    .modal-overlay {
+      background: rgba(0, 0, 0, 0.9);
+    }
   }
 </style>
