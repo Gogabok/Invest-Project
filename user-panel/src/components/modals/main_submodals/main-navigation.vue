@@ -113,13 +113,19 @@ export default {
     }
   }
 }
-
+@media screen and (max-width: 800px) {
+    .main-navigation {
+      max-width: 100%;
+      height: auto;
+      & .list {
+        padding: 0px;
+      }
+    }
+  }
 @media screen and (max-width: 630px) {
   .main-navigation {
-    max-width: 170px;
     border-width: 1px;
     & .list {
-      padding: 10px 0px;
       & .item {
         font-size: 14px;
         padding: 10px;

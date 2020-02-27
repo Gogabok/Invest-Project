@@ -53,16 +53,25 @@ export default {
     overflow: hidden;
   }
   .main-modal-component {
-    padding: 15px 30px;
+    padding: 15px 20px;
     overflow-y: auto;
     max-height: 100%;
     width: 100%;
+    max-width: 100%;
   }
   .main-modal-component::-webkit-scrollbar{
     background: #E4E4E4;
     width: 8px;
   }
   .main-modal-component::-webkit-scrollbar-thumb{
+    background: rgba(45, 45, 45, .7);
+    border-radius: 5px;
+  } 
+  .main-modal::-webkit-scrollbar{
+    background: #E4E4E4;
+    width: 8px;
+  }
+  .main-modal::-webkit-scrollbar-thumb{
     background: rgba(45, 45, 45, .7);
     border-radius: 5px;
   } 
@@ -74,10 +83,25 @@ export default {
     user-select: none;
     z-index: 9999;
   }
+   @media screen and (max-width: 800px) {
+    .main-modal {
+      display: block;
+      overflow: auto;
+    }
+    .main-modal-component {
+      padding: 0px 10px 0px 10px;
+      max-height: none;
+      height:auto;
+      width: 100%;
+    }
+  }
   @media screen and (max-width: 630px) {
     .modal-close {
       top: -40px;
       right: 5px;
+    }
+    .main-modal-component {
+      padding: 0px;
     }
   }
 </style>
