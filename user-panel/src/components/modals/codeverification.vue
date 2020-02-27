@@ -70,6 +70,11 @@ export default {
   mounted() {
     setTimeout(() => {
       this.$refs['input_1'].focus();
+      for(let i = 1; i < this.inputs.length + 1; i++) {
+        this.$refs['input_' + i].addEventListener("focus", function (e) {
+          e.target.value = ''
+        })
+      }
     }, 1);
   },
   methods: {
@@ -77,11 +82,12 @@ export default {
       this.$emit("deleteModal", { modal, index });
     },
     changeInput: function(event, input){
-    	let val = event.target.value;
+      let val = event.target.value;
     	if(val.length >= 1) {
       	let next = this.$refs['input_' + (input+1)];
         if(next) {
-        	next.focus();
+          next.focus();
+          this.inputs[input] = ''
         } else {
         	event.preventDefault();
         }
