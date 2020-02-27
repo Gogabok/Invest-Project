@@ -6,7 +6,9 @@ export default {
     modals: [],
     codes: {
       email: false,
-      phone: false
+      phone: false, 
+      emailTwoFa: false,
+      phoneTwoFa: false
     }
   },
   getters: {

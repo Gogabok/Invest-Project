@@ -20,7 +20,6 @@ export default {
   }),
   methods: {
     selecting(payload) {
-      console.log(payload)
       this.activeComponent = payload.link
     }
   }
