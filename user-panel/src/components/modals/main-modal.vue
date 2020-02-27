@@ -101,6 +101,9 @@ export default {
       top: -40px;
       right: 10px;
     }
+    .main-modal {
+      max-height: 75vh;
+    }
   }
   @media screen and (max-width: 1000px) {
     .main-modal {

@@ -14,6 +14,7 @@
           type="text"
           placeholder="Ваше имя"
           :disabled="userData.name.isSaved"
+          maxlength="20"
         />
         <span
           v-show="userData.name.isExtraInfo && userData.name.value !== userData.name.oldValue && !userData.name.isSaved"
@@ -105,7 +106,7 @@
         </div>
         <img class="share" ondragstart="return false;" src="../../../../assets/modals/icon-share.svg" alt />
       </a>
-      <div class="input-container-text notLabel">
+      <div @click="changePassword" class="input-container-text notLabel">
         <div class="text-wrapper">
           <p class="title">Изменить пароль</p>
           <p class="desc">Сброс или изменение пароля.</p>
@@ -117,7 +118,7 @@
           alt
         />
       </div>
-      <div class="input-container-text notLabel">
+      <div @click="deleteAccount" class="input-container-text notLabel">
         <div class="text-wrapper">
           <p class="title">Удалить свою учетную запись</p>
           <p class="desc">Начать удаление учетной записи.</p>
@@ -226,6 +227,33 @@ export default {
       } else {
         alert("Пожалуйста, заполните поле");
       }
+    },
+    deleteAccount () {
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+        {
+          link: 'codeVerification',
+          info: {
+            input: 'deleteAccount',
+            title: 'Удаление учетной записи',
+            desc: 'Сделав запрос на эл. почту отправится подтверждение. Удаление возможно при балансе менее $15.',
+            btn: 'deleteAccount',
+            code: '0000'
+          }
+        }
+      )
+    },
+    changePassword () {
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+        {
+          link: 'codeVerification',
+          info: {
+            input: 'changePassword',
+            title: 'Восстановление/Изменение пароля',
+            desc: 'Сделав запрос на эл. почту отправится подтверждение, требуется перейти по ссылке в течении 24 часов.',
+            btn: 'changePassword'
+          }
+        }
+      )
     },
     acceptEmail() {
       this.$store.dispatch("modalStore/ADD_MODAL", 
@@ -350,7 +378,7 @@ export default {
   user-select: none;
   cursor: pointer;
   // margin: 15px 0px;
-  border-bottom: 2px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
   padding: 15px 20px;
   & .text-wrapper {
     width: 100%;
@@ -409,6 +437,9 @@ export default {
     background-color: #379a1d;
     border: 1px solid #c8c8c8;
   }
+}
+.main-modal-wrapper .notLabel:last-child {
+  border: none;
 }
 @media screen and (max-width: 630px) {
   .input-container {
