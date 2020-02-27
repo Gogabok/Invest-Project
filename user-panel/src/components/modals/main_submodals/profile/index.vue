@@ -13,9 +13,10 @@
           name="name"
           type="text"
           placeholder="Ваше имя"
+          :disabled="userData.name.isSaved"
         />
         <span
-          v-show="userData.name.isExtraInfo && userData.name.value !== userData.name.oldValue"
+          v-show="userData.name.isExtraInfo && userData.name.value !== userData.name.oldValue && !userData.name.isSaved"
           @click="save(`name`, userData.name.value)"
           class="save"
         >Сохранить</span>
@@ -32,19 +33,23 @@
           name="email"
           type="text"
           placeholder="Ваш email"
+          :disabled="userData.email.isAccepted"
         />
         <span
-          v-show="emailRegularTesting && !userData.email.isSaved"
+          v-show="emailRegularTesting && !userData.email.isSaved && !userData.email.isAccepted"
           @click="save('email', userData.email.value)"
           class="save"
         >
           Сохранить
         </span>
         <span
-          v-show="userData.email.isSaved"
+          v-show="userData.email.isSaved && !userData.email.isAccepted"
           @click="acceptEmail(`email`, userData.email.value)"
           class="accept"
         >Подтвердить</span>
+        <span class="ok" v-show="userData.email.isAccepted">
+          <img ondragstart="return false;" src="../../../../assets/common/ok.svg" alt="">
+        </span>
       </label>
       <label for="user-phone-input" class="input-container">
         <div class="img">
@@ -59,19 +64,23 @@
           name="phone"
           type="text"
           placeholder="Ваш телефон"
+          :disabled="userData.phone.isAccepted"
         />
         <span
-          v-show="phoneRegularTesting && !userData.phone.isSaved"
+          v-show="phoneRegularTesting && !userData.phone.isSaved && !userData.phone.isAccepted"
           @click="save('phone', userData.phone.value)"
           class="save"
         >
           Сохранить
         </span>
         <span
-          v-show="userData.phone.isSaved"
+          v-show="userData.phone.isSaved && !userData.phone.isAccepted"
           @click="acceptPhone(`phone`, userData.phone.value)"
           class="accept"
         >Подтвердить</span>
+        <span class="ok" v-show="userData.phone.isAccepted">
+          <img ondragstart="return false;" src="../../../../assets/common/ok.svg" alt="">
+        </span>
       </label>
       <label for="user-notification-input" class="input-container-text">
         <div class="text-wrapper">
@@ -132,19 +141,22 @@ export default {
       name: {
         oldValue: "",
         value: null,
-        isExtraInfo: false
+        isExtraInfo: false,
+        isSaved: false,
       },
       email: {
         oldValue: "",
         value: null,
         isExtraInfo: false,
-        isSaved: false
+        isSaved: false,
+        isAccepted: false
       },
       phone: {
         oldValue: "",
         value: null,
         isExtraInfo: false,
-        isSaved: false
+        isSaved: false,
+        isAccepted: false
       }
     }
   }),
@@ -179,6 +191,20 @@ export default {
       } else {
         return false;
       }
+    },
+    codeEmail: function () {
+      return this.$store.getters["modalStore/codes"].email
+    },
+    codePhone: function () {
+      return this.$store.getters["modalStore/codes"].phone
+    }
+  },
+  watch: {
+    codeEmail: function () {
+      this.userData.email.isAccepted = true
+    },
+    codePhone: function () {
+      this.userData.phone.isAccepted = true
     }
   },
   methods: {
@@ -192,17 +218,40 @@ export default {
       if (input && data) {
         if("isSaved" in this.userData[input]) {
           this.userData[input].isSaved = true
+          if(input === 'name') {
+
+          }
         }
-        alert(`Новое значение поля '${input}' - ${data}`);
+        console.log(`Новое значение поля '${input}' - ${data}`);
       } else {
         alert("Пожалуйста, заполните поле");
       }
     },
     acceptEmail() {
-      alert("Вызывается модальное окно с подтверждением почты");
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+        {
+          link: 'codeVerification',
+          info: {
+            input: 'email',
+            title: 'Запрос отправлен! Введите код из Email',
+            desc: 'Введите четырехзначный код, отправленный на Email',
+            code: '0000'
+          }
+        }
+      )
     },
     acceptPhone() {
-      alert("Вызывается модальное окно с подтверждением телефона");
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+        {
+          link: 'codeVerification',
+          info: {
+            input: 'phone',
+            title: 'Запрос отправлен! Введите код из SMS',
+            desc: 'Введите четырехзначный код отправленный на телефон.',
+            code: '1234'
+          }
+        }
+      )
     },
     validatingPhone() {
       this.userData.phone.isExtraInfo = true;
@@ -229,6 +278,11 @@ export default {
     width: 100%;
     text-align: center;
   }
+  & .ok img {
+    width: 25px;
+    margin: 0px 22px;
+    user-select: none;
+  }
   & img {
     margin: 0px 10px;
   }
@@ -243,6 +297,12 @@ export default {
     -webkit-box-shadow: inset 0 0 0 50px #fff;
     &::placeholder {
       color: rgba(112, 112, 112, 0.7);
+    }
+    &[disabled] {
+      opacity: 0.8;
+      user-select: none;
+      pointer-events: none;
+      cursor: default;
     }
   }
   & span.accept {

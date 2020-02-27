@@ -1,101 +1,119 @@
 <template>
   <transition-group name="fade-group-faster" tag="div" class="modal-overlay">
-    <div class="modal" v-for="(modal, index) in this.$store.state.modalStore.modals" :key="modal.component + index">
-      <div class="modal-wrapper">
-        <component @deleteModal="deleteModal" :modal="modal" :index="index" :is="`modal-${modal.component}`"></component>
-      </div>
+    <div
+      class="modal"
+      v-for="(modal, index) in this.$store.state.modalStore.modals"
+      :key="modal.component + index"
+    >
+      <!-- <div class="modal-wrapper"> -->
+      <component
+        @deleteModal="deleteModal"
+        :modal="modal"
+        :index="index"
+        :is="`modal-${modal.component}`"
+      ></component>
+      <!-- </div> -->
     </div>
   </transition-group>
 </template>
 
 <script>
-import modalMain from "@/components/modals/main-modal"
-import store from '@/store'
+import modalMain from "@/components/modals/main-modal";
+import modalCodeVerification from "@/components/modals/codeverification";
+import store from "@/store";
 export default {
   name: "main-modal",
   components: {
-    modalMain
+    modalMain,
+    modalCodeVerification
   },
   mounted() {
-    document.getElementsByTagName('html')[0].style.overflow = "hidden"
-    document.getElementsByTagName('html')[0].style.paddingRight = "8px"
-    if(document.body.clientWidth < 830) {
-      document.getElementsByClassName("navigation")[0].style.width = "calc(100% - 8px)"
+    document.getElementsByTagName("html")[0].style.overflow = "hidden";
+    document.getElementsByTagName("html")[0].style.paddingRight = "8px";
+    if (document.body.clientWidth < 830) {
+      document.getElementsByClassName("navigation")[0].style.width =
+        "calc(100% - 8px)";
     }
-    let overlay = document.getElementsByClassName("modal-overlay")[0]
-    overlay.addEventListener("mousedown", function (e) {
-      if(e.target === overlay) {
-        store.dispatch("modalStore/DELETE_ALL_MODALS")
+    let overlay = document.getElementsByClassName("modal-overlay")[0];
+    overlay.addEventListener("mousedown", function(e) {
+      if (e.target === overlay) {
+        store.dispatch("modalStore/DELETE_ALL_MODALS");
       }
-    })
+    });
   },
   destroyed() {
-    document.getElementsByTagName('html')[0].style.overflowY = "scroll"
-    document.getElementsByTagName('html')[0].style.paddingRight = "0px"
-    document.getElementsByClassName("navigation")[0].style.width = "100%"
+    document.getElementsByTagName("html")[0].style.overflowY = "scroll";
+    document.getElementsByTagName("html")[0].style.paddingRight = "0px";
+    document.getElementsByClassName("navigation")[0].style.width = "100%";
   },
   methods: {
-    deleteModal (payload) {
-      this.$store.dispatch("modalStore/DELETE_MODAL", {modal: payload.modal, index: payload.index})
-    },
+    deleteModal(payload) {
+      this.$store.dispatch("modalStore/DELETE_MODAL", {
+        modal: payload.modal,
+        index: payload.index
+      })
+    }
   }
-}
+};
 </script>
 
 
 <style lang="scss" scoped>
+.modal-overlay {
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  padding: 60px;
+}
+.modal {
+  // max-width: 1000px;
+  // max-height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // width: 100%;
+  // height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.modal-wrapper {
+  background: #fff;
+  border: 3px solid #e4e4e4;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  max-height: 700px;
+  max-width: 1000px;
+}
+.modal-wrapper::-webkit-scrollbar {
+  background: #e4e4e4;
+  width: 8px;
+}
+.modal-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(45, 45, 45, 0.7);
+  border-radius: 5px;
+}
+@media screen and (max-width: 630px) {
   .modal-overlay {
-    overflow: hidden;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
-    padding: 60px;
+    padding: 50px 0px 50px 0px;
   }
-  .modal {
-    max-width: 1000px;
-    max-height: 700px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+  .modal-close {
+    top: 15px;
+    right: 10px;
   }
   .modal-wrapper {
-    background: #fff;
-    border: 3px solid #E4E4E4;
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
+    max-height: 100%;
     overflow-y: auto;
   }
-  .modal-wrapper::-webkit-scrollbar{
-    background: #E4E4E4;
-    width: 8px;
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.9);
   }
-  .modal-wrapper::-webkit-scrollbar-thumb{
-    background: rgba(45, 45, 45, .7);
-    border-radius: 5px;
-  } 
-  @media screen and (max-width: 630px) {
-    .modal-overlay {
-      padding: 50px 5px 10px 5px;
-    }
-    .modal-close {
-      top: 15px;
-      right: 10px;
-    }
-    .modal-wrapper {
-      max-height: 100%;
-      overflow-y: auto;
-    }
-    .modal-overlay {
-      background: rgba(0, 0, 0, 0.9);
-    }
-  }
+}
 </style>

@@ -34,6 +34,9 @@ export default {
     },
     selecting (payload) {
       this.activeNavItem = payload.link
+    },
+    cons() {
+      console.log(1)
     }
   },
   created() {
@@ -49,8 +52,15 @@ export default {
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: flex-start;
-    overflow: hidden;
+    align-items: stretch;
+    // overflow: hidden;
+    background: #fff;
+    border: 3px solid #E4E4E4;
+    max-height: 700px;
+    max-width: 1000px;
+    border-radius: 5px;
+    margin: 0px auto;
+    position: relative;
   }
   .main-modal-component {
     padding: 15px 20px;
@@ -58,6 +68,7 @@ export default {
     max-height: 100%;
     width: 100%;
     max-width: 100%;
+    
   }
   .main-modal-component::-webkit-scrollbar{
     background: #E4E4E4;
@@ -82,11 +93,25 @@ export default {
     cursor: pointer;
     user-select: none;
     z-index: 9999;
+    width: 20px;
+    height: 20px;
+  }
+  @media screen and (max-width: 1100px) {
+    .modal-close {
+      top: -40px;
+      right: 10px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .main-modal {
+      max-width: calc(100% - 20px);
+    }
   }
    @media screen and (max-width: 800px) {
     .main-modal {
       display: block;
       overflow: auto;
+      position: static;
     }
     .main-modal-component {
       padding: 0px 10px 0px 10px;
@@ -96,10 +121,6 @@ export default {
     }
   }
   @media screen and (max-width: 630px) {
-    .modal-close {
-      top: -40px;
-      right: 5px;
-    }
     .main-modal-component {
       padding: 0px;
     }

@@ -3,11 +3,18 @@
 export default {
   namespaced: true,
   state: {
-    modals: []
+    modals: [],
+    codes: {
+      email: false,
+      phone: false
+    }
   },
   getters: {
     modals (state) {
       return state.modals
+    },
+    codes (state) {
+      return state.codes
     }
   },
   mutations: {
@@ -15,7 +22,8 @@ export default {
       state.modals.push(
         {
           component: payload.link,
-          subModal: payload.sublink
+          subModal: payload.sublink,
+          infoCodeVerification: payload.info
         }
       )
     },
@@ -24,6 +32,9 @@ export default {
     },
     deleteAllModals (state) {
       state.modals.splice(0, state.modals.length)
+    },
+    codeValidation (state, payload) {
+      state.codes[payload.info.input] = payload
     }
   },
   actions: {
@@ -35,6 +46,9 @@ export default {
     },
     DELETE_ALL_MODALS({ commit }) {
       commit("deleteAllModals")
+    },
+    SUCCESS_CODE_VALIDATION ({ commit }, payload) {
+      commit('codeValidation', payload)
     }
   }
 }
