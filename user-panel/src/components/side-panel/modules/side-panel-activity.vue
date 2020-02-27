@@ -50,7 +50,7 @@
           :page-range="3"
         ></paginate>
         <div class="dotted" />
-      </div>
+    </div>
   </div>
 </template>
 

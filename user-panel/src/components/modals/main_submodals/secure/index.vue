@@ -10,10 +10,11 @@
 <script>
 import vNav from "@/components/modals/main_submodals/secure/nav"
 import twoFa from "@/components/modals/main_submodals/secure/twoFa"
+import sessions from "@/components/modals/main_submodals/secure/sessions"
 export default {
   name: 'secure-main-modal',
   components: {
-    vNav, twoFa
+    vNav, twoFa, sessions
   },
   data: () => ({
     activeComponent: 'twoFa'
@@ -30,5 +31,10 @@ export default {
   .main-modal-wrapper {
     width: 80%;
     margin: 0px auto;
+  }
+  @media screen and (max-width: 630px) {
+    .main-modal-wrapper {
+      width: 100%;
+    }
   }
 </style>
