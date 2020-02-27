@@ -427,7 +427,6 @@ export default {
       -o-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
-      transition: opacity 0.2s;
     }
   }
   & input[type="checkbox"]:checked + label:after {
