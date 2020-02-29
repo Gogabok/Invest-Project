@@ -155,8 +155,6 @@ export default {
     }
   }
   .body-table {
-    height: 400px;
-    overflow-y: auto;
     & .row {
       display: flex;
       align-items: flex-start;

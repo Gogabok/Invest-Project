@@ -2,7 +2,9 @@
   <div class="secure-main-modal">
     <div class="main-modal-wrapper">
       <v-nav @selecting="selecting"></v-nav>
-      <component :is="activeComponent"></component>
+      <transition name="scaleY" mode="out-in">
+        <component :is="activeComponent"></component>
+      </transition>
     </div>
   </div>
 </template>
