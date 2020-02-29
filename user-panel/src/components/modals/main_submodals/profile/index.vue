@@ -377,10 +377,10 @@ export default {
   position: relative;
   user-select: none;
   cursor: pointer;
-  // margin: 15px 0px;
   border-bottom: 1px solid #e4e4e4;
   padding: 15px 20px;
   & .text-wrapper {
+    margin-right: 30px;
     width: 100%;
     & .title {
       color: #302d2b;
