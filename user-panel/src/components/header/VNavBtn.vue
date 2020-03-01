@@ -1,5 +1,5 @@
 <template>
-  <button :class="VClass" class="v-nav-btn">
+  <button @click="selecting(VClass)" :class="VClass" class="v-nav-btn">
     <slot></slot>
   </button>
 </template>
@@ -7,7 +7,13 @@
 <script>
 export default {
   name: 'v-nav-btn',
-  props: [ 'VClass' ]
+  props: [ 'VClass' ],
+  methods: {
+    selecting(payload) {
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+      {title: payload, link: payload})
+    }
+  }
 }
 </script>
 
@@ -25,16 +31,16 @@ export default {
 .invest {
   background: rgba(55, 154, 29, .7);
   border: 1px solid #fff;
-  // &:hover {
-  //   background: rgba(55, 154, 29, .1);
-  // }
+  &:hover {
+    background: rgba(55, 154, 29, .1);
+  }
 }
-.get {
+.output {
   background: rgba(55, 154, 29, .1);
   border: 1px solid #379A1D;
-  // &:hover {
-  //   border: 1px solid #fff; 
-  // }
+  &:hover {
+    border: 1px solid #fff; 
+  }
 }
 
 @media screen and (max-width: 1530px) {

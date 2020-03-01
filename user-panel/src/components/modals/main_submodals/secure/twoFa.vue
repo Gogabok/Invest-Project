@@ -5,7 +5,7 @@
       <input :ref="item.techLink" @click="selecting(item)" v-model="activeInput" :checked="item.isActivate" :value="item.techLink" type="radio" :id="item.techLink" name="security-input" />
       <label :for="item.techLink"></label>
     </label>
-    <div class="phoneSettings" v-if="phoneSettings.isShow">
+    <div class="phoneSettings" v-show="phoneSettings.isShow">
       <div class="item">
         <p class="title">Авторизация</p>
         <div class="toggle-wrapper">
@@ -178,6 +178,7 @@ export default {
     border-bottom: 1px solid #e4e4e4;
     padding: 20px 20px;
     color: rgba(48, 45, 43, .5);
+    transition-delay: .2s;
     transition-duration: .2s;
     &.active {
       color: rgba(48, 45, 43, 1);
@@ -235,6 +236,7 @@ export default {
   border-radius: 10px;
   padding: 10px 30px;
   margin: 20px auto 10px auto;
+    transition-delay: .2s;
   & .item {
     display: flex;
     align-items: center;

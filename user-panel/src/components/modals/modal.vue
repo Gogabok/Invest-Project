@@ -20,12 +20,14 @@
 <script>
 import modalMain from "@/components/modals/main-modal";
 import modalCodeVerification from "@/components/modals/codeverification";
+import modalOutput from "@/components/modals/output";
 import store from "@/store";
 export default {
   name: "main-modal",
   components: {
     modalMain,
-    modalCodeVerification
+    modalCodeVerification,
+    modalOutput
   },
   mounted() {
     document.getElementsByTagName("html")[0].style.overflow = "hidden";
@@ -113,7 +115,7 @@ export default {
     overflow-y: auto;
   }
   .modal-overlay {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
   }
 }
 </style>
