@@ -19,10 +19,10 @@
     </div>
     <div class="methods">
       <div class="list">
-        <div class="item">
-          <img ondragstart="return false;" src="../../../assets/common/method-advcash.svg" alt="">
+        <div :class="item.isActive ? 'active' : ''" @click="selecting(item)" class="item" v-for="item in paymentMethods" :key="item.link">
+          <img ondragstart="return false;" :src='`./assets/common/method-${item.link}.svg`' alt="">
         </div>
-        <div class="item">
+        <!-- <div class="item">
           <img ondragstart="return false;" src="../../../assets/common/method-perfectMoney.svg" alt="">
         </div>
         <div class="item">
@@ -30,7 +30,7 @@
         </div>
         <div class="item btc">
           <img ondragstart="return false;" src="../../../assets/common/method-btc.svg" alt="">
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -40,9 +40,35 @@
 export default {
   name: "modalOutputMethods",
   props: ["modal", "index"],
+  data: () => ({
+    paymentMethods: [
+      {
+        isActive: false,
+        link: 'advcash',
+      },
+      {
+        isActive: false,
+        link: 'perfectMoney',
+      },
+      {
+        isActive: false,
+        link: 'payeer',
+      },
+      {
+        isActive: false,
+        link: 'btc',
+      }
+    ]
+  }),
   methods: {
     deleteModal(modal, index) {
       this.$emit("deleteModal", { modal, index });
+    },
+    selecting(payload) {
+      this.paymentMethods.forEach(item => {
+        item.isActive = false
+      })
+      payload.isActive = true
     }
   }
 };
@@ -87,6 +113,17 @@ export default {
   & .methods {
     background: #fff;
     padding: 15px 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 40vh;
+    &::-webkit-scrollbar{
+      background: #E4E4E4;
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb{
+      background: rgba(45, 45, 45, .7);
+      border-radius: 5px;
+    } 
     & .list {
       display: flex;
       align-items: center;
@@ -101,6 +138,9 @@ export default {
         margin: 30px 0px;
         text-align: center;
         transform: scale(.7);
+        &.active {
+          transform: scale(1);
+        }
         &:hover {
           transform: scale(1);
         }
@@ -129,6 +169,31 @@ export default {
   .modal-close {
     right: 5px;
     top: -45px;
+  }
+  .output-modal {
+    max-width: calc(100% - 20px);
+    & .methods {
+      & .list {
+        flex-wrap: wrap;
+        justify-content: center;
+        & .item {
+          margin: 5px 5px;
+          transform: scale(.7);
+          width: calc(50% - 30px);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .output-modal {
+    & .methods {
+      & .list {
+        & .item {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 </style>
