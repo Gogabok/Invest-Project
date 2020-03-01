@@ -21,13 +21,15 @@
 import modalMain from "@/components/modals/main-modal";
 import modalCodeVerification from "@/components/modals/codeverification";
 import modalOutput from "@/components/modals/output";
+import modalMainMethodsOutput from "@/components/modals/output/mainMethodsOutput";
 import store from "@/store";
 export default {
   name: "main-modal",
   components: {
     modalMain,
     modalCodeVerification,
-    modalOutput
+    modalOutput,
+    modalMainMethodsOutput
   },
   mounted() {
     document.getElementsByTagName("html")[0].style.overflow = "hidden";

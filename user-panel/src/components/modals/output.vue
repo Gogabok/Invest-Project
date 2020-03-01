@@ -38,7 +38,7 @@
         </div>
       </label>
     </div>
-    <button class="output-submit">
+    <button @click.prevent="select" class="output-submit">
       Далее
       <img src="../../assets/common/arrow-right-white.svg" alt />
     </button>
@@ -55,6 +55,11 @@ export default {
   methods: {
     deleteModal(modal, index) {
       this.$emit("deleteModal", { modal, index });
+    },
+    select () {
+      this.$emit("deleteModal", { modal: this.modal, index: this.index });
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+      {title: 'mainMethodsOutput', link: 'mainMethodsOutput'})
     }
   }
 };
