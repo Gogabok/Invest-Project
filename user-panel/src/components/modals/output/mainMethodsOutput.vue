@@ -19,18 +19,29 @@
     </div>
     <div class="methods">
       <div class="list">
-        <div :class="item.isActive ? 'active' : ''" @click="selecting(item)" class="item" v-for="item in paymentMethods" :key="item.link">
-          <img ondragstart="return false;" :src='`./assets/common/method-${item.link}.svg`' alt="">
+        <div
+          :class="item.isActive ? 'active' : ''"
+          @click="selecting(item)"
+          class="item"
+          v-for="item in paymentMethods"
+          :key="item.link"
+        >
+          <img ondragstart="return false;" :src="`./assets/common/method-${item.link}.svg`" alt />
         </div>
-        <!-- <div class="item">
-          <img ondragstart="return false;" src="../../../assets/common/method-perfectMoney.svg" alt="">
-        </div>
-        <div class="item">
-          <img ondragstart="return false;" src="../../../assets/common/method-payeer.svg" alt="">
-        </div>
-        <div class="item btc">
-          <img ondragstart="return false;" src="../../../assets/common/method-btc.svg" alt="">
-        </div> -->
+      </div>
+      <div class="input-wrapper">
+        <p class="input-title">Сумма пополнения</p>
+        <label for="value-input" class="input">
+          <input v-model="value" type="text" id="value-input" />
+          <span>{{ currency }}</span>
+        </label>
+        <button :disabled="isBtnDisabled" @click.prevent="submit" class="output-submit">
+          Далее
+          <img src="../../../assets/common/arrow-right-white.svg" alt />
+        </button>
+      </div>
+      <div v-show="currencyList.length > 1" class="input-values">
+        <p v-for="item in currencyList" :key="item + Math.random()" :class="currency === item ? 'active' : ''" @click="valueSelecting(item)" class="value">{{ item }}</p>
       </div>
     </div>
   </div>
@@ -44,31 +55,67 @@ export default {
     paymentMethods: [
       {
         isActive: false,
-        link: 'advcash',
+        link: "advcash",
+        currencyList: ['USD', 'RUB']
       },
       {
         isActive: false,
-        link: 'perfectMoney',
+        link: "perfectMoney",
+        currencyList: ['USD']
       },
       {
         isActive: false,
-        link: 'payeer',
+        link: "payeer",
+        currencyList: ['USD']
       },
       {
         isActive: false,
-        link: 'btc',
+        link: "btc",
+        currencyList: ['BTC', 'ETH', 'LTC', 'TRX']
       }
-    ]
+    ],
+    currency: "USD",
+    value: ''
   }),
+  computed: {
+    isBtnDisabled() {
+      let data = {
+        value: this.value,
+        currency: this.currency,
+        method: this.paymentMethods.find(item => item.isActive) ? true : false
+      }
+      return Object.values(data).some(item => item.length <= 0)
+    }, 
+    currencyList () {
+      return this.paymentMethods.find(item => item.isActive).currencyList
+    }
+  },
+  mounted() {
+    this.paymentMethods[0].isActive = true
+  },
   methods: {
     deleteModal(modal, index) {
       this.$emit("deleteModal", { modal, index });
     },
     selecting(payload) {
       this.paymentMethods.forEach(item => {
-        item.isActive = false
-      })
-      payload.isActive = true
+        item.isActive = false;
+      });
+      this.currency = payload.currencyList[0]
+      payload.isActive = true;
+    },
+    valueSelecting (value) {
+      this.currency = value.toUpperCase()
+    },
+    submit() {
+      let data = {
+        value: this.value,
+        currency: this.currency,
+        method: this.paymentMethods.find(item => item.isActive).link
+      }
+      if(!Object.values(data).some(item => item.length <= 0)) {
+        console.log(data)
+      }
     }
   }
 };
@@ -80,12 +127,19 @@ export default {
   height: 100%;
   width: 100%;
   background: #fff;
-  border: 3px solid #e4e4e4;
   max-height: 700px;
   max-width: 1000px;
   border-radius: 5px;
   margin: 0px auto;
   position: relative;
+  & .text-area {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  & .methods {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
   & .text-area {
     padding: 15px 20px;
     background: #f5f5f5;
@@ -112,32 +166,33 @@ export default {
   }
   & .methods {
     background: #fff;
-    padding: 15px 20px;
+    padding: 45px 0px;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 40vh;
-    &::-webkit-scrollbar{
-      background: #E4E4E4;
+    max-height: 80vh;
+    &::-webkit-scrollbar {
+      background: #e4e4e4;
       width: 8px;
     }
-    &::-webkit-scrollbar-thumb{
-      background: rgba(45, 45, 45, .7);
+    &::-webkit-scrollbar-thumb {
+      background: rgba(45, 45, 45, 0.7);
       border-radius: 5px;
-    } 
+    }
     & .list {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0px 20px;
       & .item {
         width: 350px;
         border: 5px solid rgba(112, 112, 112, 0.2);
         border-radius: 10px;
-        transition-duration: .5s;
+        transition-duration: 0.5s;
         cursor: pointer;
         position: relative;
         margin: 30px 0px;
         text-align: center;
-        transform: scale(.7);
+        transform: scale(0.7);
         &.active {
           transform: scale(1);
         }
@@ -151,6 +206,78 @@ export default {
         &.btc img {
           width: 100%;
         }
+      }
+    }
+  }
+  & .input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    & .output-submit {
+      border: none;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+        background: rgba(55, 154, 29, 1);
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 10px 10px 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-left: auto;
+      transition-duration: .2s;
+      & img {
+        margin-left: 20px;
+      }
+      &:disabled {
+        background: rgba(55, 154, 29, .5)
+      }
+    }
+    & .input-title {
+      font-size: 1.3em;
+      color: #302d2b;
+      margin: 0px 20px;
+      margin-left: auto;
+    }
+    & .input {
+      display: flex;
+      align-items: center;
+      padding: 5px 15px;
+      border: 1px solid #c8c8c8;
+      border-radius: 17px;
+      font-size: 1.5em;
+      font-weight: bold;
+      & input {
+        border: none;
+        color: #302d2b;
+        font-weight: 600;
+      }
+      & span {
+        color: #379a1d;
+        margin-left: 10px;
+      }
+    }
+  }
+  & .input-values {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0px 5px 0px;
+    user-select: none;
+    & .value {
+      font-weight: 600;
+      font-size: 1.3em;
+      color: rgba(145, 145, 145, 0.7);
+      margin: 0px 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition-duration: .2s;
+      &:hover {
+        color: #379a1d;
+      }
+      &.active {
+        color: #379a1d;
       }
     }
   }
@@ -178,16 +305,52 @@ export default {
         justify-content: center;
         & .item {
           margin: 5px 5px;
-          transform: scale(.7);
+          transform: scale(0.7);
           width: calc(50% - 30px);
         }
       }
     }
   }
 }
+@media screen and (max-width: 780px) {
+  .output-modal {
+    & .input-wrapper {
+      display: block;
+      text-align: center;
+      padding: 0px 20px;
+      & .output-submit {
+        position: relative;
+        top: 40px;
+        right: 0px;
+        border-radius: 10px;
+        & img {
+          margin-left: 20px;
+        }
+      }
+      & .input-title {
+        margin: 10px 20px;
+      }
+      & .input {
+        margin: 10px 0px;
+        & input {
+          width: 100%
+        }
+      }
+    }
+    & .input-values {
+      position: relative;
+      top: -50px;
+      & .value {
+        margin: 0px 30px;
+      }
+  }
+  }
+}
 @media screen and (max-width: 500px) {
   .output-modal {
     & .methods {
+    max-height: 40vh;
+    padding: 15px 0px;
       & .list {
         & .item {
           width: 100%;
