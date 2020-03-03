@@ -9,7 +9,7 @@
     />
     <div class="text-area">
       <div class="title">
-        <img ondragstart="return false;" src="../../../assets/common/arrow-left-grey.svg" alt />
+        <img @click="back" ondragstart="return false;" src="../../../assets/common/arrow-left-grey.svg" alt />
         Вывод с баланса
       </div>
       <p class="desc">
@@ -37,7 +37,7 @@
         </label>
         <button :disabled="isBtnDisabled" @click.prevent="submit" class="output-submit">
           Далее
-          <img src="../../../assets/common/arrow-right-white.svg" alt />
+          <img ondragstart="return false;" src="../../../assets/common/arrow-right-white.svg" alt />
         </button>
       </div>
       <div v-show="currencyList.length > 1" class="input-values">
@@ -87,13 +87,18 @@ export default {
       return Object.values(data).some(item => item.length <= 0)
     }, 
     currencyList () {
-      return this.paymentMethods.find(item => item.isActive).currencyList
+      return this.paymentMethods.find(item => item.isActive) ? this.paymentMethods.find(item => item.isActive).currencyList : false
     }
   },
   mounted() {
     this.paymentMethods[0].isActive = true
   },
   methods: {
+    back () {
+      this.$emit("deleteModal", { modal: this.modal, index: this.index });
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+      {title: 'output', link: 'output'})
+    },
     deleteModal(modal, index) {
       this.$emit("deleteModal", { modal, index });
     },
@@ -152,6 +157,7 @@ export default {
       & img {
         width: 25px;
         margin-right: 10px;
+        cursor: pointer;
       }
     }
     & .desc {
@@ -170,6 +176,7 @@ export default {
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 80vh;
+    user-select: none;
     &::-webkit-scrollbar {
       background: #e4e4e4;
       width: 8px;
@@ -355,6 +362,11 @@ export default {
         & .item {
           width: 100%;
         }
+      }
+    }
+    & .input-values {
+      & .value {
+        margin: 0px 10px;
       }
     }
   }

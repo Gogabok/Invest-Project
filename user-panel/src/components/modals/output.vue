@@ -40,7 +40,7 @@
     </div>
     <button @click.prevent="select" class="output-submit">
       Далее
-      <img src="../../assets/common/arrow-right-white.svg" alt />
+      <img ondragstart="return false;" src="../../assets/common/arrow-right-white.svg" alt />
     </button>
   </div>
 </template>
