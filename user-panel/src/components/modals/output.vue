@@ -26,7 +26,7 @@
       <label class="item">
         <input
           v-model="activeInput"
-          value="autoOutput"
+          value="auto"
           type="radio"
           id="output-input-2"
           name="output-input"
@@ -59,7 +59,7 @@ export default {
     select () {
       this.$emit("deleteModal", { modal: this.modal, index: this.index });
       this.$store.dispatch("modalStore/ADD_MODAL", 
-      {title: 'mainMethodsOutput', link: 'mainMethodsOutput'})
+      {title: this.activeInput + 'MethodsOutput', link:  this.activeInput + 'MethodsOutput'})
     }
   }
 };

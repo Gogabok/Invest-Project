@@ -22,6 +22,7 @@ import modalMain from "@/components/modals/main-modal";
 import modalCodeVerification from "@/components/modals/codeverification";
 import modalOutput from "@/components/modals/output";
 import modalMainMethodsOutput from "@/components/modals/output/mainMethodsOutput";
+import modalAutoMethodsOutput from "@/components/modals/output/autoMethodsOutput";
 import store from "@/store";
 export default {
   name: "main-modal",
@@ -29,7 +30,8 @@ export default {
     modalMain,
     modalCodeVerification,
     modalOutput,
-    modalMainMethodsOutput
+    modalMainMethodsOutput,
+    modalAutoMethodsOutput
   },
   mounted() {
     document.getElementsByTagName("html")[0].style.overflow = "hidden";

@@ -49,4 +49,22 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 440px){
+    .secure-main-modal-qr {
+    margin-top: 30px;
+    user-select: none;
+      & .desc {
+        font-size: 1.2em;
+        color: #302d2b;
+        margin-top: 10px;
+        text-align: center;
+      }
+      & .qrs {
+        display: block;
+        & .qr {
+          margin: 10px auto;
+        }
+      }
+    }
+  }
 </style>
