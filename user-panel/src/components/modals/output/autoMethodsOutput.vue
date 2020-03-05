@@ -14,8 +14,29 @@
       >— После накопления минимальной суммы выплаты деньги отправляются на основной способ вывода.</p>
     </div>
     <div class="input-range">
+      <p class="input-range-title">На баланс</p>
       <input type="range" v-model="rangeValue" />
-      <p>{{ rangeValue }}</p>
+      <p class="input-range-title">На вывод</p>
+    </div>
+    <div class="input-values">
+      <p class="input-values-title">
+        На баланс
+        <span>{{ balanceValue }}</span>
+      </p>
+      <p class="input-values-title">
+        На вывод
+        <span>{{ outputValue }}</span>
+      </p>
+    </div>
+    <div class="minimal-output">
+      <p class="title">Минимальная выплата</p>
+      <input
+        :style="widthValue"
+        type="text"
+        @input="ValueFiltration"
+        v-model="minimalOutputValue"
+      />
+      <p class="title"></p>
     </div>
   </div>
 </template>
@@ -25,11 +46,33 @@ export default {
   name: "modalOutputAuto",
   props: ["modal", "index"],
   data: () => ({
-    rangeValue: 25
+    rangeValue: 25,
+    minimalOutputValue: null
   }),
+  computed: {
+    outputValue() {
+      return `${this.rangeValue}%`;
+    },
+    balanceValue() {
+      return `${100 - this.rangeValue}%`;
+    },
+    widthValue () {
+      return {
+        "width": `${(this.minimalOutputValue.length + 1) * 16}px`
+      }
+    }
+  },
+  mounted() {
+    this.minimalOutputValue = `$${10}`;
+  },
   methods: {
     deleteModal(modal, index) {
       this.$emit("deleteModal", { modal, index });
+    },
+    ValueFiltration() {
+      let symbol = "$";
+      let str = this.minimalOutputValue.replace(symbol, "");
+      this.minimalOutputValue = symbol + str;
     }
   }
 };
@@ -74,11 +117,22 @@ export default {
   }
   & .input-range {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60px 0px;
+    &-title {
+      font-size: 1.3em;
+      color: #3b4757;
+      font-weight: 300;
+      width: 100px;
+    }
     & input {
-      width: calc(100% - 60px);
+      max-width: calc(100% - 240px);
+      width: 100%;
       display: block;
-      margin: 60px auto 20px auto;
-      height: 30px;
+      // margin: 60px auto 20px auto;
+      // height: 30px;
       -webkit-appearance: none;
       &:focus {
         outline: none;
@@ -88,7 +142,7 @@ export default {
         height: 16px;
         cursor: pointer;
         animate: 0.2s;
-        background: #C0C8CF;
+        background: #c0c8cf;
         border-radius: 10px;
       }
       &::-webkit-slider-thumb {
@@ -96,21 +150,21 @@ export default {
         height: 60px;
         width: 60px;
         border-radius: 100%;
-        border: 9px solid #C0C8CF;
+        border: 9px solid #c0c8cf;
         background: #379a1d;
         cursor: pointer;
         -webkit-appearance: none;
         margin-top: -20px;
       }
       &:focus::-webkit-slider-runnable-track {
-        background: #C0C8CF;
+        background: #c0c8cf;
       }
       &::-moz-range-track {
         width: 100%;
         height: 6px;
         cursor: pointer;
         animate: 0.2s;
-        background: #C0C8CF;
+        background: #c0c8cf;
         border-radius: 10px;
       }
       &::-moz-range-thumb {
@@ -123,6 +177,44 @@ export default {
         cursor: pointer;
       }
     }
+  }
+}
+
+.input-values {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  &-title {
+    font-size: 1.6em;
+    color: #3b4757;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    & span {
+      margin: 0px 20px;
+      font-size: 4em;
+      font-weight: 600;
+    }
+  }
+}
+
+.minimal-output {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0px 20px 0px;
+  & .title {
+    font-size: 1.6em;
+    font-weight: 400;
+    color: #3b4757;
+    margin-right: 15px;
+  }
+  & input {
+    border: none;
+    border-bottom: 3px solid #c0c8cf;
+    text-align: center;
+    font-size: 1.8em;
+    color: #3b4757;
   }
 }
 

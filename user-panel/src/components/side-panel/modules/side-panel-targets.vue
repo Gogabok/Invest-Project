@@ -218,9 +218,9 @@ export default {
   display: flex;
   align-items: flex-start;
   padding: 10px 35px;
+  user-select: none;
   &:hover {
     background: rgba(184, 189, 196, 0.08);
-    user-select: none;
   }
 }
 
