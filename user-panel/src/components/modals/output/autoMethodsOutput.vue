@@ -1,43 +1,49 @@
 <template>
   <div class="output-modal">
-    <img
-      ondragstart="return false;"
-      @click="deleteModal(modal, index)"
-      class="modal-close"
-      src="../../../assets/modals/close.svg"
-      alt
-    />
-    <div class="text">
-      <p class="title">Активируйте автовыплаты</p>
-      <p
-        class="desc"
-      >— После накопления минимальной суммы выплаты деньги отправляются на основной способ вывода.</p>
-    </div>
-    <div class="input-range">
-      <p class="input-range-title">На баланс</p>
-      <input type="range" v-model="rangeValue" />
-      <p class="input-range-title">На вывод</p>
-    </div>
-    <div class="input-values">
-      <p class="input-values-title">
-        На баланс
-        <span>{{ balanceValue }}</span>
-      </p>
-      <p class="input-values-title">
-        На вывод
-        <span>{{ outputValue }}</span>
-      </p>
-    </div>
-    <div class="minimal-output">
-      <p class="title">Минимальная выплата</p>
-      <input
-        :style="widthValue"
-        type="text"
-        @input="ValueFiltration"
-        v-model="minimalOutputValue"
+    <div class="wrapper">
+      <img
+        ondragstart="return false;"
+        @click="deleteModal(modal, index)"
+        class="modal-close"
+        src="../../../assets/modals/close.svg"
+        alt
       />
-      <p class="title"></p>
+      <div class="text">
+        <p class="title">Активируйте автовыплаты</p>
+        <p
+          class="desc"
+        >— После накопления минимальной суммы выплаты деньги отправляются на основной способ вывода.</p>
+      </div>
+      <div class="input-range">
+        <p class="input-range-title">На баланс</p>
+        <input type="range" @input="filtrationRangeValue" v-model="rangeValue" />
+        <p class="input-range-title">На вывод</p>
+      </div>
+      <div class="input-values">
+        <p class="input-values-title">
+          На баланс
+          <span>{{ balanceValue }}</span>
+        </p>
+        <p class="input-values-title">
+          На вывод
+          <span>{{ outputValue }}</span>
+        </p>
+      </div>
+      <div class="minimal-output">
+        <p class="title">Минимальная выплата</p>
+        <input
+          :style="widthValue"
+          type="text"
+          @input="ValueFiltration"
+          v-model="minimalOutputValue"
+        />
+        <p class="title"></p>
+      </div>
     </div>
+    <button :disabled="isBtnActive" @click.prevent="save" class="output-submit">
+      Далее
+      <img ondragstart="return false;" src="../../../assets/common/arrow-right-white.svg" alt />
+    </button>
   </div>
 </template>
 
@@ -56,13 +62,18 @@ export default {
     balanceValue() {
       return `${100 - this.rangeValue}%`;
     },
-    widthValue () {
+    widthValue() {
       return {
-        "width": `${(this.minimalOutputValue.length + 1) * 16}px`
-      }
+        width: `${(this.minimalOutputValue.length + 1) * 16}px`
+      };
+    },
+    isBtnActive() {
+      let symbol = "$";
+      let val = this.minimalOutputValue.replace(symbol, "")
+      return val < 10 ? true : false
     }
   },
-  mounted() {
+  created() {
     this.minimalOutputValue = `$${10}`;
   },
   methods: {
@@ -71,8 +82,24 @@ export default {
     },
     ValueFiltration() {
       let symbol = "$";
+      this.minimalOutputValue = this.minimalOutputValue.replace(/[^\d]/g, "");
       let str = this.minimalOutputValue.replace(symbol, "");
       this.minimalOutputValue = symbol + str;
+    },
+    filtrationRangeValue () {
+      if(this.rangeValue <= 10) {
+        this.rangeValue = 10
+      } else if(this.rangeValue >= 90) {
+        this.rangeValue = 90
+      }
+    },
+    save() {
+      this.$emit("deleteModal", { modal: this.modal, index: this.index });
+      this.$store.dispatch("modalStore/ADD_MODAL", {
+        title: "saved",
+        link: "saved",
+        message: "Автовыплаты подключены!"
+      });
     }
   }
 };
@@ -89,7 +116,10 @@ export default {
   border-radius: 5px;
   margin: 0px auto;
   position: relative;
-  padding: 20px 30px;
+  padding-bottom: 20px;
+  & .wrapper {
+    padding: 20px 30px;
+  }
   & .modal-close {
     position: absolute;
     right: -35px;
@@ -215,6 +245,30 @@ export default {
     text-align: center;
     font-size: 1.8em;
     color: #3b4757;
+  }
+}
+
+.output-submit {
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #379a1d;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin: 0px 0px 0px auto;
+  & img {
+    margin-left: 20px;
+  }
+  &[disabled] {
+    opacity: 0.8;
+    user-select: none;
+    pointer-events: none;
+    cursor: default;
   }
 }
 

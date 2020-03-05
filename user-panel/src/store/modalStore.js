@@ -25,7 +25,8 @@ export default {
         {
           component: payload.link,
           subModal: payload.sublink,
-          infoCodeVerification: payload.info
+          infoCodeVerification: payload.info,
+          message: payload.message
         }
       )
     },
