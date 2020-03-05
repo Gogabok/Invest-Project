@@ -144,10 +144,10 @@ export default {
 <style lang="scss">
   .dashboard-graph-module {
     background: #24303C;
-    margin: 10px 0px 0px 140px;
+    margin: 10px 0px 0px 60px;
     position: relative;
     border-radius: 3px;
-    padding: 10px 30px 5px 30px;
+    padding: 10px 10px 5px 10px;
     transition-duration: .5s;
   }
   .toolbar {

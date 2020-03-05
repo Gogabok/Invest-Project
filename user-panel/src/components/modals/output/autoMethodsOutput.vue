@@ -16,15 +16,15 @@
       </div>
       <div class="input-range">
         <p class="input-range-title">На баланс</p>
-        <input type="range" @input="filtrationRangeValue" v-model="rangeValue" />
+        <input type="range" v-model="rangeValue" />
         <p class="input-range-title">На вывод</p>
       </div>
       <div class="input-values">
-        <p class="input-values-title">
+        <p class="input-values-title balanceVal">
           На баланс
           <span>{{ balanceValue }}</span>
         </p>
-        <p class="input-values-title">
+        <p class="input-values-title outputVal">
           На вывод
           <span>{{ outputValue }}</span>
         </p>
@@ -86,18 +86,11 @@ export default {
       let str = this.minimalOutputValue.replace(symbol, "");
       this.minimalOutputValue = symbol + str;
     },
-    filtrationRangeValue () {
-      if(this.rangeValue <= 10) {
-        this.rangeValue = 10
-      } else if(this.rangeValue >= 90) {
-        this.rangeValue = 90
-      }
-    },
     save() {
       this.$emit("deleteModal", { modal: this.modal, index: this.index });
       this.$store.dispatch("modalStore/ADD_MODAL", {
-        title: "saved",
-        link: "saved",
+        title: "successMessage",
+        link: "successMessage",
         message: "Автовыплаты подключены!"
       });
     }
@@ -264,6 +257,10 @@ export default {
   & img {
     margin-left: 20px;
   }
+  transition-duration: .2s;
+  &:hover {
+    background: #1E640B;
+  }
   &[disabled] {
     opacity: 0.8;
     user-select: none;
@@ -274,9 +271,71 @@ export default {
 
 @media screen and (max-width: 1100px) {
   .output-modal {
+    max-width: auto;
+    width: calc(100% - 30px);
     & .modal-close {
       right: 5px;
       top: -45px;
+    }
+    & .input-range {
+      margin: 30px 0px;
+      &-title {
+        display: none;
+      }
+      & input {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .output-modal {
+    & .wrapper {
+      padding: 10px 5px;
+    }
+    & .input-values {
+      display: block;
+      &-title {
+        &.outputVal {
+          margin-left: auto;
+          justify-content: flex-end;
+        }
+        &.balanceVal {
+          margin-right: auto;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .output-modal {
+    & .input-values {
+      &-title {
+        &.outputVal {
+          justify-content: center;
+        }
+        &.balanceVal {
+          justify-content: center;
+        }
+        font-size: 1.2em;
+        color: #3b4757;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        & span {
+          margin: 0px 20px;
+          font-size: 2em;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .minimal-output {
+    & .title {
+      font-size: 1.1em;
     }
   }
 }

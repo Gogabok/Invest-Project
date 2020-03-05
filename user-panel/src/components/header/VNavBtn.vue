@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .v-nav-btn {
-  padding: 8px 25px;
+  padding: 11.5px 25px;
   font-weight: 400;
   border-radius: 3px;
   color: #fff;

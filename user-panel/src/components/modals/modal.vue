@@ -5,14 +5,14 @@
       v-for="(modal, index) in this.$store.state.modalStore.modals"
       :key="modal.component + index"
     >
-      <!-- <div class="modal-wrapper"> -->
-      <component
-        @deleteModal="deleteModal"
-        :modal="modal"
-        :index="index"
-        :is="`modal-${modal.component}`"
-      ></component>
-      <!-- </div> -->
+      <transition name="fade" mode="out-in">
+        <component
+          @deleteModal="deleteModal"
+          :modal="modal"
+          :index="index"
+          :is="`modal-${modal.component}`"
+        ></component>
+      </transition>
     </div>
   </transition-group>
 </template>
@@ -23,6 +23,7 @@ import modalCodeVerification from "@/components/modals/codeverification";
 import modalOutput from "@/components/modals/output";
 import modalMainMethodsOutput from "@/components/modals/output/mainMethodsOutput";
 import modalAutoMethodsOutput from "@/components/modals/output/autoMethodsOutput";
+import modalSuccessMessage from "@/components/modals/successMessage";
 import store from "@/store";
 export default {
   name: "main-modal",
@@ -31,7 +32,8 @@ export default {
     modalCodeVerification,
     modalOutput,
     modalMainMethodsOutput,
-    modalAutoMethodsOutput
+    modalAutoMethodsOutput,
+    modalSuccessMessage
   },
   mounted() {
     document.getElementsByTagName("html")[0].style.overflow = "hidden";

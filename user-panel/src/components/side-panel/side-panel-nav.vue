@@ -51,7 +51,7 @@ export default {
     border-bottom: 1px solid #379A1D;
     &  .nav-item {
       width: 50%;
-      padding: 35px 10px;
+      padding: 25px 10px;
       font-size: 1.3em;
       color: #fff;
       text-align: center;

@@ -54,7 +54,7 @@ export default {
     padding-left: 50px ;
   }
   & .common-dashboard-padding {
-    padding-left: 140px;
+    padding-left: 60px;
   }
 }
 .side-panel-area {

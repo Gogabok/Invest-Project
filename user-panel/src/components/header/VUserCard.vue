@@ -55,7 +55,7 @@ export default {
 
 <style lang="scss">
 .v-user-card {
-  padding: 10.5px 20px 10.5px 15px;
+  padding: 12.5px 20px 12.5px 15px;
   background: rgba(184, 189, 196, 0.1);
   color: #fff;
   border-radius: 3px;

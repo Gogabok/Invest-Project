@@ -234,6 +234,9 @@ export default {
       justify-content: space-between;
       margin-left: auto;
       transition-duration: .2s;
+      &:hover {
+        background: #1E640B;
+      }
       & img {
         margin-left: 20px;
       }
