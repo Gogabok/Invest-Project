@@ -56,7 +56,6 @@
         <div class="img">
           <img ondragstart="return false;" src="../../../../assets/modals/icon-phone.svg" alt />
         </div>
-        <span v-show="String(userData.phone.value).length > 0" class="phone-plus">+</span>
         <input
           @input="validatingPhone"
           v-model="userData.phone.value"
@@ -287,6 +286,9 @@ export default {
         /[^\d]/g,
         ""
       );
+      let symbol = "+";
+      let str = this.userData.phone.value.replace(symbol, "");
+      this.userData.phone.value = symbol + str;
     }
   }
 };
@@ -454,11 +456,6 @@ export default {
     }
     & span.save {
       margin: 0px 5px;
-    }
-    & span.phone-plus {
-      font-size: 1em;
-      margin-left: -6px;
-      margin-right: 6px;
     }
   }
   .input-container-text {
