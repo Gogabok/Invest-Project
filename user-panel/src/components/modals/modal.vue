@@ -21,6 +21,7 @@
 import modalMain from "@/components/modals/main-modal";
 import modalCodeVerification from "@/components/modals/codeverification";
 import modalOutput from "@/components/modals/output";
+import modalInvest from "@/components/modals/invest";
 import modalMainMethodsOutput from "@/components/modals/output/mainMethodsOutput";
 import modalAutoMethodsOutput from "@/components/modals/output/autoMethodsOutput";
 import modalSuccessMessage from "@/components/modals/successMessage";
@@ -33,7 +34,8 @@ export default {
     modalOutput,
     modalMainMethodsOutput,
     modalAutoMethodsOutput,
-    modalSuccessMessage
+    modalSuccessMessage,
+    modalInvest
   },
   mounted() {
     document.getElementsByTagName("html")[0].style.overflow = "hidden";
