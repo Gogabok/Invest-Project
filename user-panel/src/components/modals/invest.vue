@@ -12,29 +12,46 @@
       <label class="item">
         <input
           v-model="activeInput"
-          value="main"
+          value="management-trust"
           type="radio"
           id="output-input-1"
           name="output-input"
         />
         <label for="output-input-1"></label>
         <div class="text">
-          <p class="title-label">Вывод с основного счета</p>
-          <p class="desc-label">Вывод с инвестиционного счета</p>
+          <p class="title-label">Доверительное управление</p>
+          <p class="desc-label">Ваши деньги под контролем сервиса</p>
         </div>
       </label>
       <label class="item">
         <input
           v-model="activeInput"
-          value="auto"
+          value="management-unConrol"
           type="radio"
           id="output-input-2"
           name="output-input"
         />
         <label for="output-input-2"></label>
         <div class="text">
-          <p class="title-label">Настроить автовыплаты</p>
-          <p class="desc-label">Настройка автовывода дивидендов</p>
+          <p class="title-label">Независимое управление <span class="title-desc">best</span></p>
+          <p class="desc-label">Самостоятельная работа с биржами</p>
+        </div>
+      </label>
+      <label class="item">
+        <input
+          v-model="activeInput"
+          value="management-club"
+          type="radio"
+          id="output-input-3"
+          name="output-input"
+        />
+        <label for="output-input-3"></label>
+        <div class="text">
+          <p class="title-label">Инвест-Клуб <span class="title-desc">free</span></p>
+          <p class="desc-label">
+            Инструкции по ботам, обзоры
+            проектов и расследования хайпов
+          </p>
         </div>
       </label>
     </div>
@@ -50,16 +67,18 @@ export default {
   name: "modalInvest",
   props: ["modal", "index"],
   data: () => ({
-    activeInput: "main"
+    activeInput: "management-trust"
   }),
   methods: {
     deleteModal(modal, index) {
       this.$emit("deleteModal", { modal, index });
     },
-    select () {
+    select() {
       this.$emit("deleteModal", { modal: this.modal, index: this.index });
-      this.$store.dispatch("modalStore/ADD_MODAL", 
-      {title: this.activeInput + 'MethodsOutput', link:  this.activeInput + 'MethodsOutput'})
+      this.$store.dispatch("modalStore/ADD_MODAL", {
+        title: this.activeInput + "MethodsOutput",
+        link: this.activeInput + "MethodsOutput"
+      });
     }
   }
 };
@@ -96,9 +115,9 @@ export default {
     justify-content: space-between;
     margin-left: auto;
     margin: 20px 0px 0px auto;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     &:hover {
-      background: #1E640B;
+      background: #1e640b;
     }
     & img {
       margin-left: 20px;
@@ -126,6 +145,16 @@ export default {
           font-weight: 400;
           color: #3b4757;
           user-select: none;
+          display: flex;
+          & .title-desc {
+            display: block;
+            font-size: .6em;
+            color: #379A1D;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-left: 3px;
+            text-transform: uppercase;
+          }
         }
         & .desc-label {
           font-size: 0.9em;
