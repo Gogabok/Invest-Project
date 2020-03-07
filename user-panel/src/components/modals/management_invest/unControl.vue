@@ -31,7 +31,7 @@
       </div>
     </div>
     <transition mode="out-in" name="fade-faster">
-      <component @selecting="selecting" class="main-modal-component" :is="activeNavItem"></component>
+      <component :sublink="nav.find(item => item.sublink)"  @selecting="selecting" class="main-modal-component" :is="activeNavItem"></component>
     </transition>
   </div>
 </template>
@@ -43,6 +43,7 @@ import cryptoMarket from "@/components/modals/management_invest/unconrol-subcomp
 import currencyMarket from "@/components/modals/management_invest/unconrol-subcomponents/currencyMarket";
 import stockMarket from "@/components/modals/management_invest/unconrol-subcomponents/stockMarket";
 import bettingMarket from "@/components/modals/management_invest/unconrol-subcomponents/bettingMarket";
+import marketPlace from "@/components/modals/management_invest/unconrol-subcomponents/marketPlace";
 export default {
   name: "managementUnConrol",
   props: ["modal", "index"],
@@ -51,7 +52,8 @@ export default {
     cryptoMarket,
     currencyMarket,
     stockMarket,
-    bettingMarket
+    bettingMarket,
+    marketPlace
   },
   data: () => ({
     activeNavItem: null,
@@ -234,7 +236,7 @@ export default {
         border-bottom: 2px solid #e4e4e4;
         border-top: 2px solid #e4e4e4;
       }
-      &:nth-child(3) {
+      &:nth-child(3), &:nth-child(4), &:nth-child(5) {
         border-bottom: 2px solid #e4e4e4;
       }
       &.active {
