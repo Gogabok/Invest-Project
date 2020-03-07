@@ -25,6 +25,7 @@ import modalInvest from "@/components/modals/invest";
 import modalMainMethodsOutput from "@/components/modals/output/mainMethodsOutput";
 import modalAutoMethodsOutput from "@/components/modals/output/autoMethodsOutput";
 import modalSuccessMessage from "@/components/modals/successMessage";
+import modalErrorMessage from "@/components/modals/errorMessage";
 import modalManagementTrust from "@/components/modals/management_invest/trust";
 import modalManagementUnControl from "@/components/modals/management_invest/unControl";
 import store from "@/store";
@@ -39,7 +40,8 @@ export default {
     modalSuccessMessage,
     modalInvest,
     modalManagementTrust,
-    modalManagementUnControl
+    modalManagementUnControl,
+    modalErrorMessage
   },
   mounted() {
     document.getElementsByTagName("html")[0].style.overflow = "hidden";

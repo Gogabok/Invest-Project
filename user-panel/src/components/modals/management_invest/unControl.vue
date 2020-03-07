@@ -31,7 +31,7 @@
       </div>
     </div>
     <transition mode="out-in" name="fade-faster">
-      <component :sublink="nav.find(item => item.sublink)"  @selecting="selecting" class="main-modal-component" :is="activeNavItem"></component>
+      <component @deleteModal="deleteModal" :sublink="nav.find(item => item.sublink)"  @selecting="selecting" class="main-modal-component" :is="activeNavItem"></component>
     </transition>
   </div>
 </template>
