@@ -1,7 +1,7 @@
 <template>
   <div class="main-modal">
-    <img ondragstart="return false;" @click="deleteModal(modal, index)" class="modal-close" src="../../assets/modals/close.svg" alt="">
-    <main-nav @selecting="selecting" :activeNavItem="activeNavItem"></main-nav>
+    <img ondragstart="return false;" @click="deleteModal(modal, index)" class="modal-close" src="../../../assets/modals/close.svg" alt="">
+    <main-nav @back="back" @selecting="selecting" :activeNavItem="activeNavItem"></main-nav>
     <transition mode="out-in" name="fade-faster">
       <component class="main-modal-component" :is="activeNavItem"></component>
     </transition>
@@ -9,38 +9,34 @@
 </template>
 
 <script>
-// Навигация модального окна "Main"
-import mainNav from "@/components/modals/main_submodals/main-navigation"
-
-// Компоненты модального окна "Main"
-import profile from "@/components/modals/main_submodals/profile"
-import secure from "@/components/modals/main_submodals/secure"
-import settings from "@/components/modals/main_submodals/settings"
-import app from "@/components/modals/main_submodals/app"
-
+import mainNav from "@/components/modals/management_invest/unconrol-subcomponents/invest-navigation"
 export default {
-  name: "modal-main",
-  // Все возможные модальные окна нужно регать через Import и объект Components
-  components: {
-    mainNav, profile, secure, settings, app
-  },
+  name: 'managementUnConrol',
   props: ["modal", "index"],
+  components: {
+    mainNav
+  },
   data: () => ({
     activeNavItem: null
   }),
+  created() {
+    if(this.modal) {
+      this.activeNavItem = this.modal.subModal
+    }
+  },
   methods: {
+    back () {
+      this.$emit("deleteModal", { modal: this.modal, index: this.index });
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+      {title: 'invest', link: 'invest'})
+    },
     deleteModal(modal, index) {
       this.$emit("deleteModal", {modal, index})
     },
     selecting (payload) {
       this.activeNavItem = payload.link
     },
-  },
-  created() {
-    if(this.modal) {
-      this.activeNavItem = this.modal.subModal
-    }
-  },
+  }
 }
 </script>
 

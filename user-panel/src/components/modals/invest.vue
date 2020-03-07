@@ -12,7 +12,7 @@
       <label class="item">
         <input
           v-model="activeInput"
-          value="management-trust"
+          value="Trust"
           type="radio"
           id="output-input-1"
           name="output-input"
@@ -26,7 +26,7 @@
       <label class="item">
         <input
           v-model="activeInput"
-          value="management-unConrol"
+          value="UnControl"
           type="radio"
           id="output-input-2"
           name="output-input"
@@ -40,7 +40,7 @@
       <label class="item">
         <input
           v-model="activeInput"
-          value="management-club"
+          value="Club"
           type="radio"
           id="output-input-3"
           name="output-input"
@@ -67,7 +67,7 @@ export default {
   name: "modalInvest",
   props: ["modal", "index"],
   data: () => ({
-    activeInput: "management-trust"
+    activeInput: "Trust"
   }),
   methods: {
     deleteModal(modal, index) {
@@ -76,8 +76,9 @@ export default {
     select() {
       this.$emit("deleteModal", { modal: this.modal, index: this.index });
       this.$store.dispatch("modalStore/ADD_MODAL", {
-        title: this.activeInput + "MethodsOutput",
-        link: this.activeInput + "MethodsOutput"
+        title: `management` + this.activeInput,
+        sublink: 'cryptoMarket',
+        link: `management` + this.activeInput
       });
     }
   }

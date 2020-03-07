@@ -10,14 +10,17 @@
     <div class="text-area">
       <div class="title">
         <img @click="back" ondragstart="return false;" src="../../../assets/common/arrow-left-grey.svg" alt />
-        Вывод с баланса
+        Доверительное управление
       </div>
       <p class="desc">
-        <span>Выводите</span> деньги в любой момент, здесь нет ожиданий завершения депозта. Также вывод
-        возможен в систему платежей отличную от выбранной при пополнении счёта.
+        <span>Инвестируйте</span> в высокодоходные инструменты с вычетом от <span class="underlined">10% комиссии</span> сервису от ваших 
+        дивидендов, получайте диверсификацию по проверенным решениям с минимизацией рисков.
       </p>
     </div>
     <div class="methods">
+      <p class="methods-desc">
+        — При пополнении счёта взымается дополнительно 2% комиссии на отправку депозита на биржи
+      </p>
       <div class="list">
         <div
           :class="item.isActive ? 'active' : ''"
@@ -49,7 +52,7 @@
 
 <script>
 export default {
-  name: "modalOutputMethods",
+  name: "modalManagementTrust",
   props: ["modal", "index"],
   data: () => ({
     paymentMethods: [
@@ -94,13 +97,13 @@ export default {
     this.paymentMethods[0].isActive = true
   },
   methods: {
+    ValueFiltration() {
+      this.value = this.value.replace(/[^\d]/g, "");
+    },
     back () {
       this.$emit("deleteModal", { modal: this.modal, index: this.index });
       this.$store.dispatch("modalStore/ADD_MODAL", 
-      {title: 'output', link: 'output'})
-    },
-    ValueFiltration() {
-      this.value = this.value.replace(/[^\d]/g, "");
+      {title: 'invest', link: 'invest'})
     },
     deleteModal(modal, index) {
       this.$emit("deleteModal", { modal, index });
@@ -123,6 +126,12 @@ export default {
       }
       if(!Object.values(data).some(item => item.length <= 0)) {
         console.log(data)
+        this.$emit("deleteModal", { modal: this.modal, index: this.index });
+        this.$store.dispatch("modalStore/ADD_MODAL", {
+          title: "successMessage",
+          link: "successMessage",
+          message: "Деньги зачислены!"
+        });
       }
     }
   }
@@ -171,15 +180,21 @@ export default {
       & span {
         font-weight: 600;
       }
+      & span.underlined {
+        font-weight: 400;
+        color: #40AE76;
+        text-decoration: underline;
+      }
     }
   }
   & .methods {
     background: #fff;
-    padding: 45px 0px;
+    padding: 10px 0px 25px 0px;
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 80vh;
     user-select: none;
+    text-align: center;
     &::-webkit-scrollbar {
       background: #e4e4e4;
       width: 8px;
@@ -187,6 +202,11 @@ export default {
     &::-webkit-scrollbar-thumb {
       background: rgba(45, 45, 45, 0.7);
       border-radius: 5px;
+    }
+    &-desc {
+      color: #379A1D;
+      font-size: 1.1em;
+
     }
     & .list {
       display: flex;
@@ -375,6 +395,14 @@ export default {
         margin: 0px 10px;
       }
     }
+  }
+}
+@media screen and (max-width: 430px) {
+  .desc {
+      margin-left: 0px !important;
+  }
+  .methods-desc {
+    padding: 0px 5px;
   }
 }
 </style>
