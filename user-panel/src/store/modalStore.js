@@ -8,7 +8,8 @@ export default {
       email: false,
       phone: false, 
       emailTwoFa: false,
-      phoneTwoFa: false
+      phoneTwoFa: false,
+      emailInstructions: false
     }
   },
   getters: {

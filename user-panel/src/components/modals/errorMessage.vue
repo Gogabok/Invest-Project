@@ -9,7 +9,7 @@
     />
     <img ondragstart="return false;" class="okLogo" src="../../assets/common/errorOkModal.svg" alt />
     <p class="message">{{ message }}</p>
-    <button @click="deleteModal(modal, index)" class="btnSuccess">Подтвердить</button>
+    <button @click="submit" class="btnSuccess">Подтвердить</button>
   </div>
 </template>
 
@@ -23,9 +23,21 @@ export default {
   created() {
     this.message = this.$store.getters["modalStore/modals"][this.index].message;
   },
+  // Is code validated hook
   methods: {
-    deleteModal(modal, index) {
-      this.$emit("deleteModal", { modal, index });
+    submit(modal, index) {
+      this.$emit("deleteModal", { modal: this.modal, index: this.index });
+      this.$store.dispatch("modalStore/ADD_MODAL", 
+        {
+          link: 'codeVerification',
+          info: {
+            input: 'emailInstructions',
+            title: 'Запрос отправлен! Введите код из Email',
+            desc: 'Введите четырехзначный код, отправленный на Email',
+            code: '0000'
+          }
+        }
+      )
     }
   }
 };
