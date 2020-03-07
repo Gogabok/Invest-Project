@@ -4,24 +4,23 @@
       <p class="title">Описание</p>
       <ul class="text-list">
         <li class="text-list-item">
-          Автоторговля на криптовалютной бирже
-          <a href="https://www.binance.com/" target="_blank">Binance</a>.
+          Работа на бирже <a href="https://www.betfair.com/" target="_blanl">BetFair</a> с автоматизацией через бота.
         </li>
-        <li class="text-list-item">Аренда ботов с быстрым подключением по API к бирже.</li>
+        <li class="text-list-item">Работа с биржей напрямую по API, либо через телеграмм-бота.</li>
+        <li class="text-list-item">Это решение - бестселлер благодаря уникальному соотношению
+высокодоходности/надежности.</li>
       </ul>
     </div>
     <div class="text">
       <p class="title">Безопасность</p>
       <ul class="text-list">
-        <li class="text-list-item">Денежный баланс на вашем аккаунте биржи.</li>
-        <li class="text-list-item">Бот на основе нейросети с автоподстройкой под изменения рынка.</li>
-        <li class="text-list-item">Предусмотрена многоуровневая защита депозита от слива.</li>
+        <li class="text-list-item">Денежный баланс на вашем аккаунте биржи, при работе через API.</li>
       </ul>
     </div>
     <div class="text">
       <p class="title">Диверсификация</p>
       <ul class="text-list">
-        <li class="text-list-item">Распределение сделок на десятки торговых пар.</li>
+        <li class="text-list-item">В пределах этого решения отсутствует: 1 бот/1 биржа/1 стратегия.</li>
       </ul>
     </div>
     <div class="footer-component">
@@ -36,14 +35,14 @@
 
 <script>
 export default {
-  name: "CryptoMarket",
+  name: "stonksMarket",
   methods: {
     select () {
       this.$emit("selecting", {
         title: "МАРКЕТПЛЕЙС",
         link: "marketPlace",
         isActive: false,
-        sublink: 'cryptoMarket'
+        sublink: 'bettingMarket'
       })
     }
   }

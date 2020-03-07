@@ -33,62 +33,13 @@
 
 <script>
 export default {
-  props: ["activeNavItem"],
-  data: () => ({
-    nav: [
-      {
-        title: "Крипторынок",
-        link: "cryptoMarket",
-        isActive: false
-      },
-      {
-        title: "Валютный рынок",
-        link: "currencyMarket",
-        isActive: false
-      },
-      {
-        title: "Фондовый рынок",
-        link: "stockMarket",
-        isActive: false
-      },
-      {
-        title: "Букмекерский рынок",
-        link: "bettingMarket",
-        isActive: false
-      },
-      {
-        title: "МАРКЕТПЛЕЙС",
-        link: "marketPlace",
-        isActive: false
-      }
-    ]
-  }),
-  mounted() {
-    this.nav.forEach(item => {
-      if (item.link === this.activeNavItem) {
-        item.isActive = true;
-      } else {
-        item.isActive = false;
-      }
-    });
-  },
+  props: ["activeNavItem", "nav"],
   methods: {
     back () {
       this.$emit("back");
     },
     selecting(payload) {
-      this.nav.forEach(item => {
-        if (item.link === payload.link) {
-          if (!item.isActive) {
-            this.$emit("selecting", payload)
-            item.isActive = true;
-          } else {
-            return false;
-          }
-        } else {
-          item.isActive = false;
-        }
-      });
+      this.$emit("selecting", payload)
     }
   }
 };
