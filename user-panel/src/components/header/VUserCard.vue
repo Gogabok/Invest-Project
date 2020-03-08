@@ -47,7 +47,11 @@ export default {
     },
     openModal (payload) {
       this.modal.isActive = false
-      this.$store.dispatch("modalStore/ADD_MODAL", payload)
+      if(payload.link !== 'exit') {
+        this.$store.dispatch("modalStore/ADD_MODAL", payload)
+      } else {
+        alert("User logout")
+      }
     }
   },
 };

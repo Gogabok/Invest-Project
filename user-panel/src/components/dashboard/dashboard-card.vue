@@ -36,11 +36,11 @@ export default {
         list: [
           {
             title: 'Внести депозит',
-            link: 'deposit'
+            link: 'ManagementTrust'
           },
           {
-            title: 'Внести деньги',
-            link: 'money'
+            title: 'Вывести деньги',
+            link: 'mainMethodsOutput'
           }
         ]
       },
@@ -49,7 +49,7 @@ export default {
         list: [
           {
             title: 'Автовывод',
-            link: 'output'
+            link: 'autoMethodsOutput'
           }
         ]
       },
