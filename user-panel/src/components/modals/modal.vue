@@ -28,6 +28,8 @@ import modalSuccessMessage from "@/components/modals/successMessage";
 import modalErrorMessage from "@/components/modals/errorMessage";
 import modalManagementTrust from "@/components/modals/management_invest/trust";
 import modalManagementUnControl from "@/components/modals/management_invest/unControl";
+import modalManagementClub from "@/components/modals/management_invest/club";
+import modalExtraInfo from "@/components/modals/extraInfo";
 import store from "@/store";
 export default {
   name: "main-modal",
@@ -41,7 +43,9 @@ export default {
     modalInvest,
     modalManagementTrust,
     modalManagementUnControl,
-    modalErrorMessage
+    modalErrorMessage,
+    modalManagementClub,
+    modalExtraInfo
   },
   mounted() {
     document.getElementsByTagName("html")[0].style.overflow = "hidden";

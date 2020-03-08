@@ -18,12 +18,12 @@ export default {
   name: "modalSuccessMessage",
   props: ["modal", "index"],
   data: () => ({
-    message: null
+    message: null,
+    isEmailSuccessed: null
   }),
   created() {
     this.message = this.$store.getters["modalStore/modals"][this.index].message;
   },
-  // Is code validated hook
   methods: {
     submit(modal, index) {
       this.$emit("deleteModal", { modal: this.modal, index: this.index });
@@ -38,7 +38,10 @@ export default {
           }
         }
       )
-    }
+    },
+    deleteModal(modal, index) {
+      this.$emit("deleteModal", { modal, index });
+    },
   }
 };
 </script>

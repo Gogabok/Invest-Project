@@ -249,7 +249,7 @@ export default {
   opacity: 0;
 }
 .fade-faster-enter-active, .fade-faster-leave-active {
-  transition-duration: .2s;
+  transition-duration: .1s;
 }
 
 

@@ -14,7 +14,7 @@
     <transition name="scaleY" mode="out-in">
       <div class="card-modal" v-show="miniModals[modal].isActive">
         <div class="list">
-          <p @click="openModal(item)" class="item" v-for="item in miniModals[modal].list" :key="item.link + modal">
+          <p @click="openModal(item)" class="item" v-for="item in miniModals[modal].list" :key="item.link + modal + item.sublink || Math.random()">
             {{ item.title }}
           </p>
         </div>
@@ -58,11 +58,13 @@ export default {
         list: [
           {
             title: 'Реферальная ссылка',
-            link: 'referral'
+            link: 'extraInfo',
+            sublink: 'refferals'
           },
           {
             title: 'Промоматериалы',
-            link: 'promo'
+            link: 'extraInfo',
+            sublink: 'promo'
           }
         ]
       }

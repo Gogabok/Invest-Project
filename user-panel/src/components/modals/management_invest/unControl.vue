@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import mainNav from "@/components/modals/management_invest/unconrol-subcomponents/invest-navigation";
 
 import cryptoMarket from "@/components/modals/management_invest/unconrol-subcomponents/cryptoMarket";
 import currencyMarket from "@/components/modals/management_invest/unconrol-subcomponents/currencyMarket";
@@ -48,7 +47,6 @@ export default {
   name: "managementUnConrol",
   props: ["modal", "index"],
   components: {
-    mainNav,
     cryptoMarket,
     currencyMarket,
     stockMarket,

@@ -208,6 +208,16 @@ export default {
     }
   }
 }
+@media screen and (max-width: 725px) {
+  .nav {
+    display: block;
+      & .item {
+        &.active {
+          border: 3px solid #3b4757;
+        }
+      }
+  }
+}
 @media screen and (max-width: 400px) {
   .footer-component {
     display: block;
