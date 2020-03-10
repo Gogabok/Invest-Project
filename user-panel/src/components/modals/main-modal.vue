@@ -49,7 +49,7 @@ export default {
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: stretch;
+    // align-items: stretch;
     // overflow: hidden;
     background: #fff;
     border: 3px solid #E4E4E4;

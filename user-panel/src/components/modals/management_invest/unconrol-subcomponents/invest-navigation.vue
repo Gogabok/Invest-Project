@@ -49,7 +49,7 @@ export default {
 .main-navigation {
   max-width: 230px;
   border-right: 2px solid #e4e4e4;
-  height: 100%;
+  // height: 100%;
   width: 100%;
   & .list {
     padding: 5px 0px 5px 0px;

@@ -43,7 +43,7 @@
           <img ondragstart="return false;" src="../../../assets/common/arrow-right-white.svg" alt />
         </button>
       </div>
-      <div v-show="currencyList.length > 1" class="input-values">
+      <div class="input-values">
         <p v-for="item in currencyList" :key="item + Math.random()" :class="currency === item ? 'active' : ''" @click="valueSelecting(item)" class="value">{{ item }}</p>
       </div>
     </div>
