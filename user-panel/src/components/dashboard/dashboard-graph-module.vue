@@ -141,7 +141,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
   .dashboard-graph-module {
     background: #24303C;
     margin: 10px 0px 0px 60px;
@@ -152,7 +152,7 @@ export default {
   }
   .toolbar {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 30px;
   }
   .maintoolbar {
@@ -160,8 +160,8 @@ export default {
     align-items: flex-start;
     &-item {
       color: #fff;
-      font-size: 1.2em;
-      padding: 10px 20px;
+      font-size: 1.1em;
+      padding: 5px 10px;
       margin: 0px 7px;
       border-radius: 3px;
       border: none;
@@ -220,6 +220,25 @@ export default {
       width: 8px;
     }
     .dashboard-graph-module::-webkit-scrollbar-thumb{
+      background: rgb(42, 59, 80);
+      border-radius: 5px;
+    } 
+    .module-component {
+      max-height: 460px;
+      min-height: 460px;
+      overflow-y: auto;
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .module-component::-webkit-scrollbar{
+      background: rgba(30, 44, 61, 0.7);
+      border-radius: 5px;
+      width: 8px;
+    }
+    .module-component::-webkit-scrollbar-thumb{
       background: rgb(42, 59, 80);
       border-radius: 5px;
     } 

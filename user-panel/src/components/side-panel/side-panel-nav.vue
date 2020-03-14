@@ -51,7 +51,7 @@ export default {
     border-bottom: 1px solid #379A1D;
     &  .nav-item {
       width: 50%;
-      padding: 25px 10px;
+      padding: 15px 10px;
       font-size: 1.3em;
       color: #fff;
       text-align: center;
@@ -66,7 +66,7 @@ export default {
   @media screen and (max-width: 1530px) {
     .side-panel-nav {
       &  .nav-item {
-        padding: 20px 10px;
+        padding: 10px 10px;
         font-size: 1.1em;
         transition-duration: .5s;
       }

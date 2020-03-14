@@ -51,7 +51,7 @@ export default {
   .side-panel {
     height: 100%;
     background: #24303C;
-    max-width: 991px !important;
+    // max-width: 991px !important;
     width: 100%;
   }
   .side-panel * {

@@ -175,7 +175,7 @@ export default {
     background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: grey; stroke-width: 2;'/></svg>");
     text-align: center;
     padding: 10px 1px;
-    margin: -1px 0px 0px -1px !important;
+    margin: -1px 0px 0px 0px !important;
     position: relative;
     padding: 15px 0px 0px 0px;
     & .date {

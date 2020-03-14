@@ -114,6 +114,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .decisions-wrapper {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    min-height: 460px;
+  }
   .decisions-wrapper-nav {
     display: flex;
     align-items: flex-start;

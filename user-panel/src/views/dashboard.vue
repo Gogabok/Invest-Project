@@ -49,9 +49,9 @@ export default {
   // }
 }
 .dashboard-user-area {
-  width: 60%;
+  width: calc(100% - 20%);
   & .v-nav {
-    padding-left: 50px ;
+    padding-left: 60px ;
   }
   & .common-dashboard-padding {
     padding-left: 60px;
@@ -59,7 +59,7 @@ export default {
 }
 .side-panel-area {
   padding: 0px 60px;
-  max-width: 620px;
+  max-width: 820px;
   width: 100%;
 }
 .pagination-wrapper {
@@ -68,6 +68,7 @@ export default {
   justify-content: space-between;
   height: 34px;
   width: 100%;
+  margin-bottom: 10px;
 }
 .prev-next-class {
   display: none;

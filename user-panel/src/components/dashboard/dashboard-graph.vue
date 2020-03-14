@@ -15,9 +15,13 @@ export default {
   }),
   mounted () {
     this.renderChart({
-      labels: ['02.20', '03.20', '04.20', '05.20'],
+      labels: ['01.20', '02.20', '03.20', '04.20', '05.20', '06.20', '07.20', '08.20', '09.20', '10.20', '11.20', '12.20'],
       datasets: [{
           data: [
+            {
+              y: 50,
+              x: '01.20'
+            },
             {
               y: 70,
               x: '02.20'
@@ -34,17 +38,45 @@ export default {
               y: 30,
               x: '05.20'
             },
+            {
+              y: 10,
+              x: '06.20'
+            },
+            {
+              y: 80,
+              x: '07.20'
+            },
+            {
+              y: 10,
+              x: '08.20'
+            },
+            {
+              y: 60,
+              x: '09.20'
+            },
+            {
+              y: 39,
+              x: '10.20'
+            },
+            {
+              y: 10,
+              x: '11.20'
+            },
+            {
+              y: 25,
+              x: '12.20'
+            },
           ],
           borderColor: '#379A1D',
-          borderWidth: 6,
-          pointBorderWidth: 6,
+          borderWidth: 3,
+          pointBorderWidth: 3,
           pointBorderColor: '#fff',
           pointBackgroundColor: '#379A1D',
-          pointRadius: 7,
-          pointHitRadius: 13,
+          pointRadius: 3.5,
+          pointHitRadius: 6.5,
           backgroundColor: 'rgba(55, 154, 29, .1)',
-          pointHoverRadius: 7,
-          pointHoverBorderWidth: 6,
+          pointHoverRadius: 3.5,
+          pointHoverBorderWidth: 3,
       }],
     },
     { 
