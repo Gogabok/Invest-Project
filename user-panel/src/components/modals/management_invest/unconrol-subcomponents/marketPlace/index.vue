@@ -143,7 +143,8 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-left: auto;
-    margin: 0px 0px 0px auto;
+    position: absolute;
+    right: -3px;
     transition-duration: 0.2s;
     text-transform: uppercase;
     &:hover {
@@ -208,14 +209,24 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .cryptoMarket {
+    & .output-submit {
+      position: relative;
+      right: 0px;
+      border-radius: 10px;
+    }
+  }
+}
 @media screen and (max-width: 725px) {
   .nav {
     display: block;
-      & .item {
-        &.active {
-          border: 3px solid #3b4757;
-        }
+    & .item {
+      &.active {
+        border: 3px solid #3b4757;
       }
+    }
   }
 }
 @media screen and (max-width: 400px) {
