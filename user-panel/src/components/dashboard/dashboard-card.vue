@@ -140,7 +140,7 @@ export default {
     border-radius: 3px;
     & .list {
       & .item {
-        padding: 5px 15px;
+        padding: 8px 15px;
         color: #fff;
         font-size: 1.1em;
         cursor: pointer;

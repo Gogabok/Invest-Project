@@ -18,11 +18,11 @@
     :style="`height: ${height.module === 'auto' ? height.module : height.module + 'px'}`">
         <div class="item" v-for="item in items" :key="item.desc + item.date + Math.random()">
           <div class="icon">
-            <img src="/assets/common/activity-item-icon.svg" alt />
+            <img src="../../../assets/common/activity-item-icon.svg" alt />
           </div>
           <div class="icon-cloud">
             <img
-              :src="item.isCloudFilled ? `/assets/common/activity-item-icon-cloud-filled.svg` : `/assets/common/activity-item-icon-cloud.svg`"
+              :src="item.isCloudFilled ? `../../../assets/common/activity-item-icon-cloud-filled.svg` : `../../../assets/common/activity-item-icon-cloud.svg`"
               alt
             />
           </div>

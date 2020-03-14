@@ -157,7 +157,7 @@ export default {
       text-align: center;
       padding: 10px 1px;
       width: calc(100% / 7);
-      // margin: -1px 0px 0px -1px;
+      // margin: 0px 0px 0px -1px;
     }
   }
   .calendar-body {
@@ -172,10 +172,10 @@ export default {
     color: #fff;
     font-weight: bold;
     font-size: 1em;
-    background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: grey; stroke-width: 1;'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: grey; stroke-width: 2;'/></svg>");
     text-align: center;
     padding: 10px 1px;
-    // margin: -1px 0px 0px -1px !important;
+    margin: -1px 0px 0px -1px !important;
     position: relative;
     padding: 15px 0px 0px 0px;
     & .date {
