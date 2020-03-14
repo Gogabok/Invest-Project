@@ -59,6 +59,7 @@ export default {
   text-align: center;
   & .okLogo {
     width: 120px;
+    height: 120px;
     display: block;
     margin: 20px auto;
   }

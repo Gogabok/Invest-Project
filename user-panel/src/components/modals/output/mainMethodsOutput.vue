@@ -40,7 +40,7 @@
           <img ondragstart="return false;" src="../../../assets/common/arrow-right-white.svg" alt />
         </button>
       </div>
-      <div v-show="currencyList.length > 1" class="input-values">
+      <div class="input-values">
         <p v-for="item in currencyList" :key="item + Math.random()" :class="currency === item ? 'active' : ''" @click="valueSelecting(item)" class="value">{{ item }}</p>
       </div>
     </div>
@@ -258,7 +258,7 @@ export default {
       align-items: center;
       padding: 5px 15px;
       border: 1px solid #c8c8c8;
-      border-radius: 17px;
+      border-radius: 8px;
       font-size: 1.5em;
       font-weight: bold;
       & input {
@@ -276,7 +276,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px 0px 5px 0px;
+    margin: 15px -70px 5px 0px;
     user-select: none;
     & .value {
       font-weight: 600;
@@ -327,6 +327,9 @@ export default {
 }
 @media screen and (max-width: 780px) {
   .output-modal {
+    .input-values {
+      margin-right: 0px;
+    }
     & .input-wrapper {
       display: block;
       text-align: center;

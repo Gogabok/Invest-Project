@@ -278,7 +278,7 @@ export default {
       align-items: center;
       padding: 5px 15px;
       border: 1px solid #c8c8c8;
-      border-radius: 17px;
+      border-radius: 8px;
       font-size: 1.5em;
       font-weight: bold;
       & input {
