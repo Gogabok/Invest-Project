@@ -47,7 +47,8 @@ export default {
 
 <style lang="scss" scoped>
 .main-navigation {
-  max-width: 230px;
+  max-width: 300px;
+  background: #F5F5F5;
   border-right: 2px solid #e4e4e4;
   // height: 100%;
   width: 100%;
@@ -101,7 +102,7 @@ export default {
     }
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .main-navigation {
       max-width: 100%;
       height: auto;

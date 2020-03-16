@@ -189,7 +189,7 @@ export default {
     max-width: calc(100% - 20px);
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .main-modal {
     display: block;
     overflow: auto;
@@ -208,8 +208,9 @@ export default {
   }
 }
 .main-navigation {
-  max-width: 230px;
+  max-width: 300px;
   border-right: 2px solid #e4e4e4;
+  background: #F5F5F5;
   // height: 100%;
   width: 100%;
   & .list {
@@ -262,7 +263,7 @@ export default {
     }
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .main-navigation {
       max-width: 100%;
       height: auto;

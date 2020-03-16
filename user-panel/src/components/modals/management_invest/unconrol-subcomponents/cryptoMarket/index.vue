@@ -115,7 +115,7 @@ export default {
     }
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .cryptoMarket {
     & .output-submit {
       position: relative;
