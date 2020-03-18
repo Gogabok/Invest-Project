@@ -9,18 +9,45 @@
     <div class="side-panel-area">
       <side-panel></side-panel>
     </div>
+    <div :class="isMenuShow ? 'close-mainMenu': 'hamburger-mainMenu'" @click="isMenuShow = !isMenuShow">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <transition name="slideDown" mode="out-in">
+      <div class="menu" :class="isMenuShow ? 'show': 'hidden'" v-if="isMenuShow"></div>
+    </transition>
   </div>
 </template>
 
 <script>
-import VNav from '@/components/header/index';
-import dashboardCards from '@/components/dashboard/dashboard-cards'
-import dashboardGraphModule from '@/components/dashboard/dashboard-graph-module'
-import sidePanel from '@/components/side-panel/side-panel'
+import VNav from "@/components/header/index";
+import dashboardCards from "@/components/dashboard/dashboard-cards";
+import dashboardGraphModule from "@/components/dashboard/dashboard-graph-module";
+import sidePanel from "@/components/side-panel/side-panel";
 export default {
-  name: 'dashboard',
+  name: "dashboard",
   components: {
-    VNav, dashboardCards, dashboardGraphModule, sidePanel
+    VNav,
+    dashboardCards,
+    dashboardGraphModule,
+    sidePanel
+  },
+  data: () => ({
+    isMenuShow: false
+  }),
+  watch: {
+    isMenuShow: function() {
+      if (this.isMenuShow) {
+        document.getElementsByTagName("html")[0].style.overflowY = "hidden";
+        document.getElementsByTagName("html")[0].style.paddingRight = "8px";
+      } else {
+        setTimeout(() => {
+          document.getElementsByTagName("html")[0].style.overflowY = "scroll";
+          document.getElementsByTagName("html")[0].style.paddingRight = "0px";
+        }, 300);
+      }
+    }
   },
   methods: {
     // heightCalculation() {
@@ -51,14 +78,14 @@ export default {
 .dashboard-user-area {
   width: calc(100% - 20%);
   & .v-nav {
-    padding-left: 100px ;
+    padding-left: 100px;
   }
   & .common-dashboard-padding {
     padding-left: 100px;
   }
 }
 .side-panel-area {
-  padding: 0px 100px;
+  padding: 0px 8px 0px 100px;
   max-width: 820px;
   width: 100%;
 }
@@ -86,8 +113,8 @@ export default {
   justify-content: center;
   user-select: none;
   outline: none;
-  background: #24303C;
-  transition-duration: .2s;
+  background: #24303c;
+  transition-duration: 0.2s;
   position: relative;
   z-index: 10;
 }
@@ -101,8 +128,8 @@ export default {
   display: none;
 }
 .pagination-item-active {
-  background: #379A1D;
-  transition-duration: .2s;
+  background: #379a1d;
+  transition-duration: 0.2s;
 }
 .paginate-container {
   padding: 0px 30px;
@@ -122,12 +149,12 @@ export default {
   content: "..............................................................................................................................................................................................................................................................................";
   letter-spacing: 10px;
   font-size: 20px;
-  color:#fff;
+  color: #fff;
 }
 @media screen and (max-width: 1530px) {
   .paginate-container {
     padding: 0px 10px;
-    & .dotted  {
+    & .dotted {
       width: calc(100% - 20px);
       &:after {
         letter-spacing: 7px;
@@ -209,56 +236,138 @@ export default {
   }
 }
 
+.hamburger-mainMenu {
+  width: 45px;
+  display: block;
+  cursor: pointer;
+  margin: 0px 20px;
+  margin-top: 5px;
+  height: 45px;
+  z-index: 999;
+  position: relative;
+  transition-duration: 0.3s;
+  & span {
+    transition-duration: 0.3s;
+    width: 45px;
+    border: 1.5px solid #fff;
+    border-radius: 3px;
+    display: block;
+    margin: 10px 0px;
+  }
+}
+.close-mainMenu {
+  width: 45px;
+  display: block;
+  cursor: pointer;
+  margin: 0px 20px;
+  margin-top: 5px;
+  height: 45px;
+  z-index: 999;
+  position: relative;
+  margin-top: 15px;
+  transition-duration: 0.3s;
+  & span {
+    transition-duration: 0.3s;
+    width: 45px;
+    border: 1.5px solid #a0a0a0;
+    border-radius: 3px;
+    display: block;
+    margin: 10px 0px;
+    &:nth-child(1) {
+      transform: rotate(-45deg);
+      margin-top: 10px;
+    }
+    &:nth-child(2) {
+      transform: rotate(45deg);
+      margin-top: -12.5px;
+    }
+    &:nth-child(3) {
+      opacity: 0;
+      margin-top: -12.5px;
+      transform: rotate(45deg);
+    }
+  }
+}
+.menu {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 998;
+  transform: translateY(0px);
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+@media screen and (max-width: 1250px) {
+  .hamburger-mainMenu, .close-mainMenu, .menu {
+    display: none;
+  }
+}
+// animations
 
+.slideDown-enter,
+.slideDown-leave-to {
+  transform: translateY(0px);
+}
+.slideDown-enter-active,
+.slideDown-leave-active {
+  transform: translateY(-100%);
+}
 
-
-// animations 
-
-.scaleY-enter, .scaleY-leave-to {
+.scaleY-enter,
+.scaleY-leave-to {
   opacity: 0;
-  transform: scaleY(0); 
+  transform: scaleY(0);
   transform-origin: top;
 }
-.scaleY-enter-active, .scaleY-leave-active {
-  transition-duration: .3s;
+.scaleY-enter-active,
+.scaleY-leave-active {
+  transition-duration: 0.3s;
 }
 
-.scaleY-group-enter, .scaleY-group-leave-to {
+.scaleY-group-enter,
+.scaleY-group-leave-to {
   opacity: 0;
   display: none;
-  transform: scaleY(0); 
+  transform: scaleY(0);
   transform-origin: top;
 }
 
-.scaleY-group-enter-active, .scaleY-group-leave-active {
-  transition-duration: .5s;
+.scaleY-group-enter-active,
+.scaleY-group-leave-active {
+  transition-duration: 0.5s;
 }
 
 .scaleY-group-leave-active {
   display: none !important;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
-.fade-enter-active, .fade-leave-active {
-  transition-duration: .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.5s;
 }
 
-
-.fade-faster-enter, .fade-faster-leave-to {
+.fade-faster-enter,
+.fade-faster-leave-to {
   opacity: 0;
 }
-.fade-faster-enter-active, .fade-faster-leave-active {
-  transition-duration: .1s;
+.fade-faster-enter-active,
+.fade-faster-leave-active {
+  transition-duration: 0.1s;
 }
 
-
-
-.fade-group-enter, .fade-group-leave-to {
+.fade-group-enter,
+.fade-group-leave-to {
   opacity: 0;
 }
-.fade-group-enter-active, .fade-group-leave-active {
+.fade-group-enter-active,
+.fade-group-leave-active {
   transition-duration: 2s;
 }
 
@@ -266,12 +375,13 @@ export default {
   display: none !important;
 }
 
-
-.fade-group-faster-enter, .fade-group-faster-leave-to {
+.fade-group-faster-enter,
+.fade-group-faster-leave-to {
   opacity: 0;
 }
-.fade-group-faster-enter-active, .fade-group-faster-leave-active {
-  transition-duration: .5s;
+.fade-group-faster-enter-active,
+.fade-group-faster-leave-active {
+  transition-duration: 0.5s;
 }
 
 .fade-group-faster-leave-active {
