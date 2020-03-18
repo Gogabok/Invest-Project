@@ -22,7 +22,7 @@
           </div>
           <div class="icon-cloud">
             <img
-              :src="item.isCloudFilled ? `../../../assets/common/activity-item-icon-cloud-filled.svg` : `../../../assets/common/activity-item-icon-cloud.svg`"
+              :src="item.isCloudFilled ? require(`../../../assets/common/activity-item-icon-cloud-filled.svg`) : require(`../../../assets/common/activity-item-icon-cloud.svg`)"
               alt
             />
           </div>
@@ -205,6 +205,7 @@ export default {
   overflow-y: auto;
   padding: 20px;
   height: calc(100% - 110px);
+  align-items: center;
   & .item {
     display: flex;
     align-items: center;
@@ -213,14 +214,19 @@ export default {
     & .icon {
       user-select: none;
       pointer-events: none;
+      margin-left: auto;
     }
     & .icon-cloud {
       user-select: none;
       pointer-events: none;
       margin: 0px 20px;
+      margin-right: auto;
     }
     & .text {
       color: #fff;
+      display: block;
+      margin: 0px auto;
+      margin-left: 20px;
       & .desc {
         font-weight: 400;
         font-size: 0.9em;
