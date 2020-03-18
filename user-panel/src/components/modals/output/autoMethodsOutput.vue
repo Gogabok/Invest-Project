@@ -215,7 +215,7 @@ export default {
     align-items: center;
     & span {
       margin: 0px 20px;
-      font-size: 4em;
+      font-size: 2em;
       font-weight: 600;
     }
   }

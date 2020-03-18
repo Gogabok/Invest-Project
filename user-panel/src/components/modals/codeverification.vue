@@ -206,8 +206,10 @@ export default {
 }
 .modal-close {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: -25px;
+  top: -25px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   user-select: none;
   z-index: 9999;

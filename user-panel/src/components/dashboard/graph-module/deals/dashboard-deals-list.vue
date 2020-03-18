@@ -118,7 +118,7 @@ export default {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    min-height: 460px;
+    min-height: 490px;
   }
   .decisions-wrapper-nav {
     display: flex;
@@ -168,6 +168,12 @@ export default {
           margin-right: 2px;
         }
       }
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    .decisions-wrapper {
+      max-height: 400px;
+      min-height: 400px;
     }
   }
   @media screen and (max-width: 650px) {

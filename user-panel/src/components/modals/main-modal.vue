@@ -62,7 +62,8 @@ export default {
   .main-modal-component {
     padding: 15px 20px;
     overflow-y: auto;
-    max-height: 100%;
+    max-height: 600px;
+    min-height: 600px;
     width: 100%;
     max-width: 100%;
     
@@ -118,6 +119,8 @@ export default {
       max-height: none;
       height:auto;
       width: 100%;
+      max-height: auto;
+      min-height: auto;
     }
   }
   @media screen and (max-width: 630px) {

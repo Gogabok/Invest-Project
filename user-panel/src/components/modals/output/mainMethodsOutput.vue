@@ -75,7 +75,7 @@ export default {
       }
     ],
     currency: "USD",
-    value: ''
+    value: '10'
   }),
   computed: {
     isBtnDisabled() {
@@ -265,10 +265,12 @@ export default {
         border: none;
         color: #302d2b;
         font-weight: 600;
+        text-align: right;
       }
       & span {
         color: #379a1d;
         margin-left: 10px;
+        width: 50px;
       }
     }
   }
@@ -297,11 +299,11 @@ export default {
 }
 .modal-close {
   position: absolute;
-  right: -35px;
-  top: -35px;
   cursor: pointer;
   user-select: none;
   z-index: 9999;
+  right: -25px;
+  top: -25px;
   width: 20px;
   height: 20px;
 }

@@ -260,7 +260,7 @@ export default {
   & .title {
     font-weight: bold;
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
   & .desc {
     font-weight: 400;

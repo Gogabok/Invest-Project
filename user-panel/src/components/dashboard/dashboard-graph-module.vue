@@ -144,7 +144,7 @@ export default {
 <style lang="scss" >
   .dashboard-graph-module {
     background: #24303C;
-    margin: 10px 0px 0px 60px;
+    margin: 10px 0px 0px 100px;
     position: relative;
     border-radius: 3px;
     padding: 10px 10px 5px 10px;
@@ -224,8 +224,8 @@ export default {
       border-radius: 5px;
     } 
     .module-component {
-      max-height: 460px;
-      min-height: 460px;
+      max-height: 490px;
+      min-height: 490px;
       overflow-y: auto;
       justify-content: space-between;
       display: flex;
@@ -267,6 +267,12 @@ export default {
           height: 15px;
         }
       }
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    .module-component {
+      max-height: 400px;
+      min-height: 400px;
     }
   }
   @media screen and (max-width: 650px) {

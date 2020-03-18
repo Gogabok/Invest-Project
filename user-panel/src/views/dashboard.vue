@@ -51,14 +51,14 @@ export default {
 .dashboard-user-area {
   width: calc(100% - 20%);
   & .v-nav {
-    padding-left: 60px ;
+    padding-left: 100px ;
   }
   & .common-dashboard-padding {
-    padding-left: 60px;
+    padding-left: 100px;
   }
 }
 .side-panel-area {
-  padding: 0px 60px;
+  padding: 0px 100px;
   max-width: 820px;
   width: 100%;
 }

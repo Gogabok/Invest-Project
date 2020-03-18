@@ -128,13 +128,13 @@ export default {
 }
 .modal-close {
   position: absolute;
-  right: -35px;
-  top: -35px;
+  right: -25px;
+  top: -25px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   user-select: none;
   z-index: 9999;
-  width: 20px;
-  height: 20px;
 }
 @media screen and (max-width: 1100px) {
   .modal-close {

@@ -167,13 +167,13 @@ export default {
 }
 .modal-close {
   position: absolute;
-  right: -40px;
-  top: -35px;
+  right: -28px;
+  top: -28px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   user-select: none;
   z-index: 9999;
-  width: 20px;
-  height: 20px;
 }
 @media screen and (max-width: 1100px) {
   .modal-close {

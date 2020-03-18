@@ -216,11 +216,11 @@ export default {
   position: absolute;
   right: -25px;
   top: -25px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   user-select: none;
   z-index: 9999;
-  width: 20px;
-  height: 20px;
 }
 
 @media screen and (max-width: 600px) {
