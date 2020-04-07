@@ -9,7 +9,7 @@
               {{ navItem.title }}
         </div>
       </div>
-      <transition-group tag="div" class="desicions-wrapper-content" :style="`height: ${height}`" ref="desicionsWrapperContent" name="fade-group">
+      <!-- <transition-group tag="div" class="desicions-wrapper-content" :style="`height: ${height}`" ref="desicionsWrapperContent" name="fade-group"> -->
         <label
             v-for="(decision, index) in items"
             :key="decision.botName + index + Math.random()"
@@ -37,7 +37,7 @@
               />
             </div>
         </label>
-      </transition-group>
+      <!-- </transition-group> -->
     </div>
     <div class="paginate-container">
       <paginate

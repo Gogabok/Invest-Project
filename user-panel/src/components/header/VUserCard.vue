@@ -1,7 +1,7 @@
 <template>
   <div class="v-user-card">
     <p class="v-user-name">woohoohooh@gmail.com</p>
-    <div class="v-user-card-extraDots" @click="openMiniModal">
+    <div v-click-outside="hide" class="v-user-card-extraDots" @click="openMiniModal">
       <span class="v-user-card-extraDots-item"></span>
       <span class="v-user-card-extraDots-item"></span>
     </div>
@@ -22,8 +22,12 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
 export default {
   name: "v-user-card",
+  directives: {
+    ClickOutside
+  },
   data: () => ({
     modal: {
       isActive: false,
@@ -44,6 +48,9 @@ export default {
   methods: {
     openMiniModal () {
       this.modal.isActive = !this.modal.isActive
+    },
+    hide() {
+      this.modal.isActive = false
     },
     openModal (payload) {
       this.modal.isActive = false

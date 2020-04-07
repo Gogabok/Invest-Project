@@ -78,7 +78,7 @@ export default {
 .dashboard-user-area {
   width: calc(100% - 20%);
   & .v-nav {
-    padding-left: 100px;
+    padding-left: 12px;
   }
   & .common-dashboard-padding {
     padding-left: 100px;
@@ -355,11 +355,11 @@ export default {
 
 .fade-faster-enter,
 .fade-faster-leave-to {
-  opacity: 0;
+  opacity: 0 !important;
 }
 .fade-faster-enter-active,
 .fade-faster-leave-active {
-  transition-duration: 0.1s;
+  transition-duration: 0.1s !important;
 }
 
 .fade-group-enter,

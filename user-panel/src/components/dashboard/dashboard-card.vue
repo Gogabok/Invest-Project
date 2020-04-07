@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-card">
     <p class="dashboard-card-title"><slot></slot></p>
-    <div class="v-dashboard-card-extraDots" @click="openMiniModal">
+    <div v-click-outside="hide" class="v-dashboard-card-extraDots" @click="openMiniModal">
       <span class="v-dashboard-card-extraDots-item"></span>
       <span class="v-dashboard-card-extraDots-item"></span>
     </div>
@@ -24,11 +24,16 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
+
 export default {
   name: 'dashboard-card',
   props: [
     'balance', 'extraInfo', 'modal'
   ],
+  directives: {
+    ClickOutside
+  },
   data: () => ({
     miniModals: {
       invest: {
@@ -71,6 +76,9 @@ export default {
     }
   }),
   methods: {
+    hide() {
+      this.miniModals[this.modal].isActive = false
+    },
     openMiniModal () {
       this.miniModals[this.modal].isActive = !this.miniModals[this.modal].isActive
     },
@@ -124,8 +132,8 @@ export default {
       & .v-dashboard-card-extraDots-item {
         display: block;
         border-radius: 50%;
-        width: 6px;
-        height: 6px;
+        width: 5px;
+        height: 5px;
         margin: 4px auto;
         background: rgba(184, 189, 196, 0.5);
       }

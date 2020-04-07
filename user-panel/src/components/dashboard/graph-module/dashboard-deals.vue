@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition name="scaleY" mode="out-in">
+    <transition name="fade-faster" mode="out-in">
       <component :is="currentComponent"></component>
     </transition>
   </div>

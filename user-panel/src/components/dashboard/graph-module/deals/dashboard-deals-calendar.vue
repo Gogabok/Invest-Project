@@ -1,32 +1,34 @@
 <template>
   <div class="calendar">
-    <div class="graph-module-zone">
-      <div class="calendar-nav">
-        <div
-          v-for="navItem in navigation"
-          :key="navItem.title"
-          class="nav-item">
-            {{ navItem.title }}
+    <transition name="fade-faster" mode="out-in">
+      <div class="graph-module-zone">
+        <div class="calendar-nav">
+          <div
+            v-for="navItem in navigation"
+            :key="navItem.title"
+            class="nav-item">
+              {{ navItem.title }}
+          </div>
         </div>
-      </div>
-      <div class="calendar-body">
-        <div class="calendar-line" v-for="(line, index) in Object.values(daysData)" :key="index + Math.random()">
-          <div :class="day.date ? `calendar-line-item ${ today === day.unformateDate ? `calendar-line-item-today` : ``}` : `calendar-line-item-empty`" v-for="day in line" :key="day.date + Math.random()">
-            <span class="date">{{ day.date }}</span>
-            <div class="rates">
-              <div class="rates-up" v-if="day.rates">
-                <img :src="`./assets/common/arrow-up-white.svg`" alt="">
-                <span>{{ day.rates.up }}</span>
-              </div>
-              <div class="rates-down" v-if="day.rates">
-                <img :src="`./assets/common/arrow-down-white.svg`" alt="">
-                <span>{{ day.rates.down }}</span>
+        <div class="calendar-body">
+          <div class="calendar-line" v-for="(line, index) in Object.values(daysData)" :key="index + Math.random()">
+            <div :class="day.date ? `calendar-line-item ${ today === day.unformateDate ? `calendar-line-item-today` : ``}` : `calendar-line-item-empty`" v-for="day in line" :key="day.date + Math.random()">
+              <span class="date">{{ day.date }}</span>
+              <div class="rates">
+                <div class="rates-up" v-if="day.rates">
+                  <img :src="`./assets/common/arrow-up-white.svg`" alt="">
+                  <span>{{ day.rates.up }}</span>
+                </div>
+                <div class="rates-down" v-if="day.rates">
+                  <img :src="`./assets/common/arrow-down-white.svg`" alt="">
+                  <span>{{ day.rates.down }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 

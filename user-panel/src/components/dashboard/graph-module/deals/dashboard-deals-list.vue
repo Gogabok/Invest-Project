@@ -9,7 +9,7 @@
               {{ navItem.title }}
         </div>
       </div>
-      <transition-group tag="div" class="deals-wrapper-content" :style="`height: ${height}`" ref="dealsWrapperContent" name="fade-group">
+      <!-- <transition-group tag="div" class="deals-wrapper-content" :style="`height: ${height}`" ref="dealsWrapperContent" name="fade-group"> -->
         <label
             v-for="(deal, index) in items"
             :key="deal.botName + index + Math.random()"
@@ -31,7 +31,7 @@
               {{ deal.profit }}
             </p>
         </label>
-      </transition-group>
+      <!-- </transition-group> -->
     </div>
     <div class="paginate-container">
       <paginate

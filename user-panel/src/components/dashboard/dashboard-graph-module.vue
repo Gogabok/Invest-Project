@@ -27,7 +27,7 @@
         </button>
       </transition-group>
     </div>
-    <transition name="scaleY" mode="out-in">
+    <transition name="fade-faster" mode="out-in">
       <component :is="currentActiveModule" class="module-component" :minitoolbar="miniToolbar[currentActiveMiniToolbar]"></component>
     </transition>
   </div>
@@ -161,7 +161,7 @@ export default {
     &-item {
       color: #fff;
       font-size: 1.1em;
-      padding: 5px 10px;
+      padding: 5px 10px 7px 10px;
       margin: 0px 7px;
       border-radius: 3px;
       border: none;
@@ -190,7 +190,7 @@ export default {
       transition-duration: .3s;
       & .text {
         color: #fff;
-        font-size: 1em;
+        font-size: .9em;
         line-height: 0px;
         width: 20px;
         height: 20px;
@@ -198,8 +198,8 @@ export default {
         max-height: 0px;
       }
       & img {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         position: absolute;
         pointer-events: none;
       }

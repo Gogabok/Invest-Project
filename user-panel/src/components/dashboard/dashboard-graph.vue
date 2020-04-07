@@ -2,8 +2,8 @@
   <div class="dashboard-graph">
     <div class="dashboard-graph-zone">
       <canvas ref="canvas"></canvas>
-      <div :style="`bottom: ${topOfLeaf}px`" ref="leaf" class="leaf">
-        1
+      <div :style="`top: ${topOfLeaf}px`" ref="leaf" class="leaf">
+        4.5%
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@ export default {
               x: '11.20'
             },
             {
-              y: 25,
+              y: 50,
               x: '12.20'
             },
           ],
@@ -72,9 +72,10 @@ export default {
       let canvasHeight = this.$refs.canvas.height
       let lastPoint = this.points[this.points.length - 1]
 
-      let topOfLeaf = ((canvasHeight + 80) / 100) * +lastPoint.y
-      this.topOfLeaf = topOfLeaf
-      console.log(topOfLeaf);
+      let topOfLeaf = ((canvasHeight / 100) * (lastPoint.y - lastPoint.y * .15))
+      // let topOfLeaf = 30
+      this.topOfLeaf = canvasHeight - (topOfLeaf + 110)
+      console.log(this.topOfLeaf);
     }
   },
   mounted () {
@@ -160,18 +161,40 @@ export default {
 </script>
 
 <style lang="scss">
+  .dashboard-graph-module {
+    overflow: visible !important;
+  }
   .dashboard-graph {
     // position: relative;
     width: 100%;
     max-width: 1200px;
     margin: 0px auto;
+    overflow: visible !important;
   }
   .dashboard-graph-zone {
     position: relative;
   }
   .leaf {
     position: absolute;
-    right: 0px;
+    right: -70px;
+    color: #fff;
+    width: 100px;
+    height: 80px;
+    background: url("../../assets/common/leaf.svg") 30%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: 600;
+  }
+  @media screen and (max-width: 1250px) {
+    .dashboard-graph {
+      overflow: auto !important;
+    }
+    .leaf {
+      display: none;
+    }
   }
   @media screen and (max-width: 652px) {
     .dashboard-graph-zone {
@@ -179,6 +202,7 @@ export default {
     }
     .dashboard-graph {
       overflow-x: auto;
+      overflow: auto !important;
     }
     .dashboard-graph::-webkit-scrollbar {
       background: rgba(30, 44, 61, 0.7);
