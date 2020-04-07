@@ -5,7 +5,7 @@
       <span class="v-user-card-extraDots-item"></span>
       <span class="v-user-card-extraDots-item"></span>
     </div>
-    <transition name="scaleY" mode="out-in">
+    <!-- <transition name="scaleY" mode="out-in"> -->
       <div class="card-modal" v-show="modal.isActive">
         <!-- {{ miniModals[modal].list[0].title }} -->
         <div class="list">
@@ -17,7 +17,7 @@
           >{{ item.title }}</p>
         </div>
       </div>
-    </transition>
+    <!-- </transition> -->
   </div>
 </template>
 

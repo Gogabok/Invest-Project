@@ -15,7 +15,7 @@
     <div class="navigation-wrapper" :style="menuStyle">
       <v-logo class="logo"></v-logo>
       <v-nav-btn class="btn btn-1" :VClass="'invest'">Инвестировать</v-nav-btn>
-      <v-nav-btn class="btn btn-2" :VClass="'output'">Вывести деньги</v-nav-btn>
+      <v-nav-btn class="btn btn-2" :VClass="'output'">Вывести</v-nav-btn>
       <v-user-card class="userBtn">{{ userName }}</v-user-card>
     </div>
   </div>

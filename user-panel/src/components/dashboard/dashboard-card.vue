@@ -11,7 +11,7 @@
     <div class="extraInfo">
       {{ extraInfo }}
     </div>
-    <transition name="scaleY" mode="out-in">
+    <!-- <transition name="scaleY" mode="out-in"> -->
       <div class="card-modal" v-show="miniModals[modal].isActive">
         <div class="list">
           <p @click="openModal(item)" class="item" v-for="item in miniModals[modal].list" :key="item.link + modal + item.sublink || Math.random()">
@@ -19,7 +19,7 @@
           </p>
         </div>
       </div>
-    </transition>
+    <!-- </transition> -->
   </div>
 </template>
 

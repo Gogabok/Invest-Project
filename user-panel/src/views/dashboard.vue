@@ -86,7 +86,7 @@ export default {
 }
 .side-panel-area {
   padding: 0px 8px 0px 100px;
-  max-width: 820px;
+  max-width: 720px;
   width: 100%;
 }
 .pagination-wrapper {

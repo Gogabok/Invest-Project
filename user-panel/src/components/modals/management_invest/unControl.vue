@@ -30,9 +30,9 @@
         </div>
       </div>
     </div>
-    <transition mode="out-in" name="fade-faster">
+    <!-- <transition mode="out-in" name="fade-faster"> -->
       <component @deleteModal="deleteModal" :sublink="nav.find(item => item.sublink)"  @selecting="selecting" class="main-modal-component" :is="activeNavItem"></component>
-    </transition>
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -131,13 +131,14 @@ export default {
 <style lang="scss" scoped>
 .main-modal {
   height: 100%;
+  min-height: 620px;
   width: 100%;
   display: flex;
   align-items: stretch;
   // overflow: hidden;
   background: #fff;
   border: 3px solid #e4e4e4;
-  max-height: 700px;
+  // max-height: 700px;
   max-width: 1000px;
   border-radius: 5px;
   margin: 0px auto;
@@ -148,6 +149,9 @@ export default {
   max-height: 100%;
   width: 100%;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .main-modal-component::-webkit-scrollbar {
   background: #e4e4e4;
