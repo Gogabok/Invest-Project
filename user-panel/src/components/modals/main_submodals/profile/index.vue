@@ -298,7 +298,7 @@ export default {
 .input-container {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #e4e4e4;
+  // border-bottom: 2px solid #e4e4e4;
   padding: 15px 0px;
   cursor: text;
   user-select: none;
@@ -325,6 +325,12 @@ export default {
     width: 100%;
     color: #302d2b;
     -webkit-box-shadow: inset 0 0 0 50px #fff;
+    border-bottom: 2px solid #e4e4e4;
+    padding-bottom: 6px;
+    transition-duration: .2s;
+    &:focus {
+      border-bottom: 2px solid rgba(112, 112, 112, 0.7);
+    }
     &::placeholder {
       color: rgba(112, 112, 112, 0.7);
     }
