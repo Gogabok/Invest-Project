@@ -14,7 +14,7 @@
       >{{ item.title }}</button>
     </div>
     <div class="activity-wrapper">
-      <transition-group tag="div" class="activity-list" ref="activity" name="scaleY-group" 
+      <transition-group tag="div" class="activity-list" ref="activity" name="fade-group-faster" 
     :style="`height: ${height.module === 'auto' ? height.module : height.module + 'px'}`">
         <div class="item" v-for="item in items" :key="item.desc + item.date + Math.random()">
           <div class="icon">

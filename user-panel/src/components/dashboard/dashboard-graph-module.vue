@@ -211,7 +211,7 @@ export default {
   // @media screen and (min-width: 830px) {
     .dashboard-graph-module {
       overflow-y: auto;
-      min-height: 400px;
+      // min-height: 400px;
       margin-bottom: 10px;
     }
     .dashboard-graph-module::-webkit-scrollbar{
@@ -224,8 +224,8 @@ export default {
       border-radius: 5px;
     } 
     .module-component {
-      max-height: 490px;
-      min-height: 490px;
+      // max-height: 490px;
+      // min-height: 490px;
       overflow-y: auto;
       justify-content: space-between;
       display: flex;

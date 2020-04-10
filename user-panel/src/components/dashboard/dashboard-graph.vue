@@ -69,13 +69,13 @@ export default {
   }),
   methods: {
     LeafCalc() {
-      let canvasHeight = this.$refs.canvas.height
+      let canvasHeight = this.$refs.canvas.clientHeight
       let lastPoint = this.points[this.points.length - 1]
 
       let topOfLeaf = ((canvasHeight / 100) * (lastPoint.y - lastPoint.y * .15))
       // let topOfLeaf = 30
       this.topOfLeaf = canvasHeight - (topOfLeaf + 110)
-      console.log(this.topOfLeaf);
+      console.log(canvasHeight, topOfLeaf, this.topOfLeaf);
     }
   },
   mounted () {
@@ -116,12 +116,12 @@ export default {
           display: true,
           gridLines: {
             display: true,
-            color: 'rgba(210, 212, 214, 1)',
+            color: '#D3D5D8',
             borderDash: [1, 10],
             drawTicks: false,
           },
           ticks: {
-            fontColor: "#fff",
+            fontColor: "#D3D5D8",
             fontSize: 16,
             padding: 15,
             fontFamily: "Exo 2",
@@ -137,13 +137,13 @@ export default {
           display: true,
           gridLines: {
             display: true,
-            color: 'rgba(210, 212, 214, 1)',
+            color: '#D3D5D8',
             borderDash: [1, 10],
             drawTicks: false,
             drawBorder: true,
           },
           ticks: {
-            fontColor: "#fff",
+            fontColor: "#D3D5D8",
             fontSize: 16,
             padding: 15,
             fontFamily: "Exo 2",
@@ -167,7 +167,7 @@ export default {
   .dashboard-graph {
     // position: relative;
     width: 100%;
-    max-width: 1200px;
+    // max-width: 1200px;
     margin: 0px auto;
     overflow: visible !important;
   }
@@ -176,7 +176,7 @@ export default {
   }
   .leaf {
     position: absolute;
-    right: -70px;
+    right: -80px;
     color: #fff;
     width: 100px;
     height: 80px;
