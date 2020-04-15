@@ -73,9 +73,7 @@ export default {
       let lastPoint = this.points[this.points.length - 1]
 
       let topOfLeaf = ((canvasHeight / 100) * (lastPoint.y - lastPoint.y * .15))
-      // let topOfLeaf = 30
       this.topOfLeaf = canvasHeight - (topOfLeaf + 110)
-      console.log(canvasHeight, topOfLeaf, this.topOfLeaf);
     }
   },
   mounted () {
