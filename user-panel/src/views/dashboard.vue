@@ -15,7 +15,9 @@
       <span></span>
     </div>
     <transition name="slideDown" mode="out-in">
-      <div class="menu" :class="isMenuShow ? 'show': 'hidden'" v-if="isMenuShow"></div>
+      <div class="menu" :class="isMenuShow ? 'show': 'hidden'" v-if="isMenuShow">
+        <v-menu></v-menu>
+      </div>
     </transition>
   </div>
 </template>
@@ -25,16 +27,18 @@ import VNav from "@/components/header/index";
 import dashboardCards from "@/components/dashboard/dashboard-cards";
 import dashboardGraphModule from "@/components/dashboard/dashboard-graph-module";
 import sidePanel from "@/components/side-panel/side-panel";
+import VMenu from "@/components/menu/index"
 export default {
   name: "dashboard",
   components: {
     VNav,
     dashboardCards,
     dashboardGraphModule,
-    sidePanel
+    sidePanel,
+    VMenu
   },
   data: () => ({
-    isMenuShow: false
+    isMenuShow: true
   }),
   watch: {
     isMenuShow: function() {
@@ -292,6 +296,7 @@ export default {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.95);
+  // background: rgba(255, 255, 255, 1);
   overflow: hidden;
   position: fixed;
   left: 0px;
