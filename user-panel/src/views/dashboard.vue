@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="dashboard">
     <div class="dashboard-user-area" ref="dashboardUserArea">
       <v-nav class="v-nav"></v-nav>
@@ -14,12 +15,13 @@
       <span></span>
       <span></span>
     </div>
-    <transition name="slideDown" mode="out-in">
+  </div>
+  <transition name="slideDown" mode="out-in">
       <div class="menu" :class="isMenuShow ? 'show': 'hidden'" v-if="isMenuShow">
         <v-menu></v-menu>
       </div>
     </transition>
-  </div>
+</div>
 </template>
 
 <script>
@@ -295,15 +297,26 @@ export default {
 .menu {
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 1);
   // background: rgba(255, 255, 255, 1);
-  overflow: hidden;
+  // overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: fixed;
   left: 0px;
   top: 0px;
   z-index: 998;
   transform: translateY(0px);
   transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  &::-webkit-scrollbar{
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border: none;
+    border-radius: 0;
+    opacity: .2;
+  } 
 }
 @media screen and (max-width: 1250px) {
   .hamburger-mainMenu, .close-mainMenu, .menu {

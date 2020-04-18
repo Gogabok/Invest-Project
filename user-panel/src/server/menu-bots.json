@@ -1,0 +1,112 @@
+[
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Крипторынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": true,
+        "risksProgress": 1,
+        "status": "checked"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Букмекерские ставки",
+        "income": "10%",
+        "dateOfConnection": false,
+        "investors": 112,
+        "isUnConrolManagment": true,
+        "risksProgress": 2,
+        "status": "checked"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Валютный рынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": false,
+        "risksProgress": 3,
+        "status": "checked"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Фондовый рынок",
+        "income": "10%",
+        "dateOfConnection": false,
+        "investors": 112,
+        "isUnConrolManagment": true,
+        "risksProgress": 4,
+        "status": "checked"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Валютный рынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": true,
+        "risksProgress": 5,
+        "status": "checked"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Фондовый рынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": true,
+        "risksProgress": 1,
+        "status": "ourChoice"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Валютный рынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": true,
+        "risksProgress": 1,
+        "status": "ourChoice"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Фондовый рынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": false,
+        "risksProgress": 1,
+        "status": "ourChoice"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Фондовый рынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": false,
+        "risksProgress": 2,
+        "status": "testing"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Фондовый рынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": false,
+        "risksProgress": 3,
+        "status": "exploring"
+  },
+  {
+        "title": "NeiroGeniusBot",
+        "type": "Фондовый рынок",
+        "income": "10%",
+        "dateOfConnection": "20/01/2020",
+        "investors": 112,
+        "isUnConrolManagment": false,
+        "risksProgress": 5,
+        "status": "deleted"
+  }
+]
