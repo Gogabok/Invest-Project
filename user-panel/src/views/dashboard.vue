@@ -17,10 +17,10 @@
     </div>
   </div>
   <transition name="slideDown" mode="out-in">
-      <div class="menu" :class="isMenuShow ? 'show': 'hidden'" v-if="isMenuShow">
-        <v-menu></v-menu>
-      </div>
-    </transition>
+    <div class="menu" :class="isMenuShow ? 'show': 'hidden'" v-if="isMenuShow">
+      <v-menu></v-menu>
+    </div>
+  </transition>
 </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
     VMenu
   },
   data: () => ({
-    isMenuShow: true
+    isMenuShow: false
   }),
   watch: {
     isMenuShow: function() {
@@ -71,15 +71,8 @@ export default {
 <style lang="scss">
 .dashboard {
   display: flex;
-  // align-items: stretch;
   justify-content: space-between;
-  // height: 100%;
-  // min-height: 100%;
   overflow: hidden;
-  // & * {
-  //   box-sizing: border-box;
-  //   font-family: "Exo 2", sans-serif;
-  // }
 }
 .dashboard-user-area {
   width: calc(100% - 20%);
