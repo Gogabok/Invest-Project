@@ -104,7 +104,7 @@ export default {
     }, {deep:true})
   },
   mounted() {
-    this.height = this.$refs.desicionsWrapperContent.clientHeight + 'px'
+    // this.height = this.$refs.desicionsWrapperContent.clientHeight + 'px'
   },
   methods: {
     updatingComponent () {

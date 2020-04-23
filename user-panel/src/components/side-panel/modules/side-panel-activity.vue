@@ -133,7 +133,7 @@ export default {
     },
     setHeight() {
       // Тут просто вычисления высоты side panel и адаптив под экран
-      this.height.module = document.body.clientHeight - this.$refs.activityNav.clientHeight - 250;
+      this.height.module = document.body.clientHeight - this.$refs.activityNav.clientHeight - 200;
       setTimeout(() => {
         this.$refs.sidePanelModule.style.opacity = 1;
       }, 1);
@@ -165,7 +165,7 @@ export default {
   // height: calc(100% - 180px);
 }
 .side-panel-activity {
-  height: calc(100% - 100px);
+  height: calc(100% - 0px);
   opacity: 0;
   transition-duration: 1.5s;
   display: flex;
@@ -240,7 +240,7 @@ export default {
   }
 }
 .paginate-container-activity {
-  margin: auto 0px 20px 0px !important;
+  margin: 20px 0px 20px 0px !important;
   // margin-bottom: 15px !important;
   & .pagination-item-active {
     background: #fff;

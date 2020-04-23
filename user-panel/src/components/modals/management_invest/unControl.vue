@@ -220,10 +220,10 @@ export default {
   & .list {
     padding: 5px 0px 5px 0px;
     & .item {
-      padding: 20px 20px;
+      padding: 30px 20px;
       width: 100%;
       cursor: pointer;
-      font-size: 1em;
+      font-size: 1.25em;
       display: flex;
       align-items: center;
       justify-content: space-between;

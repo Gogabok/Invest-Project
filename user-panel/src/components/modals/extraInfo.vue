@@ -21,7 +21,9 @@
       </div>
     </div>
     <transition name="fade-faster" mode="out-in">
-      <component :is="activeNavItem"></component>
+      <div class="component-modal">
+        <component :is="activeNavItem"></component>
+      </div>
     </transition>
   </div>
 </template>
@@ -112,10 +114,30 @@ export default {
   .main-modal-component {
     padding: 15px 20px;
     overflow-y: auto;
-    max-height: 100%;
+    max-height: 800px;
+    height: 100%;
     width: 100%;
     max-width: 100%;
     
+  }
+
+  .component-modal {
+    padding: 15px 20px;
+    overflow-y: auto;
+    min-height: 500px;
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    &::-webkit-scrollbar{
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb{
+      background: #ccc;
+      border: none;
+      border-radius: 0;
+      opacity: .2;
+    } 
   }
   .main-modal-component::-webkit-scrollbar{
     background: #E4E4E4;

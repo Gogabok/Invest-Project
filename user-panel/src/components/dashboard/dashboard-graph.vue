@@ -2,7 +2,7 @@
   <div class="dashboard-graph">
     <div class="dashboard-graph-zone">
       <canvas ref="canvas"></canvas>
-      <div :style="`top: ${topOfLeaf}px`" ref="leaf" class="leaf">
+      <div :style="`bottom: ${topOfLeaf}px`" ref="leaf" class="leaf">
         4.5%
       </div>
     </div>
@@ -62,51 +62,57 @@ export default {
               x: '11.20'
             },
             {
-              y: 50,
+              y: 20,
               x: '12.20'
             },
           ],
   }),
   methods: {
     LeafCalc() {
-      let canvasHeight = this.$refs.canvas.clientHeight
+      let canvasHeight = this.$refs.canvas.clientHeight + 20
       let lastPoint = this.points[this.points.length - 1]
-
-      let topOfLeaf = ((canvasHeight / 100) * (lastPoint.y - lastPoint.y * .15))
-      this.topOfLeaf = canvasHeight - (topOfLeaf + 110)
+      // let pxPerPoint = (canvasHeight / 100) * lastPoint.y
+      let topOfLeaf = (canvasHeight / 100) * lastPoint.y
+      console.log(topOfLeaf)
+      if((canvasHeight / 2) < topOfLeaf) {
+        topOfLeaf -= 30
+      }
+      this.topOfLeaf = topOfLeaf
     }
   },
   mounted () {
     this.renderChart({
+      hoverMode: 'index',
       labels: this.labels,
       datasets: [{
           data: this.points,
           borderColor: '#379A1D',
-          borderWidth: 3,
+          borderWidth: 5,
           pointBorderWidth: 3,
           pointBorderColor: '#fff',
           pointBackgroundColor: '#379A1D',
-          pointRadius: 3.5,
-          pointHitRadius: 6.5,
-          backgroundColor: 'rgba(55, 154, 29, .1)',
-          pointHoverRadius: 3.5,
+          pointRadius: 7,
+          pointHitRadius: 9,
+          backgroundColor: 'rgba(55, 154, 29, .08)',
+          pointHoverRadius: 7,
           pointHoverBorderWidth: 3,
       }],
     },
     { 
       layout: {
         padding: {
-            left: 5,
-            right: 5,
+            left: 0,
+            right: 0,
             top: 0,
             bottom: 0
         }
       },
-      tooltips: {
-        enabled: false
-      },
       legend: {
         display: false
+      },
+      tooltip: {
+        // fontColor: "#D3D5D8",
+        // fontFamily: "Exo 2"
       },
       scales: {
         yAxes: [{
@@ -116,13 +122,13 @@ export default {
             display: true,
             color: '#D3D5D8',
             borderDash: [1, 10],
-            drawTicks: false,
+            drawTicks: true,
           },
           ticks: {
             fontColor: "#D3D5D8",
-            fontSize: 16,
-            padding: 15,
-            fontFamily: "Exo 2",
+            // fontSize: 16,
+            padding: 5,
+            // fontFamily: "Exo 2",
             callback: function(value, index, values) {
                 return value + '%';
             },
@@ -133,18 +139,20 @@ export default {
         }],
         xAxes: [{
           display: true,
+          color: '#D3D5D8',
           gridLines: {
             display: true,
             color: '#D3D5D8',
             borderDash: [1, 10],
-            drawTicks: false,
+            drawTicks: true,
             drawBorder: true,
+            drawOnChartArea: false,
           },
           ticks: {
             fontColor: "#D3D5D8",
-            fontSize: 16,
-            padding: 15,
-            fontFamily: "Exo 2",
+            // fontSize: 16,
+            padding: 10,
+            // fontFamily: "Exo 2",
           }
         }]
       }

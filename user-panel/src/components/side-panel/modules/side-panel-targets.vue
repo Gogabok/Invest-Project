@@ -22,12 +22,12 @@
               <stop offset="100%" stop-color="#1C4E0F" />
             </linearGradient>
           </defs>
-          <circle class="bg" cx="170" cy="170" r="140" />
+          <circle class="bg" cx="210" cy="210" r="180" />
           <circle
             class="progress"
-            cx="170"
-            cy="170"
-            r="140"
+            cx="210"
+            cy="210"
+            r="180"
             ref="progressBar"
             stroke="url(#gradient)"
           />
@@ -126,13 +126,19 @@ export default {
 
 .circle {
   position: relative;
-  width: 340px;
+  width: 420px;
   margin: 0px auto 0px auto;
+  @media screen and (max-width: 450px) {
+    zoom: 0.75;
+  }
+  @media screen and (max-width: 350px) {
+    zoom: 0.6;
+  }
 }
 
 .circle .main-circle {
   width: 100%;
-  height: 340px;
+  height: 420px;
 }
 
 .circle .bg {

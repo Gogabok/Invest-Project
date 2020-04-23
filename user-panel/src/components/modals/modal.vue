@@ -14,6 +14,7 @@
         ></component>
       </transition>
     </div>
+    <div class="overlay" key="overlay"></div>
   </transition-group>
 </template>
 
@@ -48,13 +49,16 @@ export default {
     modalExtraInfo
   },
   mounted() {
+    let textes = document.querySelectorAll(".dashboard")[0]
+    textes.style.filter = "blur(1px)"
+
     document.getElementsByTagName("html")[0].style.overflow = "hidden";
     document.getElementsByTagName("html")[0].style.paddingRight = "8px";
     if (document.body.clientWidth < 830) {
       document.getElementsByClassName("navigation")[0].style.width =
         "calc(100% - 8px)";
     }
-    let overlay = document.getElementsByClassName("modal-overlay")[0];
+    let overlay = document.getElementsByClassName("overlay")[0];
     overlay.addEventListener("mousedown", function(e) {
       if (e.target === overlay) {
         store.dispatch("modalStore/DELETE_ALL_MODALS");
@@ -65,6 +69,8 @@ export default {
     document.getElementsByTagName("html")[0].style.overflowY = "scroll";
     document.getElementsByTagName("html")[0].style.paddingRight = "0px";
     document.getElementsByClassName("navigation")[0].style.width = "100%";
+    let textes = document.querySelectorAll(".dashboard")[0]
+    textes.style.filter = "blur(0px)"
   },
   methods: {
     deleteModal(payload) {
@@ -86,9 +92,17 @@ export default {
   left: 0px;
   width: 100%;
   height: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
   background: rgba(112, 112, 112, 0.7);
-  z-index: 9999;
+  z-index: 999;
   padding: 60px;
+  filter: blur(200px);
 }
 .modal {
   // max-width: 1000px;
@@ -101,6 +115,7 @@ export default {
   // height: 100%;
   width: 100%;
   box-sizing: border-box;
+  z-index: 9999;
 }
 .modal-wrapper {
   background: #fff;

@@ -27,9 +27,9 @@
         </button>
       </transition-group>
     </div>
-    <transition name="fade-faster" mode="out-in">
+    <!-- <transition name="fade-faster" mode="out-in"> -->
       <component :is="currentActiveModule" class="module-component" :minitoolbar="miniToolbar[currentActiveMiniToolbar]"></component>
-    </transition>
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -115,11 +115,11 @@ export default {
     }
   },
   mounted() {
-    this.$emit("heightComputed", this.$refs.dashboardGraphModuleRef.clientHeight)
+    // this.$emit("heightComputed", this.$refs.dashboardGraphModuleRef.clientHeight)
   },
   watch: {
     currentActiveModule: function () {
-      this.$emit("heightComputed", this.$refs.dashboardGraphModuleRef.clientHeight)
+      // this.$emit("heightComputed", this.$refs.dashboardGraphModuleRef.clientHeight)
     }
   },
   methods: {
@@ -230,7 +230,6 @@ export default {
       justify-content: space-between;
       display: flex;
       flex-direction: column;
-      height: 100%;
     }
     
     .module-component::-webkit-scrollbar{

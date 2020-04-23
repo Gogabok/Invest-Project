@@ -80,11 +80,11 @@ export default {
   }),
   created() {
     this.dealsData = dealsJsonDataAPI
-    this.mixinOptions(5)
+    this.mixinOptions(7)
     this.setupPagination(this.dealsData)
   },
   mounted() {
-    this.height = this.$refs.dealsWrapperContent.clientHeight + 'px'
+    // this.height = this.$refs.dealsWrapperContent.clientHeight + 'px'
   },
   filters: {
     prettyTime: function (time) {
@@ -118,7 +118,7 @@ export default {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    min-height: 490px;
+    // min-height: 490px;
   }
   .decisions-wrapper-nav {
     display: flex;
