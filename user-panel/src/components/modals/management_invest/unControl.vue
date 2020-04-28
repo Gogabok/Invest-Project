@@ -219,9 +219,14 @@ export default {
   width: 100%;
   & .list {
     padding: 5px 0px 5px 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     & .item {
       padding: 30px 20px;
       width: 100%;
+      height: 100%;
       cursor: pointer;
       font-size: 1.25em;
       display: flex;
@@ -230,17 +235,19 @@ export default {
       background: transparent;
       transition-duration: .1s;
       user-select: none;
+      @media screen and (max-width: 900px) {
+        padding: 15px 20px;
+      }
       & img {
         width: 10px;
         pointer-events: none;
         user-select: none;
       }
       &:nth-child(2) {
-        border-bottom: 2px solid #e4e4e4;
-        border-top: 2px solid #e4e4e4;
+        border-bottom: 1px solid #e4e4e4;
       }
       &:nth-child(3), &:nth-child(4), &:nth-child(5) {
-        border-bottom: 2px solid #e4e4e4;
+        border-bottom: 1px solid #e4e4e4;
       }
       &.active {
         color: #379A1D;
@@ -263,6 +270,9 @@ export default {
         pointer-events: none;
         user-select: none;
         margin-right: 15px;
+      }
+      @media screen and (max-width: 900px) {
+        justify-content: flex-start;
       }
     }
   }
