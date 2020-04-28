@@ -270,8 +270,8 @@ export default {
   }
   @media screen and (max-width: 1250px) {
     .module-component {
-      max-height: 400px;
-      min-height: 400px;
+      // max-height: 400px;
+      // min-height: 400px;
     }
   }
   @media screen and (max-width: 650px) {

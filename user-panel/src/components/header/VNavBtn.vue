@@ -27,6 +27,7 @@ export default {
   margin: 0px 7px;
   text-align: center;
   transition-duration: .5s;
+  white-space: nowrap;
 }
 .invest {
   background: rgba(55, 154, 29, .7);

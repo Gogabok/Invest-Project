@@ -18,8 +18,8 @@
         <svg class="main-circle">
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#379A1D" />
-              <stop offset="100%" stop-color="#1C4E0F" />
+              <stop offset="10%" stop-color="#379A1D" />
+              <stop offset="80%" stop-color="#1C4E0F" />
             </linearGradient>
           </defs>
           <circle class="bg" cx="210" cy="210" r="180" />
@@ -81,7 +81,7 @@ export default {
     // Таймаут 300 просто для анимации
     setTimeout(() => {
       // Тут нужно получать данные юзера: от $$$ до %
-      let ourCoef = 62; // % заполнения
+      let ourCoef = 60; // % заполнения
       let forPercent = fullLength / 100;
       let result = fullLength - forPercent * ourCoef;
       if (this.$refs.progressBar) {
@@ -128,6 +128,12 @@ export default {
   position: relative;
   width: 420px;
   margin: 0px auto 0px auto;
+  @media screen and (max-width: 1366px) {
+    zoom: 0.75;
+  }
+  @media screen and (max-width: 1250px) {
+    zoom: 1;
+  }
   @media screen and (max-width: 450px) {
     zoom: 0.75;
   }

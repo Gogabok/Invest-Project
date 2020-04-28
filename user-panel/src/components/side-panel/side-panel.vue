@@ -49,7 +49,7 @@ export default {
 
 <style lang="scss">
   .side-panel {
-    height: 100vh;
+    min-height: 100vh;
     background: #24303C;
     // max-width: 991px !important;
     width: 100%;

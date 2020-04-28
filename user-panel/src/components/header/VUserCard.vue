@@ -1,6 +1,6 @@
 <template>
   <div class="v-user-card">
-    <p class="v-user-name">woohoohooh@gmail.com</p>
+    <p class="v-user-name" @click="openEditModal">woohoohooh@gmail.com</p>
     <div v-click-outside="hide" class="v-user-card-extraDots" @click="openMiniModal">
       <span class="v-user-card-extraDots-item"></span>
       <span class="v-user-card-extraDots-item"></span>
@@ -59,12 +59,22 @@ export default {
       } else {
         alert("User logout")
       }
+    },
+    openEditModal () {
+      this.$store.dispatch("modalStore/ADD_MODAL", {
+        title: "Редактировать",
+        link: "main",
+        sublink: "profile"
+      })
     }
   },
 };
 </script>
 
 <style lang="scss">
+.v-user-name {
+  cursor: pointer;
+}
 .v-user-card {
   padding: 12.5px 20px 12.5px 15px;
   background: rgba(184, 189, 196, 0.1);
