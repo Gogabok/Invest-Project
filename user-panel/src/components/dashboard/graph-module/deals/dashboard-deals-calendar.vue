@@ -16,11 +16,11 @@
               <span class="date">{{ day.date }}</span>
               <div class="rates">
                 <div class="rates-up" v-if="day.rates">
-                  <img :src="`./assets/common/arrow-up-white.svg`" alt="">
+                  <img ondragstart="return false" :src="`./assets/common/arrow-up-white.svg`" alt="">
                   <span>{{ day.rates.up }}</span>
                 </div>
                 <div class="rates-down" v-if="day.rates">
-                  <img :src="`./assets/common/arrow-down-white.svg`" alt="">
+                  <img ondragstart="return false" :src="`./assets/common/arrow-down-white.svg`" alt="">
                   <span>{{ day.rates.down }}</span>
                 </div>
               </div>
@@ -144,17 +144,23 @@ export default {
   .calendar {
     width: 100%;
     padding: 0px 0px;
+    margin-bottom: 20px;
     & * {
      user-select: none; 
     }
   }
   .calendar-nav {
     display: flex;
+    border: 1px solid #92989E;
+    border-bottom: none;
+    border-right: none;
     & .nav-item {
       color: #fff;
-      font-weight: bold;
-      font-size: .9em;
-      
+      font-weight: 400;
+      font-size: .85em;
+      border: 1px solid #92989E;
+      border-top: none;
+      border-left: none;
       text-align: center;
       padding: 10px 1px;
       width: calc(100% / 7);
@@ -164,6 +170,7 @@ export default {
   .calendar-body {
     display: flex;
     align-items: flex-start;
+    border-left: 1px solid #92989E;
   }
   .calendar-line {
     width: 100%;
@@ -173,7 +180,9 @@ export default {
     color: #fff;
     font-weight: bold;
     font-size: 1em;
-    background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: grey; stroke-width: 2;'/></svg>");
+    border: 1px solid #92989E;
+    border-top: none;
+    border-left: none;
     text-align: center;
     padding: 10px 1px;
     margin: -1px 0px 0px 0px !important;
@@ -189,6 +198,9 @@ export default {
   .calendar-line-item-empty {
     padding: 15px 0px 0px 0px;
     margin: -1px 0px 0px -1px;
+    border: 1px solid #92989E;
+    border-top: none;
+    border-left: none;
     // margin: -1px 0px 1px 1px !important;
   }
   .calendar-line-item-today {
@@ -208,14 +220,16 @@ export default {
       margin: 0px 2px;
       padding: 3px 6px;
       & img {
-        margin-right: 2px;
+        margin-right: 3px;
+        width: 12px;
+        margin-top: 2px;
       }
     }
     & .rates-up {
-      background: #379A1D;
+      background: rgba(55, 154, 29, 0.5);
     }
     & .rates-down {
-      background: #EF5350;
+      background: rgba(239, 83, 80, 0.5);
     }
   }
   @media screen and (max-width: 1530px) {
