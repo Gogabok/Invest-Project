@@ -3,7 +3,8 @@
     <div class="dashboard-graph-zone">
       <canvas ref="canvas"></canvas>
       <div :style="`bottom: ${topOfLeaf}px`" ref="leaf" class="leaf">
-        4.5%
+        <img ondragstart="return false" src="../../assets/common/leaf.svg" alt="">
+        <span>4,5%</span>
       </div>
     </div>
   </div>
@@ -58,29 +59,30 @@ export default {
               x: '10.20'
             },
             {
-              y: 10,
+              y: 50,
               x: '11.20'
             },
             {
-              y: 20,
-              x: '12.20'
+              y: 75,
+              x: '12.20',
             },
           ],
   }),
   methods: {
     LeafCalc() {
-      let canvasHeight = this.$refs.canvas.clientHeight + 20
+      let canvasHeight = this.$refs.canvas.clientHeight - 55
       let lastPoint = this.points[this.points.length - 1]
-      // let pxPerPoint = (canvasHeight / 100) * lastPoint.y
-      let topOfLeaf = (canvasHeight / 100) * lastPoint.y
-      console.log(topOfLeaf)
-      if((canvasHeight / 2) < topOfLeaf) {
-        topOfLeaf -= 30
-      }
-      this.topOfLeaf = topOfLeaf
+      let topOfLeaf = ((canvasHeight / 100) * lastPoint.y)
+      console.log((canvasHeight / 100) * lastPoint.y)
+      // if((canvasHeight / 2) < topOfLeaf) {
+      //   topOfLeaf -= 30
+      // }
+      this.$refs.leaf.style.opacity = 1
+      this.topOfLeaf = 40 + topOfLeaf
     }
   },
   mounted () {
+    
     this.renderChart({
       hoverMode: 'index',
       labels: this.labels,
@@ -91,7 +93,10 @@ export default {
           pointBorderWidth: 3,
           pointBorderColor: '#fff',
           pointBackgroundColor: '#379A1D',
-          pointRadius: 7,
+          pointRadius: function (context) {
+            let idx = context.dataIndex
+            return idx < context.dataset.data.length - 1 ? 7 : 0
+          },
           pointHitRadius: 9,
           backgroundColor: 'rgba(55, 154, 29, .08)',
           pointHoverRadius: 7,
@@ -157,6 +162,7 @@ export default {
         }]
       }
     })
+    console.log(this.$data)
     let vm = this
     this.LeafCalc()
     window.onresize = function () {
@@ -182,17 +188,30 @@ export default {
   }
   .leaf {
     position: absolute;
-    right: -80px;
-    color: #fff;
-    width: 100px;
-    height: 80px;
-    background: url("../../assets/common/leaf.svg") 30%;
-    background-size: cover;
+    right: -62px;
+    bottom: 40px;
+    transition-duration: .7s;
+    transition-timing-function: cubic-bezier(0,0,0.2,1);
+    opacity: 0;
+    width: 90px;
+    height: 47px;
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
     font-weight: 600;
+    & img {
+      width: 130px;
+      position: absolute;
+      z-index: 99;
+    }
+    & span {
+      color: #fff;
+      z-index: 100;
+      position: relative;
+      top: -1px;
+      left: -2px;
+    }
   }
   @media screen and (max-width: 1250px) {
     .dashboard-graph {

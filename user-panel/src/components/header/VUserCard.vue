@@ -76,7 +76,7 @@ export default {
   cursor: pointer;
 }
 .v-user-card {
-  padding: 12.5px 20px 12.5px 15px;
+  padding: 20px 20px 20px 15px;
   background: rgba(184, 189, 196, 0.1);
   color: #fff;
   border-radius: 3px;

@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss">
 .navigation-wrapper {
-  padding: 10px 0px;
+  padding: 10px 0px 20px 0px;
   display: flex;
   align-items: center;
     transition: opacity .5s;

@@ -261,6 +261,7 @@ export default {
       padding: 20px 0px;
       user-select: none;
       border-bottom: 1px solid #E8ECEE;
+      cursor: pointer;
       &-wrapper {
         display: flex;
         justify-content: space-between;

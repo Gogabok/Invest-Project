@@ -51,6 +51,7 @@ export default {
   .side-panel {
     min-height: 100vh;
     background: #24303C;
+    height: 100%;
     // max-width: 991px !important;
     width: 100%;
   }

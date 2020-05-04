@@ -50,7 +50,7 @@ export default {
   },
   mounted() {
     let textes = document.querySelectorAll(".dashboard")[0]
-    textes.style.filter = "blur(1px)"
+    textes.style.filter = "blur(3px)"
 
     document.getElementsByTagName("html")[0].style.overflow = "hidden";
     document.getElementsByTagName("html")[0].style.paddingRight = "8px";
@@ -102,7 +102,7 @@ export default {
   background: rgba(112, 112, 112, 0.7);
   z-index: 999;
   padding: 60px;
-  filter: blur(200px);
+  filter: blur(750px);
 }
 .modal {
   // max-width: 1000px;
