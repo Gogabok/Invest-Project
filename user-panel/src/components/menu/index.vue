@@ -1,75 +1,88 @@
 <template>
   <div class="menu-app">
-    <div class="filters">
-      <div @click="filtering()" class="item item-1">
-        <div class="main">
-          <p class="amount">0</p>
-          <p class="percent">0%</p>
+    <div v-if="!componentDetails">
+      <div class="filters">
+        <div @click="filtering()" class="item item-1">
+          <div class="main">
+            <p class="amount">0</p>
+            <p class="percent">0%</p>
+          </div>
+          <p class="item-desc">Мой портфель</p>
         </div>
-        <p class="item-desc">Мой портфель</p>
-      </div>
-      <div :class="filter === 'ourChoice' ? 'activated' : ''" @click="filtering('ourChoice')" class="item item-2">
-        <div class="main">
+        <div :class="filter === 'ourChoice' ? 'activated' : ''" @click="filtering('ourChoice')" class="item item-2">
+          <div class="main">
+          </div>
+          <p class="item-desc">Наш выбор</p>
         </div>
-        <p class="item-desc">Наш выбор</p>
-      </div>
-      <div :class="filter === 'checked' ? 'activated' : ''" @click="filtering('checked')" class="item item-3">
-        <div class="main">
+        <div :class="filter === 'checked' ? 'activated' : ''" @click="filtering('checked')" class="item item-3">
+          <div class="main">
+          </div>
+          <p class="item-desc">Проверенные</p>
         </div>
-        <p class="item-desc">Проверенные</p>
-      </div>
-      <div :class="filter === 'testing' ? 'activated' : ''" @click="filtering('testing')" class="item item-4">
-        <div class="main">
+        <div :class="filter === 'testing' ? 'activated' : ''" @click="filtering('testing')" class="item item-4">
+          <div class="main">
+          </div>
+          <p class="item-desc">Тестируются</p>
         </div>
-        <p class="item-desc">Тестируются</p>
-      </div>
-      <div :class="filter === 'exploring' ? 'activated' : ''" @click="filtering('exploring')" class="item item-5">
-        <div class="main">
+        <div :class="filter === 'exploring' ? 'activated' : ''" @click="filtering('exploring')" class="item item-5">
+          <div class="main">
+          </div>
+          <p class="item-desc">Исследуются</p>
         </div>
-        <p class="item-desc">Исследуются</p>
-      </div>
-      <div :class="filter === 'deleted' ? 'activated' : ''" @click="filtering('deleted')" class="item item-6">
-        <div class="main">
+        <div :class="filter === 'deleted' ? 'activated' : ''" @click="filtering('deleted')" class="item item-6">
+          <div class="main">
+          </div>
+          <img ondragstart="return false" src="../../assets/menu/close-btn.svg" alt="">
         </div>
-        <img ondragstart="return false" src="../../assets/menu/close-btn.svg" alt="">
       </div>
-    </div>
-    <div class="menu-folder">
-      <div class="menu-folder-caption">
-        <p class="title">Мой портфель</p>
-        <p class="filter-title">Фильтр <img ondragstart="return false" src="../../assets/menu/arrow-down.svg" alt=""></p>
-      </div>
-      <transition-group name="fade-group-faster" mode="out-in">
-        <div class="menu-folder-item" v-for="(item, idx) in items" :key="item.title + idx + Math.random()">
-          <div class="logo" :style="`background: ${colorOfLogoStatus(item)}`"></div>
-          <div class="menu-folder-item-wrapper">
-            <div class="item-main-info">
-              <p class="item-main-info-title">{{ item.title }}</p>
-              <p class="item-main-info-desc"><img src="../../assets/menu/item-icon.svg" alt=""> {{ item.type }}</p>
-            </div>
-            <div class="item-main-info-2">
-              <p class="item-main-info-2-title">Доходность <span>~{{ item.income }}</span></p>
-              <p class="item-main-info-2-desc" v-if="item.dateOfConnection">Подключен {{ item.dateOfConnection }}</p>
-              <p class="item-main-info-2-desc" v-else>Не подключен</p>
-            </div>
-            <div class="item-main-info-2">
-              <p class="item-main-info-2-title">Инвесторов: <span>{{ item.investors }}</span></p>
-              <p class="item-main-info-2-desc">Независимое управление 
-                <img v-if="item.isUnConrolManagment" src="../../assets/menu/ok.svg" alt="">
-                <img v-else src="../../assets/menu/false.svg" alt="">
-              </p>
-            </div>
-            <div class="item-main-info-3">
-              <p class="item-main-info-3-title">Оценка риска</p>
-              <div class="progress">
-                <span
-                  :style="`width:${20 * item.risksProgress}%; border-color: ${colorRisksProgressBar(item)}`"
-                ></span>
+      <div class="menu-folder">
+        <div class="menu-folder-caption">
+          <p class="title">Мой портфель</p>
+          <p class="filter-title">Фильтр <img ondragstart="return false" src="../../assets/menu/arrow-down.svg" alt=""></p>
+        </div>
+        <transition-group name="fade-group-faster" mode="out-in">
+          <div @click="routeToDetails(item)" class="menu-folder-item" v-for="(item, idx) in items" :key="item.title + idx + Math.random()">
+            <div class="logo" :style="`background: ${colorOfLogoStatus(item)}`"></div>
+            <div class="menu-folder-item-wrapper">
+              <div class="item-main-info">
+                <p class="item-main-info-title">{{ item.title }}</p>
+                <p class="item-main-info-desc"><img src="../../assets/menu/item-icon.svg" alt=""> {{ item.type }}</p>
+              </div>
+              <div class="item-main-info-2">
+                <p class="item-main-info-2-title">Доходность <span>~{{ item.income }}</span></p>
+                <p class="item-main-info-2-desc" v-if="item.dateOfConnection">Подключен {{ item.dateOfConnection }}</p>
+                <p class="item-main-info-2-desc" v-else>Не подключен</p>
+              </div>
+              <div class="item-main-info-2">
+                <p class="item-main-info-2-title">Инвесторов: <span>{{ item.investors }}</span></p>
+                <p class="item-main-info-2-desc">Независимое управление 
+                  <img v-if="item.isUnConrolManagment" src="../../assets/menu/ok.svg" alt="">
+                  <img v-else src="../../assets/menu/false.svg" alt="">
+                </p>
+              </div>
+              <div class="item-main-info-3">
+                <p class="item-main-info-3-title">Оценка риска</p>
+                <div class="progress">
+                  <span
+                    :style="`width:${20 * item.risksProgress}%; border-color: ${colorRisksProgressBar(item)}`"
+                  ></span>
+                </div>
               </div>
             </div>
           </div>
+        </transition-group>
+      </div>
+    </div>
+    <div v-else>
+      <div class="bot-caption">
+        <div class="bot-caption-title">
+          <img ondragstart="return false" src="../../assets/common/arrow-left.svg" alt="">
+          <div class="title">
+            <p class="title">{{ componentDetails.title }}</p>
+            <p class="subtitle">{{ componentDetails.type }}</p>
+          </div>
         </div>
-      </transition-group>
+      </div>
     </div>
   </div>
 </template>
@@ -81,7 +94,8 @@ export default {
   data: () => ({
     items: null,
     allData: null,
-    filter: null
+    filter: null,
+    componentDetails: null
   }),
   created() {
     this.allData = menuBotsDATA
@@ -125,6 +139,9 @@ export default {
       } else {
         this.items = this.allData
       }
+    },
+    routeToDetails(item) {
+      this.componentDetails = item
     }
   }
 }
@@ -338,6 +355,27 @@ export default {
             border-color: transparent;
             border-radius: 21px;
           }
+        }
+      }
+    }
+  }
+
+  .bot-caption {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &-title {
+      display: flex;
+      align-items: flex-start;
+      & .title {
+        & .title {
+          font-size: 'Exo 2';
+          font-weight: bold;
+          font-size: 2.5rem;
+          color: #3B4757;
+        }
+        & .subtitle {
+
         }
       }
     }
