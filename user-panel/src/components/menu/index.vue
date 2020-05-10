@@ -76,11 +76,14 @@
     <div v-else>
       <div class="bot-caption">
         <div class="bot-caption-title">
-          <img ondragstart="return false" src="../../assets/common/arrow-left.svg" alt="">
+          <img @click="componentDetails = null" ondragstart="return false" src="../../assets/common/arrow-left.svg" alt="">
           <div class="title">
             <p class="title">{{ componentDetails.title }}</p>
             <p class="subtitle">{{ componentDetails.type }}</p>
           </div>
+        </div>
+        <div class="bot-status">
+          
         </div>
       </div>
     </div>
@@ -100,6 +103,9 @@ export default {
   created() {
     this.allData = menuBotsDATA
     this.items = this.allData
+  },
+  destroyed() {
+    this.componentDetails = null
   },
   methods: {
     colorRisksProgressBar (item) {
@@ -364,9 +370,15 @@ export default {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    padding: 0px 40px;
+    position: relative;
     &-title {
       display: flex;
       align-items: flex-start;
+      & img {
+        margin: 12px 40px 0px 0px;
+        cursor: pointer;
+      }
       & .title {
         & .title {
           font-size: 'Exo 2';
