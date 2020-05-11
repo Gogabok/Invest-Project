@@ -370,24 +370,25 @@ export default {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 0px 40px;
+    padding: 0px 20px;
     position: relative;
     &-title {
       display: flex;
       align-items: flex-start;
+      margin: 20px 0px;
       & img {
-        margin: 12px 40px 0px 0px;
+        margin: 12px 20px 0px 0px;
         cursor: pointer;
       }
       & .title {
         & .title {
-          font-size: 'Exo 2';
+          font-family: 'Exo 2';
           font-weight: bold;
           font-size: 2.5rem;
           color: #3B4757;
         }
         & .subtitle {
-
+          font-family: 'N-ui';
         }
       }
     }
