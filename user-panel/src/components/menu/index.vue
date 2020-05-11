@@ -82,8 +82,9 @@
             <p class="subtitle">{{ componentDetails.type }}</p>
           </div>
         </div>
-        <div class="bot-status">
-          
+        <div class="item item-2 activated bot-caption-status">
+          <div :style="`background:${colorOfLogoStatus(componentDetails)}`" class="main"></div>
+          <div class="item-desc">123</div>
         </div>
       </div>
     </div>
@@ -138,6 +139,21 @@ export default {
       }
       return color
     },
+    statusTranslate(item) {
+      let w = ''
+      if(item.status === 'ourChoice') {
+        w = 'Наш выбор'
+      } else if(item.status === 'checked') {
+        w = 'Проверенные'
+      } else if(item.status === 'testing') {
+        w = 'Тестируются'
+      } else if(item.status === 'exploring') {
+        w = 'Исследуются'
+      } else if(item.status === 'deleted') {
+        w = 'Удаленные'
+      }
+      return w
+    },
     filtering(data_filter) {
       this.filter = data_filter
       if(data_filter) {
@@ -165,94 +181,94 @@ export default {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    & .item {
-      width: 200px;
-      user-select: none;
-      margin: 30px 0px 0px 0px;
-      cursor: pointer;
-      transition-duration: .3s;
-      &.activated {
-        margin-top: 0px;
-        & .main {
-          height: 85px;
-          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
-        }
-      }
-      &:hover  .main {
+  }
+  .item {
+    width: 200px;
+    user-select: none;
+    margin: 30px 0px 0px 0px;
+    cursor: pointer;
+    transition-duration: .3s;
+    &.activated {
+      margin-top: 0px;
+      & .main {
         height: 85px;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
       }
-      &:hover {
-        margin-top: 0px;
+    }
+    &:hover  .main {
+      height: 85px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+    &:hover {
+      margin-top: 0px;
+    }
+    & .main {
+      height:55px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      padding: 0px 15px 0px 20px;
+      line-height: 2rem;
+      color: #808791;
+      border-radius: 8px;
+      transition-duration: .3s;
+      & .amount {
+        font-weight: 700;
       }
+    }
+    & .item-desc {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 5px 0px;
+    }
+    &-1 {
+      transition-duration: 0s;
       & .main {
-        height:55px;
-        display: flex;
-        justify-content: space-between;
-        font-size: 2.2rem;
-        display: flex;
-        align-items: center;
-        padding: 0px 15px 0px 20px;
-        line-height: 2rem;
-        color: #808791;
-        border-radius: 8px;
-        transition-duration: .3s;
-        & .amount {
-          font-weight: 700;
-        }
+        border-radius: 80px;
+        box-shadow: 0px 0px 12px 0px #9EA8B0;
+        background: #FFFFFF;
       }
-      & .item-desc {
-        text-align: center;
-        font-size: 1.2rem;
-        margin: 5px 0px;
+      &:hover {
+        margin-top: 30px;
       }
-      &-1 {
-        & .main {
-          border-radius: 80px;
-          // border: 1px solid #9EA8B0;
-          box-shadow: 0px 0px 12px 0px #9EA8B0;
-          background: #FFFFFF;
-        }
-        &:hover {
-          margin-top: 30px;
-        }
-        &:hover .main {
-          border-radius: 80px;
-          height: 55px;
-        }
+      &:hover .main {
+        border-radius: 80px;
+        height: 55px;
       }
-      &-2 {
-        & .main {
-          background: #75C561;
-        }
+    }
+    &-2 {
+      & .main {
+        background: #75C561;
       }
-      &-3 {
-        & .main {
-          background: #619DC5;
-        }
+    }
+    &-3 {
+      & .main {
+        background: #619DC5;
       }
-      &-4 {
-        & .main {
-          background: #B7C561;
-        }
+    }
+    &-4 {
+      & .main {
+        background: #B7C561;
       }
-      &-5 {
-        & .main {
-          background: #C5A761;
-        }
+    }
+    &-5 {
+      & .main {
+        background: #C5A761;
       }
-      &-6 {
-        width: 60px;
-        text-align: center;
-        & .main {
-          background: #C56161;
-        }
-        & img {
-          margin: 6.5px auto;
-          width: 20px;
-        }
+    }
+    &-6 {
+      width: 60px;
+      text-align: center;
+      & .main {
+        background: #C56161;
+      }
+      & img {
+        margin: 6.5px auto;
+        width: 20px;
       }
     }
   }
@@ -390,6 +406,50 @@ export default {
         & .subtitle {
           font-family: 'N-ui';
         }
+      }
+    }
+    &-status {
+      width: 200px;
+      user-select: none;
+      margin: 30px 0px 0px 0px;
+      cursor: pointer;
+      transition-duration: .3s;
+      &.activated {
+        margin-top: 0px;
+        & .main {
+          height: 85px;
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px;
+        }
+      }
+      &:hover  .main {
+        height: 85px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+      }
+      &:hover {
+        margin-top: 0px;
+      }
+      & .main {
+        height:55px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 2.2rem;
+        display: flex;
+        align-items: center;
+        padding: 0px 15px 0px 20px;
+        line-height: 2rem;
+        color: #808791;
+        border-radius: 8px;
+        transition-duration: .3s;
+        & .amount {
+          font-weight: 700;
+        }
+      }
+      & .item-desc {
+        text-align: center;
+        font-size: 1.2rem;
+        margin: 5px 0px;
       }
     }
   }
