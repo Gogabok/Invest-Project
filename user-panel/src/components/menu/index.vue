@@ -82,9 +82,9 @@
             <p class="subtitle">{{ componentDetails.type }}</p>
           </div>
         </div>
-        <div class="item item-2 activated bot-caption-status">
+        <div class="item activated bot-caption-status">
           <div :style="`background:${colorOfLogoStatus(componentDetails)}`" class="main"></div>
-          <div class="item-desc">123</div>
+          <div class="item-desc">{{ statusTranslate(componentDetails) }}</div>
         </div>
       </div>
     </div>
@@ -187,7 +187,7 @@ export default {
     user-select: none;
     margin: 30px 0px 0px 0px;
     cursor: pointer;
-    transition-duration: .3s;
+    transition: margin .3s, height .3s;
     &.activated {
       margin-top: 0px;
       & .main {
@@ -413,7 +413,11 @@ export default {
       user-select: none;
       margin: 30px 0px 0px 0px;
       cursor: pointer;
-      transition-duration: .3s;
+      transition: height .3s;
+      position: absolute;
+      left: 50%;
+      top: 0px;
+      transform: translate(-50%, 0);
       &.activated {
         margin-top: 0px;
         & .main {
