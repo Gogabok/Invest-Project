@@ -83,8 +83,17 @@
           </div>
         </div>
         <div class="item activated bot-caption-status">
-          <div :style="`background:${colorOfLogoStatus(componentDetails)}`" class="main"></div>
+          <div key="bot-caption-status" :style="`background:${colorOfLogoStatus(componentDetails)}`" class="main"></div>
           <div class="item-desc">{{ statusTranslate(componentDetails) }}</div>
+        </div>
+        <div class="bot-caption-btns">
+          <button class="bot-caption-btns-item bot-caption-btns-bordered">Независимое управление</button>
+          <button class="bot-caption-btns-item bot-caption-btns-filled">Подключить</button>
+        </div>
+      </div>
+      <div class="main-wrapper">
+        <div class="main-wrapper-list">
+          <p class="main-wrapper-list-title">Показатели доверия</p>
         </div>
       </div>
     </div>
@@ -384,7 +393,7 @@ export default {
 
   .bot-caption {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     padding: 0px 20px;
     position: relative;
@@ -454,6 +463,45 @@ export default {
         text-align: center;
         font-size: 1.2rem;
         margin: 5px 0px;
+      }
+    }
+    &-btns {
+      display: flex;
+      align-items: flex-start;
+      margin-left: auto;
+      margin: 0px -14px;
+      &-item {
+        padding: 10px 15px;
+        border: 1px solid #14AAF5;
+        font-family: 'N-ui';
+        font-size: 1.2rem;
+        border-radius: 8px;
+        margin: 0px 8px;
+        transition-duration: .2s;
+      }
+      &-bordered {
+        color: #14AAF5;
+        background: transparent;
+        &:hover {
+          color: #fff;
+          background: #14AAF5;
+        }
+      }
+      &-filled {
+        color: #fff;
+        background: #14AAF5;
+        &:hover {
+          color: #14AAF5;
+          background: transparent;
+        }
+      }
+    }
+  }
+  .main-wrapper {
+    &-list {
+      &-title {
+        font-family: 'N-ui';
+        font-weight: 600;
       }
     }
   }
