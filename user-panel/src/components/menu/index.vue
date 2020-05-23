@@ -102,6 +102,22 @@
           </ul>
         </div>
       </div>
+      <div class="main-wrapper-list-blocks">
+        <div class="left-side">
+          <div class="left-side-block">
+            <p class="left-side-block-title">Инвесторы</p>
+            <p class="left-side-block-investors">{{ componentDetails.investors }}</p>
+          </div>
+          <div class="left-side-block">
+            <p class="left-side-block-title">Подключен</p>
+            <p class="left-side-block-connected">{{ componentDetails.dateOfConnection }}</p>
+          </div>
+          <div class="left-side-block href">
+            <p class="left-side-block-title">Сайт</p>
+            <a :href="componentDetails.site" target="_blank" class="main-wrapper-list-block-href">{{ componentDetails.site }}</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -518,8 +534,7 @@ export default {
         font-size: 1.3rem;
       }
       &-ul {
-        margin-top: 20px;
-        padding-left: 10px;
+        margin: 20px 0px 30px 10px;
         &-item {
           display: flex;
           align-items: center;
@@ -533,6 +548,50 @@ export default {
             font-size: 1.2rem;
             margin: 0px;
           }
+        }
+      }
+    }
+  }
+  .main-wrapper-list-blocks {
+    & .left-side {
+      max-width: calc(((100% / 3) * 1) - 40px );
+      &-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        border: 2px solid #E2E7EE;
+        padding: 12px 10px;
+        margin: 15px 0px;
+        &-href {
+          color: #0084FF;
+          text-decoration: underline;
+          font-size: 1.25rem;
+          line-height: 2.5rem;
+          &:visited {
+            color: #0084FF;
+          }
+          &:-webkit-any-link {
+            color: #0084FF;
+          }
+        }
+        &-title {
+          color: #3B4757;
+          font-family: 'N-ui';
+          font-size: 1.4rem;
+        }
+        &-investors {
+          color: #0084FF;
+          font-family: 'Exo 2';
+          font-size: 2.5rem;
+          line-height: 2.5rem;
+        }
+        &-connected {
+          color: #0084FF;
+          font-family: 'Exo 2';
+          font-size: 1.8rem;
+          line-height: 2.5rem;
         }
       }
     }
