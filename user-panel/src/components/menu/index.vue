@@ -101,6 +101,14 @@
             </div>
           </ul>
         </div>
+        <div class="main-wrapper-desc">
+          <p class="main-wrapper-desc-subtitle">Этот проект был создан специально для любителей пирамид и сетевого маркетинга с целью которая строго 
+          засекречена. Этот проект был создан специально для любителей пирамид и сетевого маркетинга с целью 
+          которая строго засекречена.</p>
+          <div class="preview">
+            <img ondragstart="return false" src="../../assets/common/preview.png" alt="">
+          </div>
+        </div>
       </div>
       <div class="main-wrapper-list-blocks">
         <div class="left-side">
@@ -108,7 +116,7 @@
             <p class="left-side-block-title">Инвесторы</p>
             <p class="left-side-block-investors">{{ componentDetails.investors }}</p>
           </div>
-          <div class="left-side-block">
+          <div v-if="componentDetails.dateOfConnection" class="left-side-block">
             <p class="left-side-block-title">Подключен</p>
             <p class="left-side-block-connected">{{ componentDetails.dateOfConnection }}</p>
           </div>
@@ -213,7 +221,8 @@ export default {
     align-items: flex-end;
     justify-content: space-between;
   }
-  .item {
+  .menu-app {
+    & .item {
     width: 200px;
     user-select: none;
     margin: 30px 0px 0px 0px;
@@ -303,6 +312,8 @@ export default {
       }
     }
   }
+  }
+
   .menu-folder {
     margin-top: 50px;
     & .menu-folder-caption {
@@ -520,13 +531,30 @@ export default {
     }
   }
   .main-wrapper {
-    margin-top: 20px;
+    margin-top: 40px;
     user-select: none;
     display: flex;
-    align-items: flex-start;
+    &-desc {
+      max-width: calc((100% / 3) * 2);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-between;
+      &-subtitle {
+        max-width: 900px;
+      }
+      & .preview {
+        width: 100%;
+        margin-top: 20px;
+        & img {
+          width: 100%;
+        }
+      }
+    }
     &-list {
-      max-width: 400px;
       margin-right: 30px;
+      max-width: calc(((100% / 3) * 1) - 40px);
+      width: 100%;
       &-title {
         font-family: 'N-ui';
         font-weight: 600;
@@ -534,11 +562,13 @@ export default {
         font-size: 1.3rem;
       }
       &-ul {
-        margin: 20px 0px 30px 10px;
+        margin: 20px 0px 0px 10px;
+        display: flex;
+        flex-direction: column;
         &-item {
           display: flex;
           align-items: center;
-          margin: 10px 0px;
+          margin: 7.5px 0px;
           & img {
             margin-right: 15px;
           }
@@ -553,8 +583,12 @@ export default {
     }
   }
   .main-wrapper-list-blocks {
+    margin-top: 30px;
+    padding-bottom: 30px;
     & .left-side {
       max-width: calc(((100% / 3) * 1) - 40px );
+      display: flex;
+      flex-direction: column;
       &-block {
         display: flex;
         flex-direction: column;
@@ -563,14 +597,17 @@ export default {
         border-radius: 4px;
         border: 2px solid #E2E7EE;
         padding: 12px 10px;
-        margin: 15px 0px;
+        margin: 5px 0px;
         &-href {
-          color: #0084FF;
+          color: #0084FF !important;
           text-decoration: underline;
           font-size: 1.25rem;
           line-height: 2.5rem;
           &:visited {
-            color: #0084FF;
+            color: #0084FF !important;
+          }
+          &:link {
+            color: #0084FF !important;
           }
           &:-webkit-any-link {
             color: #0084FF;

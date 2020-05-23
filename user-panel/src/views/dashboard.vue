@@ -47,6 +47,9 @@ export default {
       if (this.isMenuShow) {
         document.getElementsByTagName("html")[0].style.overflowY = "hidden";
         document.getElementsByTagName("html")[0].style.paddingRight = "8px";
+        setTimeout(() => {
+          document.getElementsByClassName("")
+        }, 1000)
       } else {
         setTimeout(() => {
           document.getElementsByTagName("html")[0].style.overflowY = "scroll";
