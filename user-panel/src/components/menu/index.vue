@@ -94,6 +94,12 @@
       <div class="main-wrapper">
         <div class="main-wrapper-list">
           <p class="main-wrapper-list-title">Показатели доверия</p>
+          <ul class="main-wrapper-list-ul">
+            <div v-for="indicator in componentDetails.indicators" :key="indicator.text" class="main-wrapper-list-ul-item">
+              <img ondragstart="return false" :src="require(`../../assets/common/menu-bot-${indicator.isOk ? 'ok' : 'close'}.svg`)" alt="">
+              <p class="main-wrapper-list-ul-item-text">{{ indicator.text }}</p>
+            </div>
+          </ul>
         </div>
       </div>
     </div>
@@ -498,10 +504,36 @@ export default {
     }
   }
   .main-wrapper {
+    margin-top: 20px;
+    user-select: none;
+    display: flex;
+    align-items: flex-start;
     &-list {
+      max-width: 400px;
+      margin-right: 30px;
       &-title {
         font-family: 'N-ui';
         font-weight: 600;
+        color: #6F7782;
+        font-size: 1.3rem;
+      }
+      &-ul {
+        margin-top: 20px;
+        padding-left: 10px;
+        &-item {
+          display: flex;
+          align-items: center;
+          margin: 10px 0px;
+          & img {
+            margin-right: 15px;
+          }
+          &-text {
+            font-family: 'N-ui';
+            color: #6F7782;
+            font-size: 1.2rem;
+            margin: 0px;
+          }
+        }
       }
     }
   }

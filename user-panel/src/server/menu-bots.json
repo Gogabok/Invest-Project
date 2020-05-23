@@ -8,7 +8,77 @@
         "isUnConrolManagment": true,
         "risksProgress": 1,
         "status": "checked",
-        "id": 1
+        "id": 1,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -19,7 +89,77 @@
         "isUnConrolManagment": true,
         "risksProgress": 2,
         "status": "checked",
-        "id": 2
+        "id": 2,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -30,7 +170,77 @@
         "isUnConrolManagment": false,
         "risksProgress": 3,
         "status": "checked",
-        "id": 3
+        "id": 3,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -41,7 +251,77 @@
         "isUnConrolManagment": true,
         "risksProgress": 4,
         "status": "checked",
-        "id": 4
+        "id": 4,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -52,7 +332,77 @@
         "isUnConrolManagment": true,
         "risksProgress": 5,
         "status": "checked",
-        "id": 5
+        "id": 5,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -63,7 +413,77 @@
         "isUnConrolManagment": true,
         "risksProgress": 1,
         "status": "ourChoice",
-        "id": 6
+        "id": 6,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -74,7 +494,77 @@
         "isUnConrolManagment": true,
         "risksProgress": 1,
         "status": "ourChoice",
-        "id": 7
+        "id": 7,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -85,7 +575,77 @@
         "isUnConrolManagment": false,
         "risksProgress": 1,
         "status": "ourChoice",
-        "id": 8
+        "id": 8,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -96,7 +656,77 @@
         "isUnConrolManagment": false,
         "risksProgress": 2,
         "status": "testing",
-        "id": 9
+        "id": 9,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -107,7 +737,77 @@
         "isUnConrolManagment": false,
         "risksProgress": 3,
         "status": "exploring",
-        "id": 10
+        "id": 10,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   },
   {
         "title": "NeiroGeniusBot",
@@ -118,6 +818,76 @@
         "isUnConrolManagment": false,
         "risksProgress": 5,
         "status": "deleted",
-        "id": 11
+        "id": 11,
+        "indicators": [
+            {
+                  "isOk": true,
+                  "text": "Наш выбор"
+            },
+            {
+                  "isOk": true,
+                  "text": "Выбор пользователей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Используют конкуренты"
+            },
+            {
+                  "isOk": true,
+                  "text": "Депозит не удерживается"
+            },
+            {
+                  "isOk": true,
+                  "text": "Несколько решений"
+            },
+            {
+                  "isOk": false,
+                  "text": "Окупаемость до 1 года"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не маржинальная торговля"
+            },
+            {
+                  "isOk": true,
+                  "text": "Период работы от 2 лет"
+            },
+            {
+                  "isOk": false,
+                  "text": "Низко или среднедоходный"
+            },
+            {
+                  "isOk": true,
+                  "text": "Низкая минималка старта"
+            },
+            {
+                  "isOk": true,
+                  "text": "Команда с историей"
+            },
+            {
+                  "isOk": false,
+                  "text": "Высокий уровень сервиса"
+            },
+            {
+                  "isOk": true,
+                  "text": "Открытая компания"
+            },
+            {
+                  "isOk": true,
+                  "text": "Не российский проект"
+            },
+            {
+                  "isOk": false,
+                  "text": "Без намеков на пирамиду"
+            },
+            {
+                  "isOk": true,
+                  "text": "Юридическое оформление"
+            },
+            {
+                  "isOk": true,
+                  "text": "Независимое управление"
+            }
+        ]
   }
 ]
