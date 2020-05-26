@@ -2,7 +2,7 @@
   <div class="menu-app">
     <div v-if="!componentDetails">
       <div class="filters">
-        <div @click="filtering()" class="item item-1">
+        <div class="item item-1">
           <div class="main">
             <p class="amount">0</p>
             <p class="percent">0%</p>
@@ -122,7 +122,15 @@
           </div>
           <div class="left-side-block href">
             <p class="left-side-block-title">Сайт</p>
-            <a :href="componentDetails.site" target="_blank" class="main-wrapper-list-block-href">{{ componentDetails.site }}</a>
+            <a :href="componentDetails.site" target="_blank" class="left-side-block-href">{{ componentDetails.site }}</a>
+          </div>
+        </div>
+        <div class="main-wrapper-list-blocks-graph">
+          <span>СКОРО...</span>
+        </div>
+        <div class="main-wrapper-list-blocks-graphes">
+          <div class="main-wrapper-list-blocks-graphes-1">
+            <div class="main-wrapper-list-blocks-graphes-1-line"></div>
           </div>
         </div>
       </div>
@@ -143,6 +151,7 @@ export default {
   created() {
     this.allData = menuBotsDATA
     this.items = this.allData
+    this.filtering('ourChoice')
   },
   destroyed() {
     this.componentDetails = null
@@ -535,7 +544,7 @@ export default {
     user-select: none;
     display: flex;
     &-desc {
-      max-width: calc((100% / 3) * 2);
+      max-width: calc((100% / 12) * 9);
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -552,8 +561,8 @@ export default {
       }
     }
     &-list {
-      margin-right: 30px;
-      max-width: calc(((100% / 3) * 1) - 40px);
+      margin-right: 40px;
+      max-width: calc(((100% / 12) * 3) - 40px);
       width: 100%;
       &-title {
         font-family: 'N-ui';
@@ -585,10 +594,13 @@ export default {
   .main-wrapper-list-blocks {
     margin-top: 30px;
     padding-bottom: 30px;
+    display: flex;
     & .left-side {
-      max-width: calc(((100% / 3) * 1) - 40px );
+      max-width: calc(((100% / 12) * 3) - 40px);
+      width: 100%;
       display: flex;
       flex-direction: column;
+      margin: -7.5px 40px -7.5px 0px;
       &-block {
         display: flex;
         flex-direction: column;
@@ -597,20 +609,25 @@ export default {
         border-radius: 4px;
         border: 2px solid #E2E7EE;
         padding: 12px 10px;
-        margin: 5px 0px;
+        margin: 7.5px 0px;
+        height: 110px;
         &-href {
-          color: #0084FF !important;
+          color: #0084FF;
           text-decoration: underline;
           font-size: 1.25rem;
           line-height: 2.5rem;
+          outline: none;
           &:visited {
-            color: #0084FF !important;
+            color: #0084FF;
+            outline: none;
           }
           &:link {
-            color: #0084FF !important;
+            color: #0084FF;
+            outline: none;
           }
           &:-webkit-any-link {
             color: #0084FF;
+            outline: none;
           }
         }
         &-title {
@@ -629,6 +646,40 @@ export default {
           font-family: 'Exo 2';
           font-size: 1.8rem;
           line-height: 2.5rem;
+        }
+      }
+    }
+    &-graph {
+      max-width: calc(((100% / 12) * 6) - 40px);
+      width: 100%;
+      border-radius: 4px;
+      border: 2px solid #E2E7EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 40px;
+      & span {
+        font-size: 2rem;
+        font-family: 'Exo 2';
+        font-weight: 300;
+        color: #0084FF;
+        user-select: none;
+      }
+    }
+    &-graphes {
+      display: flex;
+      flex-direction: column;
+      &-1 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        &-line {
+          flex: 1;
+          width: 20px;
+          border: 2px solid #ADB0B7;
+          border-radius: 21px;
+          overflow-y: hidden;
+          
         }
       }
     }
