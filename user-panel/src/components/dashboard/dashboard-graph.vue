@@ -74,9 +74,6 @@ export default {
       let lastPoint = this.points[this.points.length - 1]
       let topOfLeaf = ((canvasHeight / 100) * lastPoint.y)
       console.log((canvasHeight / 100) * lastPoint.y)
-      // if((canvasHeight / 2) < topOfLeaf) {
-      //   topOfLeaf -= 30
-      // }
       this.$refs.leaf.style.opacity = 1
       this.topOfLeaf = 40 + topOfLeaf
     }
@@ -162,7 +159,6 @@ export default {
         }]
       }
     })
-    console.log(this.$data)
     let vm = this
     this.LeafCalc()
     window.onresize = function () {

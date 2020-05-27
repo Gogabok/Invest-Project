@@ -125,12 +125,20 @@
             <a :href="componentDetails.site" target="_blank" class="left-side-block-href">{{ componentDetails.site }}</a>
           </div>
         </div>
-        <div class="main-wrapper-list-blocks-graph">
+        <div ref="blocksGraph" class="main-wrapper-list-blocks-graph">
           <span>СКОРО...</span>
         </div>
         <div class="main-wrapper-list-blocks-graphes">
           <div class="main-wrapper-list-blocks-graphes-1">
-            <div class="main-wrapper-list-blocks-graphes-1-line"></div>
+            <div :style="`height: ${progressBarHeight}px`" class="main-wrapper-list-blocks-graphes-1-line">
+              <span :style="`height: calc(${20 * componentDetails.risksProgress}% - 4px); background: ${colorRisksProgressBar(componentDetails)}`" class="main-wrapper-list-blocks-graphes-1-line-progress"></span>
+            </div>
+            <span class="main-wrapper-list-blocks-graphes-1-label l-1"><span :style="`background: ${colorRisksProgressBar(componentDetails)}`"></span>Оценка риска</span>
+            <span class="main-wrapper-list-blocks-graphes-1-label l-2">Очень низкий</span>
+            <span class="main-wrapper-list-blocks-graphes-1-label l-3">Низкий</span>
+            <span class="main-wrapper-list-blocks-graphes-1-label l-4">Умеренный</span>
+            <span class="main-wrapper-list-blocks-graphes-1-label l-5">Высокий</span>
+            <span class="main-wrapper-list-blocks-graphes-1-label l-6">Очень высокий</span>
           </div>
         </div>
       </div>
@@ -146,12 +154,16 @@ export default {
     items: null,
     allData: null,
     filter: null,
-    componentDetails: null
+    componentDetails: null,
+    progressBarHeight: null
   }),
   created() {
     this.allData = menuBotsDATA
     this.items = this.allData
     this.filtering('ourChoice')
+  },
+  mounted() {
+    this.progressBarHeight = this.$refs.blocksGraph.clientHeight
   },
   destroyed() {
     this.componentDetails = null
@@ -650,7 +662,7 @@ export default {
       }
     }
     &-graph {
-      max-width: calc(((100% / 12) * 6) - 40px);
+      max-width: calc(((100% / 12) * 8) - 40px);
       width: 100%;
       border-radius: 4px;
       border: 2px solid #E2E7EE;
@@ -673,13 +685,72 @@ export default {
         flex: 1;
         display: flex;
         flex-direction: column;
+        position: relative;
+        width: 190px;
+        &-label {
+          padding-left: 40px;
+          padding-right: 15px;
+          position: absolute;
+          left: -5px;
+          white-space: nowrap;
+          background: #F3F3F2;
+          border-radius: 20px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          user-select: none;
+
+          font-family: 'N-ui';
+          font-size: 1.1rem;
+
+          &.l-1 {
+            // bottom: 0px;
+            top: 100%;
+            font-family: 'N-ui';
+            font-weight: bold;
+            top: calc(100% - 25px);
+            & span {
+              position: absolute;
+              left: 6px;
+              top: 50%;
+              transform: translate(0, -50%);
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background: #000;
+            }
+          }
+          &.l-2 {
+            top: calc(80% - 20px);
+          }
+          &.l-3 {
+            top: calc(60% - 15px);
+          }
+          &.l-4 {
+            top: calc(40% - 10px);
+          }
+          &.l-5 {
+            top: calc(20% - 5px);
+          }
+          &.l-6 {
+            top: 0%;
+          }
+        }
         &-line {
           flex: 1;
           width: 20px;
           border: 2px solid #ADB0B7;
           border-radius: 21px;
           overflow-y: hidden;
-          
+          position: relative;
+          &-progress {
+            position: absolute;
+            width: 12px;
+            border-radius: 21px;
+            bottom: 2px;
+            left: 50%;
+            transform: translate(-50%, 0);
+          }
         }
       }
     }
