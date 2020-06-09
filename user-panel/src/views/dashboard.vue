@@ -16,11 +16,11 @@
       <span></span>
     </div>
   </div>
-  <transition name="slideDown" mode="out-in">
+  <!-- <transition name="slideDown" mode="out-in"> -->
     <div class="menu" :class="isMenuShow ? 'show': 'hidden'" v-if="isMenuShow">
       <v-menu></v-menu>
     </div>
-  </transition>
+  <!-- </transition> -->
 </div>
 </template>
 
@@ -87,7 +87,7 @@ export default {
   }
 }
 .side-panel-area {
-  padding: 0px 8px 0px 100px;
+  padding: 0px 30px 0px 70px;
   max-width: 550px;
   width: 100%;
 }
@@ -179,7 +179,7 @@ export default {
   }
   .side-panel-area {
     width: 100%;
-    padding: 0px 10px 0px 5px;
+    padding: 0px 30px 0px 5px;
   }
 }
 @media screen and (max-width: 1250px) {
@@ -242,8 +242,9 @@ export default {
   width: 45px;
   display: block;
   cursor: pointer;
-  margin: 0px 20px;
-  margin-top: 5px;
+  margin: 0px 0px 0px 0px;
+  top: 15px;
+  right: 15px;
   height: 45px;
   z-index: 999;
   position: relative;
@@ -261,12 +262,15 @@ export default {
   width: 45px;
   display: block;
   cursor: pointer;
-  margin: 0px 20px;
+  margin: 0px 0px 0px 0px;
   margin-top: 5px;
+  padding-top: 10px;
+  top: 15px;
+  right: 15px;
   height: 45px;
   z-index: 9990;
   position: relative;
-  margin-top: 15px;
+  // margin-top: 15px;
   transition-duration: 0.3s;
   & span {
     transition-duration: 0.3s;
@@ -314,7 +318,7 @@ export default {
     opacity: .2;
   } 
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1330px) {
   .hamburger-mainMenu, .close-mainMenu, .menu {
     display: none;
   }

@@ -231,7 +231,7 @@ export default {
 
 <style lang="scss">
   .menu {
-    padding: 0px 90px 0px 10px;
+    padding: 0px 110px 0px 90px;
   }
   .menu-app {
     max-width: 1600px;
@@ -381,6 +381,7 @@ export default {
         &-title {
           font-size: 1.3rem;
           margin: 3px 0px;
+          text-decoration: underline;
         }
         &-desc {
           font-size: 1.1rem;

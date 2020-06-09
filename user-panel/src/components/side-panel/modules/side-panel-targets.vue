@@ -176,11 +176,11 @@ export default {
     text-transform: uppercase;
     font-weight: bold;
     & .title {
-      font-size: 19px;
+      font-size: 1.6em;
       margin-bottom: 10px;
     }
     & .balance {
-      font-size: 36px;
+      font-size: 3em;
     }
   }
   & .text-invested {
@@ -188,12 +188,12 @@ export default {
     text-transform: uppercase;
     margin-top: 15px;
     & .title {
-      font-size: 16px;
+      font-size: 1.2em;
       margin-top: 5px;
       font-weight: bold;
     }
     & .balance {
-      font-size: 23px;
+      font-size: 1.7em;
       font-weight: 400;
     }
   }
@@ -204,7 +204,7 @@ export default {
     &:after {
       content: "........................";
       letter-spacing: 10px;
-      font-size: 20px;
+      font-size: 24px;
       color: #fff;
     }
   }
@@ -228,7 +228,7 @@ export default {
 .targets-item {
   min-height: 80px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px 35px;
   user-select: none;
   &:hover {
@@ -245,7 +245,7 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     fill: #fff;
-    font-size: 16px;
+    font-size: 1.2em;
     font-weight: bold;
   }
 }
@@ -268,15 +268,16 @@ export default {
 .target-text {
   color: #fff;
   margin-left: 15px;
+  margin-bottom: 10px;
   max-width: 60%;
   & .title {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.1em;
     margin-bottom: 8px;
   }
   & .desc {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1em;
   }
 }
 @media screen and (max-width: 1250px) {

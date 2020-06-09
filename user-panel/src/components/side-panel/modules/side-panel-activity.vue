@@ -240,7 +240,7 @@ export default {
   }
 }
 .paginate-container-activity {
-  margin: 20px 0px 20px 0px !important;
+  margin: 20px 0px 15px 0px !important;
   // margin-bottom: 15px !important;
   & .pagination-item-active {
     background: #fff;
