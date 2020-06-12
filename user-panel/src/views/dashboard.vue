@@ -268,7 +268,7 @@ export default {
   top: 15px;
   right: 15px;
   height: 45px;
-  z-index: 9990;
+  z-index: 9999 !important;
   position: relative;
   // margin-top: 15px;
   transition-duration: 0.3s;

@@ -16,7 +16,7 @@ export default {
   extends: Line,
   data: () => ({
     topOfLeaf: 0,
-    labels: ['01.20', '02.20', '03.20', '04.20', '05.20', '06.20', '07.20', '08.20', '09.20', '10.20', '11.20', '12.20'],
+    labels: ['01.20', '02.20', '03.20', '04.20', '05.20'],
     points: [
             {
               y: 50,
@@ -27,45 +27,18 @@ export default {
               x: '02.20'
             },
             {
-              y: 30,
+              y: 10,
               x: '03.20'
             },
             {
-              y: 70,
+              y: 10,
               x: '04.20'
             },
             {
-              y: 30,
+              y: 50,
               x: '05.20'
             },
-            {
-              y: 10,
-              x: '06.20'
-            },
-            {
-              y: 80,
-              x: '07.20'
-            },
-            {
-              y: 10,
-              x: '08.20'
-            },
-            {
-              y: 60,
-              x: '09.20'
-            },
-            {
-              y: 39,
-              x: '10.20'
-            },
-            {
-              y: 50,
-              x: '11.20'
-            },
-            {
-              y: 75,
-              x: '12.20',
-            },
+            
           ],
   }),
   methods: {
@@ -171,6 +144,9 @@ export default {
 <style lang="scss">
   .dashboard-graph-module {
     overflow: visible !important;
+    @media screen and (min-width: 1251px) {
+      margin-bottom: 50px !important;
+    }
   }
   .dashboard-graph {
     // position: relative;
@@ -181,6 +157,9 @@ export default {
   }
   .dashboard-graph-zone {
     position: relative;
+    @media screen and (min-width: 1251px) {
+      margin: 0px -30px -44px -60px;
+    }
   }
   .leaf {
     position: absolute;

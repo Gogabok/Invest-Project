@@ -36,7 +36,7 @@
         </div>
       </transition-group>
     </div>
-    <div class="paginate-container paginate-container-activity" ref="pagination">
+    <div v-if="pageCount > 1" class="paginate-container paginate-container-activity" ref="pagination">
         <paginate
           :page-count="pageCount"
           :click-handler="pageChangeHandler"

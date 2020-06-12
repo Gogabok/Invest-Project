@@ -176,11 +176,12 @@ export default {
     text-transform: uppercase;
     font-weight: bold;
     & .title {
-      font-size: 1.6em;
+      font-size: 1.3em;
       margin-bottom: 10px;
+      font-weight: 400;
     }
     & .balance {
-      font-size: 3em;
+      font-size: 3.6em;
     }
   }
   & .text-invested {
@@ -190,11 +191,11 @@ export default {
     & .title {
       font-size: 1.2em;
       margin-top: 5px;
-      font-weight: bold;
+      font-weight: 400;
     }
     & .balance {
-      font-size: 1.7em;
-      font-weight: 400;
+      font-size: 2.1em;
+      font-weight: 600;
     }
   }
   & .dotted {

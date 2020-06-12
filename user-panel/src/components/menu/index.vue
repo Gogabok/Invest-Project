@@ -163,7 +163,9 @@ export default {
     this.filtering('ourChoice')
   },
   mounted() {
-    this.progressBarHeight = this.$refs.blocksGraph.clientHeight
+    if(this.$refs.blocksGraph) {
+      this.progressBarHeight = this.$refs.blocksGraph.clientHeight
+    }
   },
   destroyed() {
     this.componentDetails = null
