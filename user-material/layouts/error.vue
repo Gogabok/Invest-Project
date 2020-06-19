@@ -1,10 +1,10 @@
 <template>
-  <v-app dark>
-    <v-main>
+  <v-app dark width="100%">
+    <v-main fluid>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
-          <v-col cols="12" sm="8" md="4">
-            <v-card class="card text-center py-10">
+          <v-col class="ratio-inner" cols="12" sm="8" md="4">
+            <v-card class="card text-center py-10 ratio-content">
               <p class="text-h3 text-center mb-7">
                 {{ error.statusCode === 404 ? pageNotFound : otherError }}
               </p>

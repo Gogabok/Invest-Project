@@ -36,86 +36,83 @@
           justify="space-between"
         >
           <v-col lg="4">
-            <v-card
-              outlined
-              style="position: relative; height: 100%;"
-              class="card"
-            >
-              <v-card-title class="font-weight-light subtitle-1 text-uppercase"
-                >Инвестиции</v-card-title
-              >
-              <v-card-subtitle
-                style="background: rgba(133, 170, 83, .1); max-width: 200px;"
-                class="display-1 mt-0 mb-7 py-1"
-              >
-                $0.00
-              </v-card-subtitle>
-              <v-btn
-                style="position: absolute; top: 10px; right: 10px;"
-                icon
-                small
-              >
-                <v-icon color="rgba(184, 189, 196, .55)" dense
-                  >more_vert</v-icon
+            <v-card outlined class="ratio-inner">
+              <div class="card ratio-content">
+                <v-card-title
+                  class="font-weight-light subtitle-1 text-uppercase"
+                  >Инвестиции</v-card-title
                 >
-              </v-btn>
+                <v-card-subtitle
+                  style="background: rgba(133, 170, 83, .1); max-width: 200px;"
+                  class="display-1 mt-0 mb-7 py-1"
+                >
+                  $0.00
+                </v-card-subtitle>
+                <v-btn
+                  style="position: absolute; top: 10px; right: 10px;"
+                  icon
+                  small
+                >
+                  <v-icon color="rgba(184, 189, 196, .55)" dense
+                    >more_vert</v-icon
+                  >
+                </v-btn>
+              </div>
             </v-card>
           </v-col>
 
           <v-col lg="4">
-            <v-card
-              outlined
-              style="position: relative; height: 100%;"
-              class="card"
-            >
-              <v-card-title class="font-weight-light subtitle-1 text-uppercase"
-                >Дивиденды</v-card-title
-              >
-              <v-card-subtitle
-                style="background: rgba(133, 170, 83, .1); max-width: 200px;"
-                class="display-1 mt-0 mb-0 py-1"
-              >
-                $0.00
-              </v-card-subtitle>
-              <v-card-subtitle style="color: #6B894F;" class="mt-2 mb-5 py-1">
-                От 5 до 15% в месяц
-              </v-card-subtitle>
-              <v-btn
-                style="position: absolute; top: 10px; right: 10px;"
-                icon
-                small
-              >
-                <v-icon color="rgba(184, 189, 196, .55)" dense
-                  >more_vert</v-icon
+            <v-card outlined class="ratio-inner">
+              <div class="card ratio-content">
+                <v-card-title
+                  class="font-weight-light subtitle-1 text-uppercase"
+                  >Дивиденды</v-card-title
                 >
-              </v-btn>
+                <v-card-subtitle
+                  style="background: rgba(133, 170, 83, .1); max-width: 200px;"
+                  class="display-1 mt-0 mb-0 py-1"
+                >
+                  $0.00
+                </v-card-subtitle>
+                <v-card-subtitle style="color: #6B894F;" class="mt-2 mb-5 py-1">
+                  От 5 до 15% в месяц
+                </v-card-subtitle>
+                <v-btn
+                  style="position: absolute; top: 10px; right: 10px;"
+                  icon
+                  small
+                >
+                  <v-icon color="rgba(184, 189, 196, .55)" dense
+                    >more_vert</v-icon
+                  >
+                </v-btn>
+              </div>
             </v-card>
           </v-col>
 
           <v-col lg="4">
-            <v-card
-              outlined
-              style="position: relative; height: 100%;"
-              class="card"
-            >
-              <v-card-title class="font-weight-light subtitle-1 text-uppercase"
-                >Партнерство</v-card-title
-              >
-              <v-card-subtitle
-                style="background: rgba(133, 170, 83, .1); max-width: 200px;"
-                class="display-1 mt-0 mb-7 py-1"
-              >
-                $0.00
-              </v-card-subtitle>
-              <v-btn
-                style="position: absolute; top: 10px; right: 10px;"
-                icon
-                small
-              >
-                <v-icon color="rgba(184, 189, 196, .55)" dense
-                  >more_vert</v-icon
+            <v-card outlined class="ratio-inner">
+              <div class="card ratio-content">
+                <v-card-title
+                  class="font-weight-light subtitle-1 text-uppercase"
+                  >Партнерство</v-card-title
                 >
-              </v-btn>
+                <v-card-subtitle
+                  style="background: rgba(133, 170, 83, .1); max-width: 200px;"
+                  class="display-1 mt-0 mb-7 py-1"
+                >
+                  $0.00
+                </v-card-subtitle>
+                <v-btn
+                  style="position: absolute; top: 10px; right: 10px;"
+                  icon
+                  small
+                >
+                  <v-icon color="rgba(184, 189, 196, .55)" dense
+                    >more_vert</v-icon
+                  >
+                </v-btn>
+              </div>
             </v-card>
           </v-col>
         </v-row>
@@ -128,3 +125,20 @@ export default {
   name: 'Dashboard'
 }
 </script>
+
+<style lang="scss" scoped>
+.ratio-inner {
+  position: relative;
+  height: 0;
+  border: none;
+  padding-top: 50%;
+}
+.ratio-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 150px;
+}
+</style>
