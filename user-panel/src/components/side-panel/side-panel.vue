@@ -52,8 +52,11 @@ export default {
     min-height: 100vh;
     background: #24303C;
     height: 100%;
-    // max-width: 991px !important;
-    width: 100%;
+    // max-width: 491px !important;
+    // width: 100%;
+    position: fixed;
+    margin-right: 75px;
+    
   }
   .side-panel * {
     font-family: "Exo 2", sans-serif;
@@ -62,6 +65,10 @@ export default {
   @media screen and (max-width: 1250px) {
     .side-panel {
       height: auto;
+      position: relative;
+      margin-right: 0px;
+      min-height: auto;
+      margin-bottom: 20px;
     }
   }
 </style>

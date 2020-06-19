@@ -125,7 +125,7 @@ export default {
         this.list = null;
         import(`@/server/activity/${item.type}.json`).then(data => {
           this.list = data.default;
-          this.mixinOptions(20);
+          this.mixinOptions(10);
           this.setupPagination(this.list);
           resolve();
         });
@@ -202,7 +202,7 @@ export default {
   border-radius: 5px;
 }
 .activity-list {
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 20px;
   height: calc(100% - 110px);
   align-items: center;
@@ -240,7 +240,8 @@ export default {
   }
 }
 .paginate-container-activity {
-  margin: 20px 0px 15px 0px !important;
+  // margin: 20px 0px 25px 0px !important;
+  margin: auto 0px;
   // margin-bottom: 15px !important;
   & .pagination-item-active {
     background: #fff;

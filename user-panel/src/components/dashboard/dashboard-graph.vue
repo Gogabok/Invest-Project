@@ -135,6 +135,7 @@ export default {
     let vm = this
     this.LeafCalc()
     window.onresize = function () {
+      console.log(1)
       vm.LeafCalc()
     }
   }

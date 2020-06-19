@@ -234,6 +234,7 @@ export default {
 <style lang="scss">
   .menu {
     padding: 0px 110px 0px 90px;
+    overflow-y: scroll;
   }
   .menu-app {
     max-width: 1600px;

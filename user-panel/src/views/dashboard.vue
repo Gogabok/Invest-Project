@@ -75,7 +75,7 @@ export default {
 .dashboard {
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
+  // overflow: hidden;
 }
 .dashboard-user-area {
   width: calc(100% - 20%);
@@ -165,6 +165,8 @@ export default {
   }
   .dashboard-user-area {
     width: 100%;
+    padding-left: 50px;
+    margin-right: 75px;
     & .v-nav {
       padding-left: 10px;
     }
@@ -178,7 +180,7 @@ export default {
     }
   }
   .side-panel-area {
-    width: 100%;
+    // width: 100%;
     padding: 0px 30px 0px 5px;
   }
 }
