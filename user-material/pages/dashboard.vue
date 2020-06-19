@@ -38,8 +38,7 @@
           <v-col lg="4">
             <v-card outlined class="ratio-inner">
               <div class="card ratio-content">
-                <v-card-title
-                  class="font-weight-light subtitle-1 text-uppercase"
+                <v-card-title class="font-weight-light headline text-uppercase"
                   >Инвестиции</v-card-title
                 >
                 <v-card-subtitle
@@ -64,8 +63,7 @@
           <v-col lg="4">
             <v-card outlined class="ratio-inner">
               <div class="card ratio-content">
-                <v-card-title
-                  class="font-weight-light subtitle-1 text-uppercase"
+                <v-card-title class="font-weight-light headline text-uppercase"
                   >Дивиденды</v-card-title
                 >
                 <v-card-subtitle
@@ -93,8 +91,7 @@
           <v-col lg="4">
             <v-card outlined class="ratio-inner">
               <div class="card ratio-content">
-                <v-card-title
-                  class="font-weight-light subtitle-1 text-uppercase"
+                <v-card-title class="font-weight-light headline text-uppercase"
                   >Партнерство</v-card-title
                 >
                 <v-card-subtitle
@@ -139,6 +136,6 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  min-height: 150px;
+  min-height: 175px;
 }
 </style>
