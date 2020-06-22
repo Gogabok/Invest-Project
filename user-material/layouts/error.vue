@@ -1,22 +1,20 @@
 <template>
-  <v-app dark>
-    <v-main fluid>
-      <v-container class="fill-height">
-        <v-row align="center" justify="center">
-          <v-col class="ratio-inner" cols="12">
-            <v-card class="card text-center py-10 ratio-content">
-              <p class="text-h3 text-center mb-7">
-                {{ error.statusCode === 404 ? pageNotFound : otherError }}
-              </p>
-              <v-btn to="/dashboard" link color="success dark" raised
-                >Dashboard</v-btn
-              >
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
-  </v-app>
+  <v-main class="main-height">
+    <v-container class="fill-height" fluid>
+      <v-row justify="center" align="center">
+        <v-col lg="4" md="6" cols="11">
+          <v-card class="card text-center py-10">
+            <p class="text-h3 text-center mb-7">
+              {{ error.statusCode === 404 ? pageNotFound : otherError }}
+            </p>
+            <v-btn to="/dashboard" link color="success dark" raised
+              >Dashboard</v-btn
+            >
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-main>
 </template>
 
 <script>
@@ -47,5 +45,8 @@ export default {
 <style scoped>
 h1 {
   font-size: 20px;
+}
+.main-height {
+  min-height: 100vh;
 }
 </style>

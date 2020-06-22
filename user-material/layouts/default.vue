@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app class="321" dark>
     <v-container class="pa-0" fluid>
       <v-row>
         <nuxt />
