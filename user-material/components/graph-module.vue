@@ -1,5 +1,5 @@
 <template>
-  <v-card class="graph-module-card card pa-4" outlined>
+  <v-card id="graphModuleCard" class="graph-module-card card pa-4" outlined>
     <div class="btns-group">
       <v-row no-gutters>
         <v-col cols="6" sm="4" class="px-0">
