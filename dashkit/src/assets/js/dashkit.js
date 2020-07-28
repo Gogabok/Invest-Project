@@ -118,9 +118,9 @@
         }
       },
       data: {
-        labels: ['Direct', 'Organic', 'Referral'],
+        labels: ['Cryptobot', 'Neirbot', 'Newbot'],
         datasets: [{
-          data: [60, 25, 15],
+          data: [74.2, 7.3, 18.5],
           backgroundColor: ['#2C7BE5', '#A6C5F7', '#D2DDEC']
         }, {
           data: [15, 45, 20],
@@ -215,7 +215,7 @@
           yAxes: [{
             ticks: {
               callback: function(value) {
-                return '$' + value + 'k';
+                return value + '%';
               }
             }
           }]
@@ -224,10 +224,10 @@
       data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
-          label: 'Sales',
+          label: '2019',
           data: [25, 20, 30, 22, 17, 10, 18, 26, 28, 26, 20, 32]
         }, {
-          label: 'Affiliate',
+          label: '2018',
           data: [15, 10, 20, 12, 7, 0, 8, 16, 18, 16, 10, 22],
           backgroundColor: '#d2ddec',
           hidden: true
