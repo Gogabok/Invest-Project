@@ -19,14 +19,322 @@
   
   <!-- MAIN CONTENT
       ================================================== -->
+      <div class="container-fluid">
+        <div style="border: none" class="header-body">
+          <div class="row align-item-end">
+            <div class="col">
+              <h6 class="header-pretitle">Крипторынок</h6>
+              <h1 class="header-title">NeiroGeniusBot</h1>
+            </div>
+            <div class="col-auto">
+              <div class="btn-group mr-2 " role="group">
+                <button type="button" class="btn btn-primary"><span class="fe fe-grid"></span></button>
+                <button type="button" class="btn btn-white"><span class="fe fe-list"></span></button>
+              </div>
+              <a href="#!" class="btn btn-primary lift">Подключить</a>
+            </div>
+          </div>
+          <div class="row mt-3 align-item-end">
+            <div class="col">
+              <ul class="nav nav-tabs w-100">
+                <li class="nav-item"><a href="#!" class="nav-link active">Обзор</a></li>
+                <li class="nav-item"><a href="#!" class="nav-link">Показатели доверия</a></li>
+                <li class="nav-item"><a href="#!" class="nav-link">Отзывы</a></li>
+                <div class="col d-flex align-items-center justify-content-end ml-auto">
+                  <span class="text-muted mr-3">Общие показатели</span>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="botToggle">
+                    <label class="custom-control-label" for="botToggle"></label>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="alert d-flex alert-primary mt-5 mb-3" role="alert">
+                Этот проект в работе с вашим балансом!
+                <span class="fe fe-x ml-auto"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <ul class="nav nav-tabs nav-tabs-sm card-header-tabs">
+              <li class="nav-item" data-toggle="chart" data-target="#salesChart" data-trigger="click" data-action="toggle"
+                data-dataset="0">
+                <a class="nav-link active" href="#" data-toggle="tab">
+                  M
+                </a>
+              </li>
+              <li class="nav-item" data-toggle="chart" data-target="#salesChart" data-trigger="click" data-action="toggle"
+                data-dataset="1">
+                <a class="nav-link" href="#" data-toggle="tab">
+                  All
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+        
+            <!-- Chart -->
+            <div class="chart">
+              <canvas id="salesChart" class="chart-canvas"></canvas>
+            </div>
+        
+          </div>
+        </div>
 
 
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl">
+        
+            <!-- Value  -->
+            <div class="card">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+        
+                    <!-- Title -->
+                    <h6 class="text-uppercase text-muted mb-2">
+                      Доходность среднемесячная
+                    </h6>
+        
+                    <!-- Heading -->
+                    <span class="h2 mb-0">
+                      $24,500
+                    </span>
+        
+                    <!-- Badge -->
+                    <span class="badge badge-soft-success mt-n1">
+                      +3.5%
+                    </span>
+                  </div>
+                  <div class="col-auto">
+        
+                    <!-- Icon -->
+                    <span class="h2 fe fe-dollar-sign text-muted mb-0"></span>
+        
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+        
+          </div>
+          <div class="col-12 col-lg-6 col-xl">
+        
+            <!-- Hours -->
+            <div class="card">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+        
+                    <!-- Title -->
+                    <h6 class="text-uppercase text-muted mb-2">
+                      Доходность всего
+                    </h6>
+        
+                    <!-- Heading -->
+                    <span class="h2 mb-0">
+                      763.5
+                    </span>
+        
+                  </div>
+                  <div class="col-auto">
+        
+                    <!-- Icon -->
+                    <span class="h2 fe fe-briefcase text-muted mb-0"></span>
+        
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+        
+          </div>
+          <div class="col-12 col-lg-6 col-xl">
+          
+            <!-- Hours -->
+            <div class="card">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+          
+                    <!-- Title -->
+                    <h6 class="text-uppercase text-muted mb-2">
+                      Инвестировано
+                    </h6>
+          
+                    <!-- Heading -->
+                    <div style="max-width: 150px" class="col d-flex align-items-center p-0">
+                      <span class="h2 mb-0 mr-3">
+                        84.5%
+                      </span>
+                      <div class="progress progress-sm w-100">
+                        <div class="progress-bar" role="progressbar" style="width: 84.5%" aria-valuenow="84.5" aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                    </div>
+          
+                  </div>
+                  <div class="col-auto">
+          
+                    <!-- Icon -->
+                    <span class="h2 fe fe-clipboard text-muted mb-0"></span>
+          
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+          
+          </div>
+          <div class="col-12 col-lg-6 col-xl">
+        
+            <!-- Time -->
+            <div class="card">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+        
+                    <!-- Title -->
+                    <h6 class="text-uppercase text-muted mb-2">
+                      Инвесторы
+                    </h6>
+        
+                    <!-- Heading -->
+                    <span class="h2 mb-0">
+                      $85.50
+                    </span>
+        
+                  </div>
+                  <div class="col-auto">
+        
+                    <!-- Icon -->
+                    <span class="h2 fe fe-clock text-muted mb-0"></span>
+        
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+        
+          </div>
+        </div>
 
+
+        <div class="row mx-0">
+          <div class="card w-100">
+            <div class="card-header">
+          
+              <!-- Title -->
+              <h4 class="card-header-title">
+                Счета
+              </h4>
+          
+            </div>
+            <div class="table-responsive">
+              <table class="table table-sm table-nowrap card-table">
+                <thead>
+                  <tr>
+                    <th>ID Счета</th>
+                    <th>Дата</th>
+                    <th>Сумма</th>
+                    <th>Статус</th>
+                  </tr>
+                </thead>
+                <tbody class="font-size-base">
+                  <tr>
+                    <td>
+                      <a href="invoice.html">Invoice #10395</a>
+                    </td>
+                    <td>
+                      <time datetime="2020-04-24">Apr. 24, 2020</time>
+                    </td>
+                    <td>
+                      $29.00
+                    </td>
+                    <td>
+                      <span class="badge badge-secondary">Outstanding</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="invoice.html">Invoice #10244</a>
+                    </td>
+                    <td>
+                      <time datetime="2020-03-24">Mar. 24, 2020</time>
+                    </td>
+                    <td>
+                      $29.00
+                    </td>
+                    <td>
+                      <span class="badge badge-success">Paid</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="invoice.html">Invoice #10119</a>
+                    </td>
+                    <td>
+                      <time datetime="2020-02-24">Feb. 24, 2020</time>
+                    </td>
+                    <td>
+                      $29.00
+                    </td>
+                    <td>
+                      <span class="badge badge-success">Paid</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="invoice.html">Invoice #10062</a>
+                    </td>
+                    <td>
+                      <time datetime="2020-01-24">Jan. 24, 2020</time>
+                    </td>
+                    <td>
+                      $29.00
+                    </td>
+                    <td>
+                      <span class="badge badge-success">Paid</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav style="border-top: 1px solid #E3EBF6;" class="w-100">
+              <ul class="pagination justify-content-center pagination-sm mb-0 p-3">
+                <li class="page-item"><a class="page-link" href="#!">Пред</a></li>
+                <!-- <div class="col d-flex align-items-center justify-content-center p-0"> -->
+                  <li class="page-item"><a class="page-link" href="#!">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">5</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">6</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">7</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">8</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">9</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">10</a></li>
+                <!-- </div> -->
+                <li class="page-item"><a class="page-link" href="#!">След</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
 
 
     <!-- JAVASCRIPT
         ================================================== -->
     @@include("partials/scripts.html")
-    
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      /* .page-link, .page {
+        border-top: none;
+      } */
+    </style>
 </body>   
 </html>
