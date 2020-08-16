@@ -422,3 +422,7 @@ textarea {
 .bg-color {
   background: #20272B;
 }
+
+html {
+    font-size: 10px;
+}
