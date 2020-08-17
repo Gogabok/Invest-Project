@@ -6,8 +6,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/statistic',
-    name: 'statistic',
+    path: '/',
+    redirect: '/statistics'
+  },
+  {
+    path: '/statistics',
+    name: 'statistics',
     component: Statistic
   },
 ]
@@ -18,8 +22,6 @@ const router = new VueRouter({
   routes
 })
 
-
-router.replace({ path: '/', redirect: '/statistic' })
 
 
 export default router

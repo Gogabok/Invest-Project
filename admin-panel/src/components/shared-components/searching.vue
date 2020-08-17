@@ -1,8 +1,9 @@
 <template>
   <div class="vue-searching">
     <label class="vue-searching-label" for="vue-searching">
-      <input :class="isEmpty ? 'notAnim' : false" v-model="value" class="vue-searching-input" type="text">
-      <span :class="isEmpty ? 'notDisplayed' : false" class="vue-searching-placeholder">{{ placeholder }}</span>
+      <input @blur="clearError" @keyup.enter="submit" :class="isEmpty ? 'notAnim' : false" v-model="value" class="vue-searching-input" type="text">
+      <span v-if="!error" :class="isEmpty ? 'notDisplayed' : false" class="vue-searching-placeholder">{{ placeholder }}</span>
+      <span if-else="error" :class="isEmpty ? 'notDisplayed' : false" class="vue-searching-placeholder error">{{ error }}</span>
     </label>
   </div>
 </template>
@@ -17,11 +18,22 @@ export default {
     }
   }, 
   data: () => ({
-    value: ''
+    value: '',
+    error: ''
   }),
   computed: {
     isEmpty() {
       return this.value.length > 0
+    }
+  },
+  methods: {
+    submit () {
+      if(this.value.length <= 0) {
+        this.error = 'Поле пустое'
+      }
+    },
+    clearError () {
+      this.error = ''
     }
   }
 }
@@ -61,6 +73,10 @@ export default {
       align-items: center;
       transition-duration: .2s;
       user-select: none;
+      &.error {
+        color: red;
+        transition-duration: 0s;
+      }
       &.notDisplayed {
         top: 0px;
         background: #20272B;
