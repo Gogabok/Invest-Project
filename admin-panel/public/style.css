@@ -426,3 +426,7 @@ textarea {
 html {
     font-size: 10px;
 }
+
+.container {
+    padding: 20px 35px;
+}

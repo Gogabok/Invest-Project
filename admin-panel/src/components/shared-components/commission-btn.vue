@@ -1,6 +1,6 @@
 <template>
   <div class="commission">
-    <input :class="isOpen ? 'open' : false" v-model="value" class="commission-input" type="text">
+    <input ref="commissionInput" :class="isOpen ? 'open' : false" v-model="value" class="commission-input" type="text">
     <button @click="openMenu" class="commission-btn">
       <span v-show="!isOpen">{{ value }}%</span>
       <img v-show="isOpen" class="commission-btn-ok" ondragstart="return false" src="../../assets/icons/ok-dark.svg" alt="">
@@ -18,6 +18,7 @@ export default {
   methods: {
     openMenu() {
       this.isOpen = !this.isOpen
+      this.$refs.commissionInput.focus()
     }
   }
 }
