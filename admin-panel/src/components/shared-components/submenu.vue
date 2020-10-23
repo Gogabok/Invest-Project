@@ -36,14 +36,16 @@ export default {
       color: #F3F4F4;
       font-family: 'SegoeUI';
       font-weight: 400;
-      text-decoration: underline;
+      // text-decoration: underline;
+      border-bottom: 1px solid #F3F4F4;
       font-size: 1.8rem;
       user-select: none;
       cursor: pointer;
       // transition-duration: .2s;
       &.active {
-        font-weight: bold;
-        text-decoration: none;
+        font-weight: 700;
+        // text-decoration: none;
+        border-bottom: 1px solid transparent;
       }
     }
   }
