@@ -1,5 +1,5 @@
 <template>
-  <div class="statistic">
+  <div class="statistic fullPage">
     <div class="container">
       <sub-menu @activeItemToggle="activeItemToggle" :headers="subMenuHeaders"></sub-menu>
     </div>
@@ -11,10 +11,11 @@
 import subMenu from '@/components/shared-components/submenu'
 
 import investProject from "@/components/statistic/investProject"
+import addProject from "@/components/statistic/addProject"
 export default {
   name: 'Statistic',
   components: {
-    subMenu, investProject
+    subMenu, investProject, addProject
   },
   data: () => ({
     subMenuHeaders: [

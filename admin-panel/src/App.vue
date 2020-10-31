@@ -22,6 +22,12 @@ export default {
 #app {
   min-height: 100vh;
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
+}
+.fullPage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 </style>
